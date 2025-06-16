@@ -1,0 +1,71 @@
+{
+    "message": "Data fetched successfully",
+    "status": "SUCCESS",
+    "responseTimestamp": "16-06-2025T13:08:09.105Z",
+    "data": [
+        {
+            "parameterName": "30-dpd on existing facilities",
+            "parameterValue": "11",
+            "flag": "RED",
+            "rules": [
+                {
+                    "ruleName": "0",
+                    "flag": "GREEN"
+                },
+                {
+                    "ruleName": ">0",
+                    "flag": "RED"
+                }
+            ]
+        },
+        {
+            "parameterName": "Bounced Cheques",
+            "parameterValue": "0",
+            "flag": "GREEN",
+            "rules": [
+                {
+                    "ruleName": ">5",
+                    "flag": "RED"
+                },
+                {
+                    "ruleName": "1-5",
+                    "flag": "AMBER"
+                },
+                {
+                    "ruleName": "0",
+                    "flag": "GREEN"
+                }
+            ]
+        },
+        {
+            "parameterName": "Unsettled Defaults",
+            "parameterValue": "1",
+            "flag": "RED",
+            "rules": [
+                {
+                    "ruleName": ">0",
+                    "flag": "RED"
+                },
+                {
+                    "ruleName": "0",
+                    "flag": "GREEN"
+                }
+            ]
+        },
+        {
+            "parameterName": "Outstanding Court Cases",
+            "parameterValue": "0",
+            "flag": "GREEN",
+            "rules": [
+                {
+                    "ruleName": ">0",
+                    "flag": "RED"
+                },
+                {
+                    "ruleName": ">0",
+                    "flag": "GREEN"
+                }
+            ]
+        }
+    ]
+}

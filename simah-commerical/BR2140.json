@@ -1,0 +1,52 @@
+{
+    "message": "Data fetched successfully",
+    "status": "SUCCESS",
+    "responseTimestamp": "16-06-2025T13:09:14.484Z",
+    "data": [
+        {
+            "parameterName": "30-dpd on existing facilities",
+            "parameterValue": "3",
+            "flag": "RED",
+            "rules": [
+                {
+                    "ruleName": "0",
+                    "flag": "GREEN"
+                },
+                {
+                    "ruleName": ">0",
+                    "flag": "RED"
+                }
+            ]
+        },
+        {
+            "parameterName": "Unsettled Defaults",
+            "parameterValue": "0",
+            "flag": "GREEN",
+            "rules": [
+                {
+                    "ruleName": ">0",
+                    "flag": "RED"
+                },
+                {
+                    "ruleName": "0",
+                    "flag": "GREEN"
+                }
+            ]
+        },
+        {
+            "parameterName": "Outstanding Court Cases",
+            "parameterValue": "0",
+            "flag": "GREEN",
+            "rules": [
+                {
+                    "ruleName": ">0",
+                    "flag": "RED"
+                },
+                {
+                    "ruleName": ">0",
+                    "flag": "GREEN"
+                }
+            ]
+        }
+    ]
+}
