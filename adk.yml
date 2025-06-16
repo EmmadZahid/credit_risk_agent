@@ -1,0 +1,2 @@
+name: financial-analysis-agent
+entry_point: agent:root_agent
