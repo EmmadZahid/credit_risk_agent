@@ -1,79 +1,206 @@
-from google.adk.agents import Agent
+from google.adk.agents import Agent, LlmAgent, SequentialAgent
 import os
-import json
+import requests
+import json # To potentially pretty-print JSON if needed for debugging
+from typing import Dict, Any, Optional
 
-# Load your AllCompanies.json file
-current_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(current_dir, "qawaem_data.json")
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
 
-with open(file_path, "r", encoding="utf-8") as f:
-    all_data = json.load(f)
+    MODEL_NAME = os.environ.get("GOOGLE_GENAI_MODEL", "gemini-2.0-flash")
+except ImportError:
+    print("Warning: python-dotenv not installed. Ensure API key is set")
+    MODEL_NAME = "gemini-2.0-flash"
 
-companies_data = all_data.get("data", [])
+def get_financial_raw_data_tool(organization_id: str) -> Dict[str, Any]:
+    """
+    Simulates fetching raw financial data for a given organization ID from an external API.
+    In a real scenario, this would make an actual API call.
 
-# Extract simplified data (flattened into text for prompt injection)
-simplified_data = []
+    Args:
+        organization_id: The unique identifier for the organization.
 
-for company in companies_data:
-    company_name = company.get("companyName", "Unknown")
-    cr_number = company.get("commercialRegistrationNumber", "")
-    financial_statements = company.get("financialStatement", [])
+    Returns:
+        A dictionary containing raw financial data (revenue, net_income, etc.)
+        or an error message if the organization ID is not found.
+    """
+    # --- SIMULATED DATA ---
+    # In a real application, you would make an API call here, e.g.:
+    # response = requests.get(f"https://your.financial.api/data/{organization_id}")
+    # response.raise_for_status()
+    # return response.json()
+    # --- END SIMULATED DATA ---
 
-    for yearly_data in financial_statements:
-        year = yearly_data.get("year", "")
-        ratios = yearly_data.get("ratios", {})
-        spreading = ratios.get("financialSpreading", {})
-        profit_loss = yearly_data.get("profitAndLoss", {})
-        cashflow = yearly_data.get("cashflow", {})
+    financial_data_db = {
+        "123": {
+            "revenue": 1_200_000.0,
+            "net_income": 150_000.0,
+            "bounced_cheques": 0,
+            "debt_to_equity_ratio": 0.3,
+            "years_in_business": 7
+        },
+        "456": {
+            "revenue": 400_000.0,
+            "net_income": 30_000.0,
+            "bounced_cheques": 2,
+            "debt_to_equity_ratio": 1.2,
+            "years_in_business": 3
+        },
+        "789": {
+            "revenue": 750_000.0,
+            "net_income": 80_000.0,
+            "bounced_cheques": 1,
+            "debt_to_equity_ratio": 0.6,
+            "years_in_business": 5
+        }
+    }
 
-        simplified_data.append({
-            "companyName": company_name,
-            "cr_number": cr_number,
-            "year": year,
-            "netProfit": profit_loss.get("netProfit", 0),
-            "revenue": profit_loss.get("totalRevenue", 0),
-            "cashFlowFromOperatingActivities": cashflow.get("netCashFlowsFromUsedInOperatingActivities", 0),
-            "currentRatio": spreading.get("currentRatio", 0),
-            "dscr": spreading.get("dscr", 0),
-            "debtRatio": spreading.get("debtRatio", 0),
-            "netProfitMargin": spreading.get("netProfitMargin", 0),
-            "leverageRatio": spreading.get("leverageRatio", 0),
-            "gearingRatio": spreading.get("gearingRatio", 0),
-            "totalEquity": yearly_data.get("totalEquity",0)
-        })
+    data = financial_data_db.get(organization_id)
+    if data:
+        return {"status": "success", "data": data}
+    else:
+        return {"status": "error", "message": f"Financial data not found for organization ID: {organization_id}"}
 
-# Convert data to string for full prompt injection
-data_context = json.dumps(simplified_data, indent=2)
+def calculate_credit_score_tool(
+    revenue: float,
+    net_income: float,
+    bounced_cheques: int,
+    debt_to_equity_ratio: float,
+    years_in_business: int
+) -> Dict[str, Any]:
+    """
+    Calculates a credit score and loan recommendation based on financial data.
 
-# Now build your credit policy agent with your full rulebook embedded
-financial_analysis_agent = Agent(
-    name="CreditPolicyAgent",
-    model="gemini-2.0-flash",
-    instruction=f"""
-You are a credit decision agent. You must analyze financial data and strictly follow these credit approval rules.
+    Args:
+        revenue: Total revenue of the entity.
+        net_income: Net income (profit) of the entity.
+        bounced_cheques: Number of bounced cheques in the last year.
+        debt_to_equity_ratio: The debt-to-equity ratio.
+        years_in_business: Number of years the entity has been in business.
 
-RULEBOOK:
-- Turnover: Revenue must exceed SAR 1,000,000 — Reject if not met.
-- Operating Profit: Must be positive — Reject if loss.
-- Credit History (Company & Owner): No 30+ dpd, no more than 5 bounced cheques ≤ 250K, no unsettled defaults or court cases — Reject if violated.
-- DSCR: Asset Light ≥ 1.75, Asset Heavy ≥ 1.5 — Reject if below.
-- Gearing Ratio: Asset Light ≤ 1.5, Asset Heavy ≤ 1.7 — Reject if exceeded.
-- Leverage Ratio: Asset Light ≤ 1.75, Asset Heavy ≤ 2.0 — Reject if exceeded.
-- Current Ratio: Asset Light ≥ 1.5, Asset Heavy ≥ 1.2 — Reject if below.
-- External Debt/Sales: Asset Light < 40%, Asset Heavy < 50% — Reject if exceeded.
-- Total Equity: Must exceed SAR 100,000 — Reject if not met.
+    Returns:
+        A dictionary containing the credit score, recommendation, and explanation points.
+    """
+    base_score = 500
+    explanation_points = []
+    score = base_score
 
-You must apply these rules to each company, analyze the financial data, and clearly state for each company:
+    # Policy for Revenue
+    if revenue >= 1_000_000:
+        score += 50
+        explanation_points.append("Excellent revenue performance.")
+    elif revenue >= 500_000:
+        score += 20
+        explanation_points.append("Good revenue performance.")
+    else:
+        explanation_points.append("Revenue is moderate.")
 
-- Company Name
-- Approved or Rejected
-- Reasons for approval or rejection (rule by rule)
-- Full justification
+    # Policy for Net Income
+    if net_income >= 100_000:
+        score += 40
+        explanation_points.append("Strong net income contributing positively.")
+    elif net_income >= 50_000:
+        score += 15
+        explanation_points.append("Positive net income.")
+    else:
+        explanation_points.append("Net income is low or negative.")
 
-Here is the financial data you will use:
+    # Policy for Bounced Cheques
+    if bounced_cheques == 0:
+        score += 30
+        explanation_points.append("No bounced cheques, indicating good payment discipline.")
+    elif bounced_cheques == 1:
+        score -= 20
+        explanation_points.append("One bounced cheque detected, minor impact on score.")
+    elif bounced_cheques > 1:
+        score -= 50
+        explanation_points.append("Multiple bounced cheques, significantly impacting score negatively.")
 
-{data_context}
-"""
+    # Policy for Debt-to-Equity Ratio
+    if debt_to_equity_ratio < 0.5:
+        score += 25
+        explanation_points.append("Very low debt-to-equity ratio, indicating financial stability.")
+    elif debt_to_equity_ratio >= 0.5 and debt_to_equity_ratio < 1.0:
+        score += 10
+        explanation_points.append("Moderate debt-to-equity ratio.")
+    else:
+        explanation_points.append("High debt-to-equity ratio, raising concerns.")
+
+    # Policy for Years in Business
+    if years_in_business >= 5:
+        score += 20
+        explanation_points.append("Long operational history, adding stability.")
+    elif years_in_business >= 2:
+        score += 10
+        explanation_points.append("Established presence in the market.")
+    else:
+        explanation_points.append("New business, limited operational history.")
+
+    # Determine Recommendation
+    recommendation = "Not Recommended"
+    if score >= 650:
+        recommendation = "Recommended"
+    elif score >= 550:
+        recommendation = "Review Required"
+
+    return {
+        "credit_score": score,
+        "recommendation": recommendation,
+        "explanation_points": explanation_points
+    }
+
+def send_email_tool(recipient_email: str, subject:str, body: str) -> Dict[str, str]:
+    """
+    Sends an email to the specified recipient.
+
+    Args:
+        recipient_email: The email address of the recipient.
+        subject: The subject of the email
+        body: The plain text body of the email which is the explanation of the credit assessment.
+
+    Returns:
+        A dictionary with a status and a message.
+    """
+    print(f"\n--- Simulating Email Send ---")
+    print(f"To: {recipient_email}")
+    print(f"Subject: {subject}")
+    print(f"Body:\n{body}")
+    print(f"--- End Simulation ---\n")
+    return {"status": "success", "message": f"Email sent to {recipient_email}."}
+
+
+credit_risk_assessment_agent = Agent(
+    name="CreditRiskAgent",
+    model=MODEL_NAME,
+    description="An AI agent for assessing credit risk based on financial data and providing loan recommendations.",
+    instruction=(
+        "You are a Credit Risk Assessment agent. Your primary goal is to evaluate the creditworthiness of an borrower/organization that will be provided by the user "
+        "and based on that you will fetch financial data from external API, calculate a credit score, give a clear loan recommendation, "
+        "and explain the assessment.\n"
+        "Here's the process:\n"
+        "1.  **Fetch Financial Data:** Use the `get_financial_raw_data_tool` to fetch the raw financial data in JSON format. "
+        "   The user will provide the borrower/organization id that will be passed to this tool to extract the related financial data."
+        "2.  **Calculate Credit Score:** Use the `calculate_credit_score_tool` to calculate the credit score, assessment and recommendation. "
+        "   `calculate_credit_score_tool` will use the output of `get_financial_raw_data_tool`. Ensure all required parameters are provided to the tool.\n"
+        "3.  **Explain Assessment:** Based on the `credit_score`, `recommendation`, and `explanation_points` "
+        "   returned by the tool, provide a comprehensive but easy-to-understand explanation to the user. "
+        "   Clearly state the calculated score, the recommendation (Recommended, Review Required, Not Recommended), "
+        "   and the key factors influencing the decision.\n"
+        "4.  **Offer Email Option:** After explaining the assessment, ask the user "
+        "   if user wants all this assessment to be sent on email'\n"
+        "5.  **Send Email (if requested):** If the user provides an email address, "
+        "   call the `send_email_tool`. For the `body` of the email, include the full assessment details "
+        "   (score, recommendation, and explanation).\n"
+        "   Confirm to the user that the email has been sent or if there was an issue.\n"
+        "Always be polite and professional."
+    ),
+    tools=[
+        get_financial_raw_data_tool,
+        calculate_credit_score_tool,
+        send_email_tool
+    ]
 )
 
-root_agent = financial_analysis_agent
+
+root_agent = credit_risk_assessment_agent
