@@ -48,7 +48,7 @@ data_context = json.dumps(simplified_data, indent=2)
 # Now build your credit policy agent with your full rulebook embedded
 financial_analysis_agent = Agent(
     name="CreditPolicyAgent",
-    model="gemini-1.5-flash",
+    model="gemini-2.0-flash",
     instruction=f"""
 You are a credit decision agent. You must analyze financial data and strictly follow these credit approval rules.
 
