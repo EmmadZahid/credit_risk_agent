@@ -89,22 +89,28 @@ def send_email_tool(input: Dict[str, Any]) -> Dict[str, str]:
 
     Args:
         input: {
-            "to": str - Recipient email address,
-            "subject": str - Email subject,
-            "body": str - Email body content
+            "to": str,
+            "subject": str,
+            "summary_data": dict (required - body is generated from these parameters)
         }
 
     Returns:
         dict: {"status": "Success" | "Error", "message": str}
     """
-
     try:
         to_email = input.get("to")
         subject = input.get("subject", "Credit Analysis Result")
-        body = input.get("body", "Your credit analysis is completed.")
+        summary_data = input.get("summary_data")
+        body = input.get("body")
 
         if not to_email:
             return {"status": "Error", "message": "Missing 'to' email address."}
+
+        if summary_data:
+            body = build_credit_summary_email_body(summary_data)
+
+        if not body:
+            return {"status": "Error", "message": "Missing email body or summary data."}
 
         msg = EmailMessage()
         msg["From"] = "noreply@lendo.local"
@@ -112,7 +118,6 @@ def send_email_tool(input: Dict[str, Any]) -> Dict[str, str]:
         msg["Subject"] = subject
         msg.set_content(body)
 
-        # Connect to MailHog SMTP (running in Docker)
         with smtplib.SMTP("localhost", 1025) as smtp:
             smtp.send_message(msg)
 
@@ -120,6 +125,46 @@ def send_email_tool(input: Dict[str, Any]) -> Dict[str, str]:
 
     except Exception as e:
         return {"status": "Error", "message": str(e)}
+    
+def build_credit_summary_email_body(summary_data: Dict[str, Any]) -> str:
+    """
+    Builds a credit decision email body using dynamic values from summary_data.
+
+    Args:
+        summary_data: {
+            "companyName": str,
+            "crNumber": str,
+            "simahScore": int,
+            "dpd": str,
+            "revenue": str,
+            "netProfitMargin": str,
+            "dscr": str,
+            "bouncedCheques": str,
+            "riskRating": str,
+            "finalRecommendation": str
+        }
+
+    Returns:
+        str: Email body as plain text
+    """
+    return f"""Dear CreditDecision@lendo.sa,
+
+Please find the credit file for Company: {summary_data.get("companyName", "Unknown")} (CR# {summary_data.get("crNumber", "N/A")}). Below is a summary:
+
+🔹 SIMAH Score: {summary_data.get("simahScore", "N/A")}
+🔹 DPD: {summary_data.get("dpd", "N/A")}
+🔹 Qawaem Revenue: {summary_data.get("revenue", "N/A")}
+🔹 Net Profit Margin: {summary_data.get("netProfitMargin", "N/A")}
+🔹 DSCR: {summary_data.get("dscr", "N/A")}
+🔹 Bounced Cheques: {summary_data.get("bouncedCheques", "N/A")}
+🔹 Risk Rating: {summary_data.get("riskRating", "N/A")}
+🔹 FINAL RECOMMENDATION: {summary_data.get("finalRecommendation", "N/A")}
+
+Attached: Credit File <TODO: CREATE CREDIT FILE>
+
+Regards,
+ADK AGENT
+"""
 
 financial_analysis_agent = Agent(
     name="CreditPolicyAgent",
