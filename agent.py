@@ -5,6 +5,14 @@ from typing import Dict, Any, Optional
 from .instructions import (
    COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION
 )
+
+    # Load your AllCompanies.json file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(current_dir, "qawaem_data.json")
+
+with open(file_path, "r", encoding="utf-8") as f:
+    qawaem_data = json.load(f)
+    
 def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
     """
     Reads financial data from a JSON file and parses/prepares it to be used by an agent for approving or rejecting a company.
@@ -17,6 +25,7 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
             "status": "Success" | "Error",
             "data": {
                 "companyName": str - The registered name of the company,
+                "organization_id": int - Its the main id. It can be called company id or borrower id or organization id,
                 "cr_number": str - The commercial registration number of the company,
                 "year": int - The fiscal year the financial data belongs to,
                 "netProfit": float - Net income after deducting all expenses and taxes,
@@ -33,13 +42,6 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
         }
     """
 
-    # Load your AllCompanies.json file
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(current_dir, "qawaem_data.json")
-
-    with open(file_path, "r", encoding="utf-8") as f:
-        qawaem_data = json.load(f)
-
     companies_data = qawaem_data.get("data", [])
 
     # Extract simplified data (flattened into text for prompt injection)
@@ -48,6 +50,7 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
     for company in companies_data:
         company_name = company.get("companyName", "Unknown")
         cr_number = company.get("commercialRegistrationNumber", "")
+        organization_id = company.get("organizationId", "")
         financial_statements = company.get("financialStatement", [])
 
         for yearly_data in financial_statements:
@@ -60,6 +63,7 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
             simplified_data.append({
                 "companyName": company_name,
                 "cr_number": cr_number,
+                "organization_id": organization_id,
                 "year": year,
                 "netProfit": profit_loss.get("netProfit", 0),
                 "revenue": profit_loss.get("totalRevenue", 0),
