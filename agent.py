@@ -1,12 +1,14 @@
 from google.adk.agents import Agent
 import os
 import json
+import smtplib
+from email.message import EmailMessage
 from typing import Dict, Any, Optional
 from .instructions import (
    COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION
 )
 
-    # Load your AllCompanies.json file
+# Load your AllCompanies.json file
 current_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(current_dir, "qawaem_data.json")
 
@@ -81,12 +83,51 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
         "data": simplified_data
     }
 
+def send_email_tool(input: Dict[str, Any]) -> Dict[str, str]:
+    """
+    Sends an email using MailHog SMTP.
+
+    Args:
+        input: {
+            "to": str - Recipient email address,
+            "subject": str - Email subject,
+            "body": str - Email body content
+        }
+
+    Returns:
+        dict: {"status": "Success" | "Error", "message": str}
+    """
+
+    try:
+        to_email = input.get("to")
+        subject = input.get("subject", "Credit Analysis Result")
+        body = input.get("body", "Your credit analysis is completed.")
+
+        if not to_email:
+            return {"status": "Error", "message": "Missing 'to' email address."}
+
+        msg = EmailMessage()
+        msg["From"] = "noreply@lendo.local"
+        msg["To"] = to_email
+        msg["Subject"] = subject
+        msg.set_content(body)
+
+        # Connect to MailHog SMTP (running in Docker)
+        with smtplib.SMTP("localhost", 1025) as smtp:
+            smtp.send_message(msg)
+
+        return {"status": "Success", "message": f"Email sent to {to_email}"}
+
+    except Exception as e:
+        return {"status": "Error", "message": str(e)}
+
 financial_analysis_agent = Agent(
     name="CreditPolicyAgent",
     model="gemini-2.0-flash",
     instruction=COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION,
     tools=[
-        get_financial_raw_data_approval_or_rejection_tool
+        get_financial_raw_data_approval_or_rejection_tool,
+        send_email_tool  # Register the email sending tool
     ]
     )
 

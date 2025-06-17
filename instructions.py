@@ -23,4 +23,6 @@ COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION ="""
         - Approved or Rejected
         - Reasons for approval or rejection (citing specific rules violated/met for each company)
         - A full, concise justification for each decision.
+    4.  **Offer Email Option:** After explaining the assessment, ask the user if user wants all this assessment to be sent on email
+    5.  **Send Email (if requested):** If the user provides an email address, call the `send_email_tool`. For the `body` of the email, include the full assessment details (score, recommendation, and explanation). Confirm to the user that the email has been sent or if there was an issue.
     """
