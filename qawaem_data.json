@@ -4,979 +4,6 @@
     "responseTimestamp": "11-06-2025T16:40:57.686Z",
     "data": [
         {
-            "qawaemRequestId": 380,
-            "organizationId": 4560,
-            "financialInsightRequestId": 221,
-            "companyName": "",
-            "commercialRegistrationNumber": "1010085648",
-            "statementSummary": [
-                {
-                    "year": 2023,
-                    "qawaemRequestId": 0,
-                    "statementSummary": {
-                        "revenue": 24820970,
-                        "netIncome": 21108189,
-                        "totalAssets": 91193501,
-                        "totalLiabilities": 51017657
-                    }
-                },
-                {
-                    "year": 2022,
-                    "qawaemRequestId": 0,
-                    "statementSummary": {
-                        "revenue": 13958064,
-                        "netIncome": 9714917,
-                        "totalAssets": 62185528,
-                        "totalLiabilities": 36617873
-                    }
-                }
-            ],
-            "financialStatement": [
-                {
-                    "year": 2023,
-                    "currentAssets": {
-                        "cashAndBankBalance": 5382636,
-                        "marketableSecurities": 0,
-                        "advancesToSuppliersAndContractorsCurrent": 0,
-                        "tradeAndOtherReceivables": 15137928,
-                        "provision": 0,
-                        "unBilledRevenue": 0,
-                        "inventories": 20061794,
-                        "slowMovingAssetsProvision": 0,
-                        "dueFromShareholder": 0,
-                        "dueFromRelatedPartiesCurrent": 2678542,
-                        "accruedIncome": 0,
-                        "investmentHeldForSale": 0,
-                        "advancesToSuppliers": 0,
-                        "prepayments": 706647,
-                        "otherCurrentAssets": 813014,
-                        "netEmployeeBenefitAssetsCurrent": 0,
-                        "totalLiquidAssets": 24012120,
-                        "totalCashAssets": 5382636,
-                        "inventoryNet": 20061794,
-                        "tradeReceivablesNet": 15137928,
-                        "totalCurrentAssets": 44780561
-                    },
-                    "currentTaxAssets": {
-                        "incomeTaxAssets": 0,
-                        "totalCurrentTaxAssets": 0,
-                        "currentAssetsBeforeAdjustment": 44780561,
-                        "totalCurrentAssets": 44780561
-                    },
-                    "nonCurrentAssets": {
-                        "propertyPlantAndEquipment": 37602602,
-                        "equipmentAndMachinaries": 0,
-                        "assetsSubjectToFinanceLease": 0,
-                        "furnitureAndOthers": 0,
-                        "rightOfUseOfAssets": 0,
-                        "depreciation": 0,
-                        "financeLeaseReceivablesNonCurrent": 1649718,
-                        "capitalWorkInProgress": 0,
-                        "investmentInAssociates": 0,
-                        "investmentsInSubsidiaries": 7160620,
-                        "otherInvestments": 0,
-                        "intangibleAssets": 0,
-                        "otherNonCurrentAssets": 0,
-                        "totalFixedAssets": 39252320,
-                        "totalNonCurrentAssets": 46412940
-                    },
-                    "totalAssets": 91193501,
-                    "currentLiabilities": {
-                        "debtSecuritiesTermLoansBorrowingsAndSukuks": 33811554,
-                        "governmentLoansCurrent": 0,
-                        "capitalLeaseObligation": 0,
-                        "tradeAndOtherPayables": 4650698,
-                        "advanceFromCustomers": 0,
-                        "dueToShareHoldersNotSubordinated": 0,
-                        "dueToRelatedParties": 0,
-                        "deferredRevenueCurrent": 0,
-                        "zakatLiabilities": 0,
-                        "incomeTaxLiabilities": 0,
-                        "dividentPayablesToShareHolders": 0,
-                        "accruedExpenses": 168832,
-                        "financeLeaseLiabilitiesCurrent": 1191672,
-                        "otherCurrentLiabilities": 726433,
-                        "financeLeaseLiabilitiesNonCurrent": 0,
-                        "depositsAdvancesFromCustomersCurrent": 0,
-                        "netEmployeeDefinedBenefitLiabilitiesCurrent": 0,
-                        "totalCurrentLiabilties": 40549189
-                    },
-                    "currentTaxLiabilities": {
-                        "zakatLiabilitiesCurrent": 556941,
-                        "incomeTaxLiabilitiesCurrent": 0,
-                        "totalCurrentTaxLiabilities": 556941,
-                        "totalCurrentLiabilitiesBeforeOtherAdjustments": 41106130,
-                        "totalCurrentLiabilities": 41106130
-                    },
-                    "nonCurrentLiabilities": {
-                        "provisionsForEmployeeBenefitsNonCurrent": 1582200,
-                        "nonCurrentProvisions": 1582200,
-                        "debtSecuritiesTermLoansBorrowingsAndSukuksInIssueNonCurrent": 7354332,
-                        "financeLeaseLiabilitiesNonCurrent": 974995,
-                        "nonCurrentLiabilities": 9911527,
-                        "liabilities": 51017657,
-                        "bondsAndOtherTermLanding": 0,
-                        "dueToShareHoldersNotSubordinated": 0,
-                        "dueToRelatedPartiesNonCurrent": 0,
-                        "otherNonCurrentLiabilities": 0,
-                        "netEmployeeBenefitLiabilitiesNonCurrent": 0,
-                        "totalNoncurrentLiabilities": 9911527
-                    },
-                    "equity": {
-                        "shareCapital": 500000,
-                        "additionalCapital": 0,
-                        "statutoryReserve": 250000,
-                        "currentYearProfitAndLoss": 0,
-                        "equityAttributableToOwnersOfParentMember": 0,
-                        "retainedEarningsAccumulatedLosses": 39425844,
-                        "nonControllingInterestsMember": 0,
-                        "unRealizedGains": 0,
-                        "sumOfEquity": 40175844,
-                        "totalEquity": 40175844,
-                        "totalShareHolderEquity": 40175844
-                    },
-                    "totalEquity": 40175844,
-                    "otherReserve": {
-                        "totalOtherReserves": 0,
-                        "equityAttributableToOwnersOfParent": 0,
-                        "nonControllingInterests": 0,
-                        "totalLiabilitiesAndEquity": 91193501,
-                        "assetRevaluationReserve": 0,
-                        "sumOfOtherReserves": 0
-                    },
-                    "profitAndLoss": {
-                        "revenueFromSaleOfGoods": 119488641,
-                        "totalRevenue": 119488641,
-                        "costOfSales": 94667671,
-                        "grossProfitLoss": 24820970,
-                        "otherIncome": 0,
-                        "totalOperatingIncome": 24820970,
-                        "sellingAndDistributionExpenses": 92614,
-                        "shareOfProfitLossOfSubsidiaries": 3287705,
-                        "generalAndAdministrativeExpenses": 4106074,
-                        "totalOperatingExpenses": 4198688,
-                        "operatingProfitLoss": 20622282,
-                        "financeCosts": 2244857,
-                        "profitLossBeforeZakatAndIncomeTaxContinuingOperations": 21665130,
-                        "incomeTaxExpenseContinuingOperations": 0,
-                        "profitLossFromContinuingOperations": 21108189,
-                        "profitLossFromDiscontinuedOperations": 0,
-                        "profitLoss": 21108189,
-                        "profitLossAttributableToOwnersOfParent": 0,
-                        "profitLossAttributableToNonControllingInterests": 0,
-                        "basicEarningsLossPerShare": 0,
-                        "dilutedEarningsLossPerShare": 0,
-                        "zakatExpenseContinuingOperations": 556941,
-                        "revenueFromRenderingOfServices": 0,
-                        "otherExpense": 0,
-                        "otherExpenseByFunction": 0,
-                        "netGainsLossesOnDisposalsOfPropertyPlantAndEquipment": 0,
-                        "profitAndLossForPeriod": 21108189,
-                        "grossProfitAndLoss": 24820970,
-                        "operatingProfitAndLoss": 23909987,
-                        "netProfit": 21108189,
-                        "ebit": 23909987,
-                        "ebita": 23909987,
-                        "gpm": 0.2077,
-                        "opm": 0.2001,
-                        "npm": 0.1767
-                    },
-                    "incomeStatement": {
-                        "incomeNetOfTaxGainsLossesOnRevaluationOfPropertyPlantAndEquipment": 0,
-                        "incomeNotReclassifiedProfitOrLossNetOfTax": 0,
-                        "incomeNetOfTaxExchangeDifferencesOnTranslation": 0,
-                        "incomeNetOfTaxAvailableForSaleFinancialAssets": 0,
-                        "incomeNetOfTaxCashFlowHedges": 0,
-                        "incomeNetOfTaxHedgesOfNetInvestmentsInForeignOperations": 0,
-                        "incomeThatWillBeReclassifiedToProfitOrLossNetOfTax": 0,
-                        "totalOtherIncome": 0,
-                        "totalComprehensiveIncome": 21108189
-                    },
-                    "cashflow": {
-                        "profitLossBeforeZakatAndIncomeTax": 21665130,
-                        "profitLossBeforeZakatAndIncomeTaxContinuingOperations": 21665130,
-                        "adjustmentsForDepreciationAndAmortisationExpenseProfitOrLossTangibleAssets": 0,
-                        "adjustmentsForDepreciationAndAmortisationExpenseOthers": 1120218,
-                        "adjustmentsForDepreciationAndAmortisationExpenseOther": 0,
-                        "totalAdjustmentsForDepreciationAndAmortisationExpense": 1120218,
-                        "adjustmentsForProvisionsOthers": -102256,
-                        "adjustmentsForInterestExpense": 0,
-                        "totalAdjustmentsForOthers": -102256,
-                        "totalAdjustmentsForReconcileProfitLoss": 1017962,
-                        "cashFlowsFromUsedInOperationsBeforeChangesInWorkingCapital": 22683092,
-                        "adjustmentsForLossesGainsOnSaleDisposalOfTangibleAssets": 0,
-                        "adjustmentsForLossesGainsOnSaleDisposalOfNonCurrentAssets": 0,
-                        "adjustmentsForImpairmentLossReversalOfLossRecognisedInProfitLoss": 0,
-                        "adjustmentsForDecreaseIncreaseInInventories": -3279932,
-                        "adjustmentsForDecreaseIncreaseInTradeAndOtherReceivables": -2723774,
-                        "adjustmentsForIncreaseDecreaseInTradeAndOtherPayables": -612932,
-                        "adjustmentsForDecreaseIncreaseInOtherCurrentAssets": 15984966,
-                        "adjustmentsForDepreciationAmortisationExpenseImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLossIntangibleAssets": 0,
-                        "adjustmentsForIncreaseDecreaseInOtherCurrentLiabilities": 17022966,
-                        "totalAdjustmentsForWorkingCapitalChanges": 26391294,
-                        "otherAdjustmentsToReconcileProfitLoss": 0,
-                        "netCashFlowsFromUsedInOperations": 49074386,
-                        "incomeTaxesPaidRefundClassifiedAsOperatingActivities": 0,
-                        "zakatExpensesPaidRefundClassifiedAsOperatingActivities": 542987,
-                        "netCashFlowsFromUsedInOperatingActivities": 48531399,
-                        "proceedsFromSalesOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities": 0,
-                        "purchaseOfOtherLongTermAssetsClassifiedAsInvestingActivities": 0,
-                        "purchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities": 28389342,
-                        "otherInflowsOutflowsOfCashClassifiedAsOperatingActivities": 0,
-                        "otherInflowsOutflowsOfCashClassifiedAsInvestingActivities": -7160620,
-                        "netCashFlowsFromUsedInInvestingActivities": -35549962,
-                        "dividendsPaidToEquityHoldersClassifiedAsFinancingActivities": 6500000,
-                        "proceedsFromDebtSecuritiesTermLoansBorrowingsSukuksClassifiedAsFinancingActivities": 0,
-                        "repaymentOfDebtSecuritiesTermLoansBorrowingsSukuksClassifiedAsFinancingActivities": 2896943,
-                        "paymentsOfFinanceLeaseLiabilitiesClassifiedAsFinancingActivities": 0,
-                        "netCashFlowsFromUsedInFinancingActivities": -8421948,
-                        "netIncreaseDecreaseInCashAndCashEquivalentsBeforeEffectOfExchangeRateChanges": 4559489,
-                        "netIncreaseDecreaseInCashAndCashEquivalents": 4559489,
-                        "cashAndCashEquivalentsBeginingPeriod": 823147,
-                        "cashAndCashEquivalentsEndPeriod": 5382636,
-                        "otherInflowsOutflowsOfCashClassifiedAsFinancingActivities": 974995,
-                        "purchaseOfIntangibleAssetsClassifiedAsInvestingActivities": 0,
-                        "interestPaidClassifiedOperatingActivities": 0
-                    },
-                    "changesInEquity": {
-                        "totalComprehensiveIncomeRetainingEarningMember": 21108189,
-                        "totalComprehensiveIncomeShareCapital": 0,
-                        "totalComprehensiveIncomeStatutoryReserve": 0,
-                        "totalComprehensiveIncomeAssetRevaluationReserve": 0,
-                        "totalComprehensiveIncomeNonControllingInterestsMember": 0,
-                        "totalComprehensiveIncomeOtherReserve": 0,
-                        "totalComprehensiveIncomeTotalEquity": 21108189,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentShareCapital": 500000,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentStatutoryReserve": 250000,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentRetainedEarningsMember": 24817655,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentOtherReservesMember": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentAssetRevaluationReserveMember": 6403320,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentReserveOfExchangeDifferencesOnTranslationMember": -6403320,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentTotalEquity": 25567655,
-                        "totalEquityBeforeAdjustmentStartOfPeriod": 0,
-                        "retainedEarningMemberFinalDividendPaid": 6500000,
-                        "finalDividendPaidTotalEquity": 6500000,
-                        "increaseDecreaseThroughTransferToStatutoryReserve": 0,
-                        "increaseDecreaseThroughTransferToStatutoryReserveRetainedEarningsMember": 0,
-                        "increaseDecreaseThroughTransfersAndOtherChangesEquity": 0,
-                        "increaseDecreaseRetainedEarningMemberEquity": 14608189,
-                        "increaseDecreaseShareCapitalMemberEquity": 0,
-                        "increaseDecreaseOtherReservesMemberEquity": 0,
-                        "increaseDecreaseStatutoryReserveEquity": 0,
-                        "increaseDecreaseAssetRevaluationReserveMemberEquity": 0,
-                        "increaseDecreaseInTotalEquity": 14608189,
-                        "shareCapitalEquity": 500000,
-                        "statutoryReserveEquity": 250000,
-                        "retainedEarningsMemberEquity": 39425844,
-                        "assetRevaluationReserveMemberEquity": 6403320,
-                        "otherReservesMemberEquity": 0,
-                        "reserveOfExchangeDifferencesOnTranslationMemberEquity": -6403320,
-                        "totalEquityAttributableToOwnersOfParentMember": 0,
-                        "shareCapitalBeforeAdjustmentStartOfPeriod": 500000,
-                        "statutoryReserveBeforeAdjustmentStartOfPeriod": 250000,
-                        "retainedEarningsMemberBeforeAdjustmentStartOfPeriod": 6403320,
-                        "otherReservesMemberBeforeAdjustmentStartOfPeriod": 0,
-                        "assetRevaluationReserveMemberBeforeAdjustmentStartOfPeriod": 6403320,
-                        "reserveOfExchangeDifferencesOnTranslationMemberBeforeAdjustmentStartOfPeriod": 0,
-                        "totalEquity": 40175844
-                    },
-                    "editorsReport": {
-                        "nameOfAuditFirm": "شركة سليمان علي السالم وشركاه محاسبون ومراجعون قانونيون",
-                        "nameOfPartnerSigningOffAuditorsReport": "بشاير مسعود العتيبي",
-                        "natureOfAuditorsOpinion": "رأي مطلق",
-                        "dateOfSigningAuditorsReport": "01/04/2024"
-                    },
-                    "ratios": {
-                        "liquidityRatios": {
-                            "currentRatio": 1.09,
-                            "quickCurrentRatio": 0.60,
-                            "cashRatio": 0.13
-                        },
-                        "levarageFinancialRatios": {
-                            "debtRatio": 55.9400,
-                            "leverageRatio": 126.9900
-                        },
-                        "activityRatios": {
-                            "daysSalesOutstanding": 46.24,
-                            "daysInventoryOutstanding": 77.35,
-                            "daysPayableOutstanding": 17.93
-                        },
-                        "profitabilityRatios": {
-                            "grossProfitMargin": 20.7700,
-                            "operatingProfitMargin": 17.2600,
-                            "netProfitMargin": 17.6700,
-                            "returnOnEquity": 105.0800,
-                            "returnOnAssets": 46.2900
-                        },
-                        "turnOverRatios": {
-                            "inventoryTurnOver": 3.92
-                        },
-                        "cashFlowRatios": {
-                            "freeCashFlow": 84624348,
-                            "currentLiabilityCoverageRatio": 149.1900
-                        },
-                        "financialSpreading": {
-                            "currentRatio": 1.09,
-                            "quickCurrentRatio": 0.50,
-                            "cashRatio": 0.13,
-                            "cashFlowFromOperatingActivities": 48531399,
-                            "receivablePercentageSales": 0.1267,
-                            "workingCapitalNet": 3674431,
-                            "debtRatio": 0.5594,
-                            "simahCommercialFundedLoans": 22096.90,
-                            "externalDebtSalesRatio": 0.0002,
-                            "leverageRatio": 1.2699,
-                            "interestCoverage": 10.6510,
-                            "gearingRatio": 1.0246,
-                            "debtService": 36056411,
-                            "daysSalesOutstanding": 46.24,
-                            "daysInventoryOutstanding": 77.35,
-                            "daysPayableOutstanding": 17.93,
-                            "ccc": 105.66,
-                            "grossProfitMargin": 20.7700,
-                            "operatingProfitMargin": 20.0100,
-                            "netProfitMargin": 17.6700,
-                            "revenueGrowth": 38.8000,
-                            "gpGrowth": 77.8300,
-                            "gpmGrowth": 28.1300,
-                            "opGrowth": 133.0900,
-                            "npGrowth": 117.2800,
-                            "npmGrowth": 56.5100,
-                            "dscr": 0.66
-                        }
-                    }
-                },
-                {
-                    "year": 2022,
-                    "currentAssets": {
-                        "cashAndBankBalance": 823147,
-                        "marketableSecurities": 0,
-                        "advancesToSuppliersAndContractorsCurrent": 584023,
-                        "tradeAndOtherReceivables": 11830131,
-                        "provision": 0,
-                        "unBilledRevenue": 0,
-                        "inventories": 16781862,
-                        "slowMovingAssetsProvision": 0,
-                        "dueFromShareholder": 0,
-                        "dueFromRelatedPartiesCurrent": 17910673,
-                        "accruedIncome": 0,
-                        "investmentHeldForSale": 0,
-                        "advancesToSuppliers": 0,
-                        "prepayments": 916815,
-                        "otherCurrentAssets": 1355681,
-                        "netEmployeeBenefitAssetsCurrent": 0,
-                        "totalLiquidAssets": 32503655,
-                        "totalCashAssets": 823147,
-                        "inventoryNet": 16781862,
-                        "tradeReceivablesNet": 11830131,
-                        "totalCurrentAssets": 50202332
-                    },
-                    "currentTaxAssets": {
-                        "incomeTaxAssets": 0,
-                        "totalCurrentTaxAssets": 0,
-                        "currentAssetsBeforeAdjustment": 50202332,
-                        "totalCurrentAssets": 50202332
-                    },
-                    "nonCurrentAssets": {
-                        "propertyPlantAndEquipment": 11983195,
-                        "equipmentAndMachinaries": 0,
-                        "assetsSubjectToFinanceLease": 0,
-                        "furnitureAndOthers": 0,
-                        "rightOfUseOfAssets": 0,
-                        "depreciation": 0,
-                        "financeLeaseReceivablesNonCurrent": 1,
-                        "capitalWorkInProgress": 0,
-                        "investmentInAssociates": 0,
-                        "investmentsInSubsidiaries": 0,
-                        "otherInvestments": 0,
-                        "intangibleAssets": 0,
-                        "otherNonCurrentAssets": 0,
-                        "totalFixedAssets": 11983196,
-                        "totalNonCurrentAssets": 11983196
-                    },
-                    "totalAssets": 62185528,
-                    "currentLiabilities": {
-                        "debtSecuritiesTermLoansBorrowingsAndSukuks": 17814746,
-                        "governmentLoansCurrent": 0,
-                        "capitalLeaseObligation": 0,
-                        "tradeAndOtherPayables": 5263630,
-                        "advanceFromCustomers": 0,
-                        "dueToShareHoldersNotSubordinated": 0,
-                        "dueToRelatedParties": 0,
-                        "deferredRevenueCurrent": 0,
-                        "zakatLiabilities": 0,
-                        "incomeTaxLiabilities": 0,
-                        "dividentPayablesToShareHolders": 0,
-                        "accruedExpenses": 151055,
-                        "financeLeaseLiabilitiesCurrent": 0,
-                        "otherCurrentLiabilities": 909724,
-                        "financeLeaseLiabilitiesNonCurrent": 0,
-                        "depositsAdvancesFromCustomersCurrent": 0,
-                        "netEmployeeDefinedBenefitLiabilitiesCurrent": 0,
-                        "totalCurrentLiabilties": 24139155
-                    },
-                    "currentTaxLiabilities": {
-                        "zakatLiabilitiesCurrent": 542987,
-                        "incomeTaxLiabilitiesCurrent": 0,
-                        "totalCurrentTaxLiabilities": 542987,
-                        "totalCurrentLiabilitiesBeforeOtherAdjustments": 24682142,
-                        "totalCurrentLiabilities": 24682142
-                    },
-                    "nonCurrentLiabilities": {
-                        "provisionsForEmployeeBenefitsNonCurrent": 1684456,
-                        "nonCurrentProvisions": 1684456,
-                        "debtSecuritiesTermLoansBorrowingsAndSukuksInIssueNonCurrent": 10251275,
-                        "financeLeaseLiabilitiesNonCurrent": 0,
-                        "nonCurrentLiabilities": 11935731,
-                        "liabilities": 36617873,
-                        "bondsAndOtherTermLanding": 0,
-                        "dueToShareHoldersNotSubordinated": 0,
-                        "dueToRelatedPartiesNonCurrent": 0,
-                        "otherNonCurrentLiabilities": 0,
-                        "netEmployeeBenefitLiabilitiesNonCurrent": 0,
-                        "totalNoncurrentLiabilities": 11935731
-                    },
-                    "equity": {
-                        "shareCapital": 500000,
-                        "additionalCapital": 0,
-                        "statutoryReserve": 250000,
-                        "currentYearProfitAndLoss": 0,
-                        "equityAttributableToOwnersOfParentMember": 0,
-                        "retainedEarningsAccumulatedLosses": 18414335,
-                        "nonControllingInterestsMember": 0,
-                        "unRealizedGains": 0,
-                        "sumOfEquity": 19164335,
-                        "totalEquity": 19164335,
-                        "totalShareHolderEquity": 19164335
-                    },
-                    "totalEquity": 25567655,
-                    "otherReserve": {
-                        "totalOtherReserves": 6403320,
-                        "equityAttributableToOwnersOfParent": 0,
-                        "nonControllingInterests": 0,
-                        "totalLiabilitiesAndEquity": 62185528,
-                        "assetRevaluationReserve": 6403320,
-                        "sumOfOtherReserves": 6403320
-                    },
-                    "profitAndLoss": {
-                        "revenueFromSaleOfGoods": 86086790,
-                        "totalRevenue": 86086790,
-                        "costOfSales": 72128726,
-                        "grossProfitLoss": 13958064,
-                        "otherIncome": 0,
-                        "totalOperatingIncome": 13958064,
-                        "sellingAndDistributionExpenses": 182361,
-                        "shareOfProfitLossOfSubsidiaries": 0,
-                        "generalAndAdministrativeExpenses": 3517799,
-                        "totalOperatingExpenses": 3700160,
-                        "operatingProfitLoss": 10257904,
-                        "financeCosts": 0,
-                        "profitLossBeforeZakatAndIncomeTaxContinuingOperations": 10257904,
-                        "incomeTaxExpenseContinuingOperations": 0,
-                        "profitLossFromContinuingOperations": 9714917,
-                        "profitLossFromDiscontinuedOperations": 0,
-                        "profitLoss": 9714917,
-                        "profitLossAttributableToOwnersOfParent": 0,
-                        "profitLossAttributableToNonControllingInterests": 0,
-                        "basicEarningsLossPerShare": 0,
-                        "dilutedEarningsLossPerShare": 0,
-                        "zakatExpenseContinuingOperations": 542987,
-                        "revenueFromRenderingOfServices": 0,
-                        "otherExpense": 0,
-                        "otherExpenseByFunction": 0,
-                        "netGainsLossesOnDisposalsOfPropertyPlantAndEquipment": 0,
-                        "profitAndLossForPeriod": 9714917,
-                        "grossProfitAndLoss": 13958064,
-                        "operatingProfitAndLoss": 10257904,
-                        "netProfit": 9714917,
-                        "ebit": 10257904,
-                        "ebita": 10257904,
-                        "gpm": 0.1621,
-                        "opm": 0.1192,
-                        "npm": 0.1129
-                    },
-                    "incomeStatement": {
-                        "incomeNetOfTaxGainsLossesOnRevaluationOfPropertyPlantAndEquipment": 0,
-                        "incomeNotReclassifiedProfitOrLossNetOfTax": 6403320,
-                        "incomeNetOfTaxExchangeDifferencesOnTranslation": 0,
-                        "incomeNetOfTaxAvailableForSaleFinancialAssets": 0,
-                        "incomeNetOfTaxCashFlowHedges": 0,
-                        "incomeNetOfTaxHedgesOfNetInvestmentsInForeignOperations": 0,
-                        "incomeThatWillBeReclassifiedToProfitOrLossNetOfTax": 0,
-                        "totalOtherIncome": 6403320,
-                        "totalComprehensiveIncome": 16118237
-                    },
-                    "cashflow": {
-                        "profitLossBeforeZakatAndIncomeTax": 10257904,
-                        "profitLossBeforeZakatAndIncomeTaxContinuingOperations": 10257904,
-                        "adjustmentsForDepreciationAndAmortisationExpenseProfitOrLossTangibleAssets": 0,
-                        "adjustmentsForDepreciationAndAmortisationExpenseOthers": 1057868,
-                        "adjustmentsForDepreciationAndAmortisationExpenseOther": 0,
-                        "totalAdjustmentsForDepreciationAndAmortisationExpense": 1057868,
-                        "adjustmentsForProvisionsOthers": 424179,
-                        "adjustmentsForInterestExpense": 0,
-                        "totalAdjustmentsForOthers": 6827499,
-                        "totalAdjustmentsForReconcileProfitLoss": 7885367,
-                        "cashFlowsFromUsedInOperationsBeforeChangesInWorkingCapital": 18143271,
-                        "adjustmentsForLossesGainsOnSaleDisposalOfTangibleAssets": 0,
-                        "adjustmentsForLossesGainsOnSaleDisposalOfNonCurrentAssets": 0,
-                        "adjustmentsForImpairmentLossReversalOfLossRecognisedInProfitLoss": 0,
-                        "adjustmentsForDecreaseIncreaseInInventories": 377736,
-                        "adjustmentsForDecreaseIncreaseInTradeAndOtherReceivables": -4563067,
-                        "adjustmentsForIncreaseDecreaseInTradeAndOtherPayables": 3742775,
-                        "adjustmentsForDecreaseIncreaseInOtherCurrentAssets": -7378724,
-                        "adjustmentsForDepreciationAmortisationExpenseImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLossIntangibleAssets": 0,
-                        "adjustmentsForIncreaseDecreaseInOtherCurrentLiabilities": 571153,
-                        "totalAdjustmentsForWorkingCapitalChanges": -7250127,
-                        "otherAdjustmentsToReconcileProfitLoss": 0,
-                        "netCashFlowsFromUsedInOperations": 10893144,
-                        "incomeTaxesPaidRefundClassifiedAsOperatingActivities": 0,
-                        "zakatExpensesPaidRefundClassifiedAsOperatingActivities": 513861,
-                        "netCashFlowsFromUsedInOperatingActivities": 10379283,
-                        "proceedsFromSalesOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities": 0,
-                        "purchaseOfOtherLongTermAssetsClassifiedAsInvestingActivities": 0,
-                        "purchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities": 7330837,
-                        "otherInflowsOutflowsOfCashClassifiedAsOperatingActivities": 0,
-                        "otherInflowsOutflowsOfCashClassifiedAsInvestingActivities": 0,
-                        "netCashFlowsFromUsedInInvestingActivities": -7330837,
-                        "dividendsPaidToEquityHoldersClassifiedAsFinancingActivities": 8134948,
-                        "proceedsFromDebtSecuritiesTermLoansBorrowingsSukuksClassifiedAsFinancingActivities": 5399101,
-                        "repaymentOfDebtSecuritiesTermLoansBorrowingsSukuksClassifiedAsFinancingActivities": 0,
-                        "paymentsOfFinanceLeaseLiabilitiesClassifiedAsFinancingActivities": 0,
-                        "netCashFlowsFromUsedInFinancingActivities": -3510838,
-                        "netIncreaseDecreaseInCashAndCashEquivalentsBeforeEffectOfExchangeRateChanges": -462392,
-                        "netIncreaseDecreaseInCashAndCashEquivalents": -462392,
-                        "cashAndCashEquivalentsBeginingPeriod": 0,
-                        "cashAndCashEquivalentsEndPeriod": 823147,
-                        "otherInflowsOutflowsOfCashClassifiedAsFinancingActivities": -774991,
-                        "purchaseOfIntangibleAssetsClassifiedAsInvestingActivities": 0,
-                        "interestPaidClassifiedOperatingActivities": 0
-                    },
-                    "changesInEquity": {
-                        "totalComprehensiveIncomeRetainingEarningMember": 9714917,
-                        "totalComprehensiveIncomeShareCapital": 0,
-                        "totalComprehensiveIncomeStatutoryReserve": 0,
-                        "totalComprehensiveIncomeAssetRevaluationReserve": 6403320,
-                        "totalComprehensiveIncomeNonControllingInterestsMember": 0,
-                        "totalComprehensiveIncomeOtherReserve": 6403320,
-                        "totalComprehensiveIncomeTotalEquity": 16118237,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentShareCapital": 500000,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentStatutoryReserve": 250000,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentRetainedEarningsMember": 16834366,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentOtherReservesMember": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentAssetRevaluationReserveMember": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentReserveOfExchangeDifferencesOnTranslationMember": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentTotalEquity": 17584366,
-                        "totalEquityBeforeAdjustmentStartOfPeriod": 0,
-                        "retainedEarningMemberFinalDividendPaid": 8134948,
-                        "finalDividendPaidTotalEquity": 8134948,
-                        "increaseDecreaseThroughTransferToStatutoryReserve": 0,
-                        "increaseDecreaseThroughTransferToStatutoryReserveRetainedEarningsMember": 0,
-                        "increaseDecreaseThroughTransfersAndOtherChangesEquity": 0,
-                        "increaseDecreaseRetainedEarningMemberEquity": 1579969,
-                        "increaseDecreaseShareCapitalMemberEquity": 0,
-                        "increaseDecreaseOtherReservesMemberEquity": 6403320,
-                        "increaseDecreaseStatutoryReserveEquity": 0,
-                        "increaseDecreaseAssetRevaluationReserveMemberEquity": 6403320,
-                        "increaseDecreaseInTotalEquity": 14386609,
-                        "shareCapitalEquity": 500000,
-                        "statutoryReserveEquity": 250000,
-                        "retainedEarningsMemberEquity": 18414335,
-                        "assetRevaluationReserveMemberEquity": 6403320,
-                        "otherReservesMemberEquity": 6403320,
-                        "reserveOfExchangeDifferencesOnTranslationMemberEquity": 0,
-                        "totalEquityAttributableToOwnersOfParentMember": 0,
-                        "shareCapitalBeforeAdjustmentStartOfPeriod": 500000,
-                        "statutoryReserveBeforeAdjustmentStartOfPeriod": 250000,
-                        "retainedEarningsMemberBeforeAdjustmentStartOfPeriod": 17609357,
-                        "otherReservesMemberBeforeAdjustmentStartOfPeriod": 0,
-                        "assetRevaluationReserveMemberBeforeAdjustmentStartOfPeriod": 0,
-                        "reserveOfExchangeDifferencesOnTranslationMemberBeforeAdjustmentStartOfPeriod": 0,
-                        "totalEquity": 25567655
-                    },
-                    "editorsReport": {
-                        "nameOfAuditFirm": null,
-                        "nameOfPartnerSigningOffAuditorsReport": null,
-                        "natureOfAuditorsOpinion": null,
-                        "dateOfSigningAuditorsReport": null
-                    },
-                    "ratios": {
-                        "liquidityRatios": {
-                            "currentRatio": 2.03,
-                            "quickCurrentRatio": 1.35,
-                            "cashRatio": 0.03
-                        },
-                        "levarageFinancialRatios": {
-                            "debtRatio": 58.8800,
-                            "leverageRatio": 143.2200
-                        },
-                        "activityRatios": {
-                            "daysSalesOutstanding": 50.16,
-                            "daysInventoryOutstanding": 84.92,
-                            "daysPayableOutstanding": 26.64
-                        },
-                        "profitabilityRatios": {
-                            "grossProfitMargin": 16.2100,
-                            "operatingProfitMargin": 11.9200,
-                            "netProfitMargin": 11.2900,
-                            "returnOnEquity": 75.9900,
-                            "returnOnAssets": 31.2400
-                        },
-                        "turnOverRatios": {
-                            "inventoryTurnOver": 0
-                        },
-                        "cashFlowRatios": {
-                            "freeCashFlow": 18223981,
-                            "currentLiabilityCoverageRatio": 88.2700
-                        },
-                        "financialSpreading": {
-                            "currentRatio": 2.03,
-                            "quickCurrentRatio": 0.51,
-                            "cashRatio": 0.03,
-                            "cashFlowFromOperatingActivities": 10379283,
-                            "receivablePercentageSales": 0.1374,
-                            "workingCapitalNet": 25520190,
-                            "debtRatio": 0.5888,
-                            "simahCommercialFundedLoans": 22096.90,
-                            "externalDebtSalesRatio": 0.0003,
-                            "leverageRatio": 1.4322,
-                            "interestCoverage": 0,
-                            "gearingRatio": 1.0977,
-                            "debtService": 17814746,
-                            "daysSalesOutstanding": 50.16,
-                            "daysInventoryOutstanding": 84.92,
-                            "daysPayableOutstanding": 26.64,
-                            "ccc": 108.44,
-                            "grossProfitMargin": 16.2100,
-                            "operatingProfitMargin": 11.9200,
-                            "netProfitMargin": 11.2900,
-                            "revenueGrowth": 0,
-                            "gpGrowth": 0,
-                            "gpmGrowth": 0,
-                            "opGrowth": 0,
-                            "npGrowth": 0,
-                            "npmGrowth": 0,
-                            "dscr": 0.58
-                        }
-                    }
-                },
-                {
-                    "year": 2021,
-                    "currentAssets": {
-                        "cashAndBankBalance": 0,
-                        "marketableSecurities": 0,
-                        "advancesToSuppliersAndContractorsCurrent": 0,
-                        "tradeAndOtherReceivables": 0,
-                        "provision": 0,
-                        "unBilledRevenue": 0,
-                        "inventories": 0,
-                        "slowMovingAssetsProvision": 0,
-                        "dueFromShareholder": 0,
-                        "dueFromRelatedPartiesCurrent": 0,
-                        "accruedIncome": 0,
-                        "investmentHeldForSale": 0,
-                        "advancesToSuppliers": 0,
-                        "prepayments": 0,
-                        "otherCurrentAssets": 0,
-                        "netEmployeeBenefitAssetsCurrent": 0,
-                        "totalLiquidAssets": 0,
-                        "totalCashAssets": 0,
-                        "inventoryNet": 0,
-                        "tradeReceivablesNet": 0,
-                        "totalCurrentAssets": 0
-                    },
-                    "currentTaxAssets": {
-                        "incomeTaxAssets": 0,
-                        "totalCurrentTaxAssets": 0,
-                        "currentAssetsBeforeAdjustment": 0,
-                        "totalCurrentAssets": 0
-                    },
-                    "nonCurrentAssets": {
-                        "propertyPlantAndEquipment": 0,
-                        "equipmentAndMachinaries": 0,
-                        "assetsSubjectToFinanceLease": 0,
-                        "furnitureAndOthers": 0,
-                        "rightOfUseOfAssets": 0,
-                        "depreciation": 0,
-                        "financeLeaseReceivablesNonCurrent": 0,
-                        "capitalWorkInProgress": 0,
-                        "investmentInAssociates": 0,
-                        "investmentsInSubsidiaries": 0,
-                        "otherInvestments": 0,
-                        "intangibleAssets": 0,
-                        "otherNonCurrentAssets": 0,
-                        "totalFixedAssets": 0,
-                        "totalNonCurrentAssets": 0
-                    },
-                    "totalAssets": 0,
-                    "currentLiabilities": {
-                        "debtSecuritiesTermLoansBorrowingsAndSukuks": 0,
-                        "governmentLoansCurrent": 0,
-                        "capitalLeaseObligation": 0,
-                        "tradeAndOtherPayables": 0,
-                        "advanceFromCustomers": 0,
-                        "dueToShareHoldersNotSubordinated": 0,
-                        "dueToRelatedParties": 0,
-                        "deferredRevenueCurrent": 0,
-                        "zakatLiabilities": 0,
-                        "incomeTaxLiabilities": 0,
-                        "dividentPayablesToShareHolders": 0,
-                        "accruedExpenses": 0,
-                        "financeLeaseLiabilitiesCurrent": 0,
-                        "otherCurrentLiabilities": 0,
-                        "financeLeaseLiabilitiesNonCurrent": 0,
-                        "depositsAdvancesFromCustomersCurrent": 0,
-                        "netEmployeeDefinedBenefitLiabilitiesCurrent": 0,
-                        "totalCurrentLiabilties": 0
-                    },
-                    "currentTaxLiabilities": {
-                        "zakatLiabilitiesCurrent": 0,
-                        "incomeTaxLiabilitiesCurrent": 0,
-                        "totalCurrentTaxLiabilities": 0,
-                        "totalCurrentLiabilitiesBeforeOtherAdjustments": 0,
-                        "totalCurrentLiabilities": 0
-                    },
-                    "nonCurrentLiabilities": {
-                        "provisionsForEmployeeBenefitsNonCurrent": 0,
-                        "nonCurrentProvisions": 0,
-                        "debtSecuritiesTermLoansBorrowingsAndSukuksInIssueNonCurrent": 0,
-                        "financeLeaseLiabilitiesNonCurrent": 0,
-                        "nonCurrentLiabilities": 0,
-                        "liabilities": 0,
-                        "bondsAndOtherTermLanding": 0,
-                        "dueToShareHoldersNotSubordinated": 0,
-                        "dueToRelatedPartiesNonCurrent": 0,
-                        "otherNonCurrentLiabilities": 0,
-                        "netEmployeeBenefitLiabilitiesNonCurrent": 0,
-                        "totalNoncurrentLiabilities": 0
-                    },
-                    "equity": {
-                        "shareCapital": 0,
-                        "additionalCapital": 0,
-                        "statutoryReserve": 0,
-                        "currentYearProfitAndLoss": 0,
-                        "equityAttributableToOwnersOfParentMember": 0,
-                        "retainedEarningsAccumulatedLosses": 0,
-                        "nonControllingInterestsMember": 0,
-                        "unRealizedGains": 0,
-                        "sumOfEquity": 0,
-                        "totalEquity": 0,
-                        "totalShareHolderEquity": 0
-                    },
-                    "totalEquity": 0,
-                    "otherReserve": {
-                        "totalOtherReserves": 0,
-                        "equityAttributableToOwnersOfParent": 0,
-                        "nonControllingInterests": 0,
-                        "totalLiabilitiesAndEquity": 0,
-                        "assetRevaluationReserve": 0,
-                        "sumOfOtherReserves": 0
-                    },
-                    "profitAndLoss": {
-                        "revenueFromSaleOfGoods": 0,
-                        "totalRevenue": 0,
-                        "costOfSales": 0,
-                        "grossProfitLoss": 0,
-                        "otherIncome": 0,
-                        "totalOperatingIncome": 0,
-                        "sellingAndDistributionExpenses": 0,
-                        "shareOfProfitLossOfSubsidiaries": 0,
-                        "generalAndAdministrativeExpenses": 0,
-                        "totalOperatingExpenses": 0,
-                        "operatingProfitLoss": 0,
-                        "financeCosts": 0,
-                        "profitLossBeforeZakatAndIncomeTaxContinuingOperations": 0,
-                        "incomeTaxExpenseContinuingOperations": 0,
-                        "profitLossFromContinuingOperations": 0,
-                        "profitLossFromDiscontinuedOperations": 0,
-                        "profitLoss": 0,
-                        "profitLossAttributableToOwnersOfParent": 0,
-                        "profitLossAttributableToNonControllingInterests": 0,
-                        "basicEarningsLossPerShare": 0,
-                        "dilutedEarningsLossPerShare": 0,
-                        "zakatExpenseContinuingOperations": 0,
-                        "revenueFromRenderingOfServices": 0,
-                        "otherExpense": 0,
-                        "otherExpenseByFunction": 0,
-                        "netGainsLossesOnDisposalsOfPropertyPlantAndEquipment": 0,
-                        "profitAndLossForPeriod": 0,
-                        "grossProfitAndLoss": 0,
-                        "operatingProfitAndLoss": 0,
-                        "netProfit": 0,
-                        "ebit": 0,
-                        "ebita": 0,
-                        "gpm": 0,
-                        "opm": 0,
-                        "npm": 0
-                    },
-                    "incomeStatement": {
-                        "incomeNetOfTaxGainsLossesOnRevaluationOfPropertyPlantAndEquipment": 0,
-                        "incomeNotReclassifiedProfitOrLossNetOfTax": 0,
-                        "incomeNetOfTaxExchangeDifferencesOnTranslation": 0,
-                        "incomeNetOfTaxAvailableForSaleFinancialAssets": 0,
-                        "incomeNetOfTaxCashFlowHedges": 0,
-                        "incomeNetOfTaxHedgesOfNetInvestmentsInForeignOperations": 0,
-                        "incomeThatWillBeReclassifiedToProfitOrLossNetOfTax": 0,
-                        "totalOtherIncome": 0,
-                        "totalComprehensiveIncome": 0
-                    },
-                    "cashflow": {
-                        "profitLossBeforeZakatAndIncomeTax": 0,
-                        "profitLossBeforeZakatAndIncomeTaxContinuingOperations": 0,
-                        "adjustmentsForDepreciationAndAmortisationExpenseProfitOrLossTangibleAssets": 0,
-                        "adjustmentsForDepreciationAndAmortisationExpenseOthers": 0,
-                        "adjustmentsForDepreciationAndAmortisationExpenseOther": 0,
-                        "totalAdjustmentsForDepreciationAndAmortisationExpense": 0,
-                        "adjustmentsForProvisionsOthers": 0,
-                        "adjustmentsForInterestExpense": 0,
-                        "totalAdjustmentsForOthers": 0,
-                        "totalAdjustmentsForReconcileProfitLoss": 0,
-                        "cashFlowsFromUsedInOperationsBeforeChangesInWorkingCapital": 0,
-                        "adjustmentsForLossesGainsOnSaleDisposalOfTangibleAssets": 0,
-                        "adjustmentsForLossesGainsOnSaleDisposalOfNonCurrentAssets": 0,
-                        "adjustmentsForImpairmentLossReversalOfLossRecognisedInProfitLoss": 0,
-                        "adjustmentsForDecreaseIncreaseInInventories": 0,
-                        "adjustmentsForDecreaseIncreaseInTradeAndOtherReceivables": 0,
-                        "adjustmentsForIncreaseDecreaseInTradeAndOtherPayables": 0,
-                        "adjustmentsForDecreaseIncreaseInOtherCurrentAssets": 0,
-                        "adjustmentsForDepreciationAmortisationExpenseImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLossIntangibleAssets": 0,
-                        "adjustmentsForIncreaseDecreaseInOtherCurrentLiabilities": 0,
-                        "totalAdjustmentsForWorkingCapitalChanges": 0,
-                        "otherAdjustmentsToReconcileProfitLoss": 0,
-                        "netCashFlowsFromUsedInOperations": 0,
-                        "incomeTaxesPaidRefundClassifiedAsOperatingActivities": 0,
-                        "zakatExpensesPaidRefundClassifiedAsOperatingActivities": 0,
-                        "netCashFlowsFromUsedInOperatingActivities": 0,
-                        "proceedsFromSalesOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities": 0,
-                        "purchaseOfOtherLongTermAssetsClassifiedAsInvestingActivities": 0,
-                        "purchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities": 0,
-                        "otherInflowsOutflowsOfCashClassifiedAsOperatingActivities": 0,
-                        "otherInflowsOutflowsOfCashClassifiedAsInvestingActivities": 0,
-                        "netCashFlowsFromUsedInInvestingActivities": 0,
-                        "dividendsPaidToEquityHoldersClassifiedAsFinancingActivities": 0,
-                        "proceedsFromDebtSecuritiesTermLoansBorrowingsSukuksClassifiedAsFinancingActivities": 0,
-                        "repaymentOfDebtSecuritiesTermLoansBorrowingsSukuksClassifiedAsFinancingActivities": 0,
-                        "paymentsOfFinanceLeaseLiabilitiesClassifiedAsFinancingActivities": 0,
-                        "netCashFlowsFromUsedInFinancingActivities": 0,
-                        "netIncreaseDecreaseInCashAndCashEquivalentsBeforeEffectOfExchangeRateChanges": 0,
-                        "netIncreaseDecreaseInCashAndCashEquivalents": 0,
-                        "cashAndCashEquivalentsBeginingPeriod": 0,
-                        "cashAndCashEquivalentsEndPeriod": 1285539,
-                        "otherInflowsOutflowsOfCashClassifiedAsFinancingActivities": 0,
-                        "purchaseOfIntangibleAssetsClassifiedAsInvestingActivities": 0,
-                        "interestPaidClassifiedOperatingActivities": 0
-                    },
-                    "changesInEquity": {
-                        "totalComprehensiveIncomeRetainingEarningMember": 0,
-                        "totalComprehensiveIncomeShareCapital": 0,
-                        "totalComprehensiveIncomeStatutoryReserve": 0,
-                        "totalComprehensiveIncomeAssetRevaluationReserve": 0,
-                        "totalComprehensiveIncomeNonControllingInterestsMember": 0,
-                        "totalComprehensiveIncomeOtherReserve": 0,
-                        "totalComprehensiveIncomeTotalEquity": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentShareCapital": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentStatutoryReserve": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentRetainedEarningsMember": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentOtherReservesMember": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentAssetRevaluationReserveMember": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentReserveOfExchangeDifferencesOnTranslationMember": 0,
-                        "equityBalanceBeginningOfPeriodAfterAdjustmentTotalEquity": 0,
-                        "totalEquityBeforeAdjustmentStartOfPeriod": 0,
-                        "retainedEarningMemberFinalDividendPaid": 0,
-                        "finalDividendPaidTotalEquity": 0,
-                        "increaseDecreaseThroughTransferToStatutoryReserve": 0,
-                        "increaseDecreaseThroughTransferToStatutoryReserveRetainedEarningsMember": 0,
-                        "increaseDecreaseThroughTransfersAndOtherChangesEquity": 0,
-                        "increaseDecreaseRetainedEarningMemberEquity": 0,
-                        "increaseDecreaseShareCapitalMemberEquity": 0,
-                        "increaseDecreaseOtherReservesMemberEquity": 0,
-                        "increaseDecreaseStatutoryReserveEquity": 0,
-                        "increaseDecreaseAssetRevaluationReserveMemberEquity": 0,
-                        "increaseDecreaseInTotalEquity": 0,
-                        "shareCapitalEquity": 0,
-                        "statutoryReserveEquity": 0,
-                        "retainedEarningsMemberEquity": 0,
-                        "assetRevaluationReserveMemberEquity": 0,
-                        "otherReservesMemberEquity": 0,
-                        "reserveOfExchangeDifferencesOnTranslationMemberEquity": 0,
-                        "totalEquityAttributableToOwnersOfParentMember": 0,
-                        "shareCapitalBeforeAdjustmentStartOfPeriod": 0,
-                        "statutoryReserveBeforeAdjustmentStartOfPeriod": 0,
-                        "retainedEarningsMemberBeforeAdjustmentStartOfPeriod": 0,
-                        "otherReservesMemberBeforeAdjustmentStartOfPeriod": 0,
-                        "assetRevaluationReserveMemberBeforeAdjustmentStartOfPeriod": 0,
-                        "reserveOfExchangeDifferencesOnTranslationMemberBeforeAdjustmentStartOfPeriod": 0,
-                        "totalEquity": 0
-                    },
-                    "editorsReport": {
-                        "nameOfAuditFirm": null,
-                        "nameOfPartnerSigningOffAuditorsReport": null,
-                        "natureOfAuditorsOpinion": null,
-                        "dateOfSigningAuditorsReport": null
-                    },
-                    "ratios": {
-                        "liquidityRatios": {
-                            "currentRatio": 0,
-                            "quickCurrentRatio": 0,
-                            "cashRatio": 0
-                        },
-                        "levarageFinancialRatios": {
-                            "debtRatio": 0,
-                            "leverageRatio": 0
-                        },
-                        "activityRatios": {
-                            "daysSalesOutstanding": 0,
-                            "daysInventoryOutstanding": 0,
-                            "daysPayableOutstanding": 0
-                        },
-                        "profitabilityRatios": {
-                            "grossProfitMargin": 0,
-                            "operatingProfitMargin": 0,
-                            "netProfitMargin": 0,
-                            "returnOnEquity": 0,
-                            "returnOnAssets": 0
-                        },
-                        "turnOverRatios": {
-                            "inventoryTurnOver": 0
-                        },
-                        "cashFlowRatios": {
-                            "freeCashFlow": 0,
-                            "currentLiabilityCoverageRatio": 0
-                        },
-                        "financialSpreading": {
-                            "currentRatio": 0,
-                            "quickCurrentRatio": 0,
-                            "cashRatio": 0,
-                            "cashFlowFromOperatingActivities": 0,
-                            "receivablePercentageSales": 0,
-                            "workingCapitalNet": 0,
-                            "debtRatio": 0,
-                            "simahCommercialFundedLoans": 22096.90,
-                            "externalDebtSalesRatio": 0,
-                            "leverageRatio": 0,
-                            "interestCoverage": 0,
-                            "gearingRatio": 0,
-                            "debtService": 0,
-                            "daysSalesOutstanding": 0,
-                            "daysInventoryOutstanding": 0,
-                            "daysPayableOutstanding": 0,
-                            "ccc": 0,
-                            "grossProfitMargin": 0,
-                            "operatingProfitMargin": 0,
-                            "netProfitMargin": 0,
-                            "revenueGrowth": 0,
-                            "gpGrowth": 0,
-                            "gpmGrowth": 0,
-                            "opGrowth": 0,
-                            "npGrowth": 0,
-                            "npmGrowth": 0,
-                            "dscr": 0
-                        }
-                    }
-                }
-            ]
-        },
-        {
             "qawaemRequestId": 371,
             "organizationId": 1742,
             "financialInsightRequestId": 218,
@@ -1957,7 +984,143 @@
                         }
                     }
                 }
-            ]
+            ],
+            "consumer": {
+                "rules": [
+                    {
+                        "parameterName": "30-dpd on existing facilities",
+                        "parameterValue": "3",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Bounced Cheques",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">5",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "1-5",
+                                "flag": "AMBER"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Unsettled Defaults",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Outstanding Court Cases",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "commercial": {
+                "rules": [
+                    {
+                        "parameterName": "30-dpd on existing facilities",
+                        "parameterValue": "11",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Bounced Cheques",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">5",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "1-5",
+                                "flag": "AMBER"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Unsettled Defaults",
+                        "parameterValue": "1",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Outstanding Court Cases",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             "qawaemRequestId": 373,
@@ -2930,7 +2093,143 @@
                         }
                     }
                 }
-            ]
+            ],
+            "consumer": {
+                "rules": [
+                    {
+                        "parameterName": "30-dpd on existing facilities",
+                        "parameterValue": "29",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Bounced Cheques",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">5",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "1-5",
+                                "flag": "AMBER"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Unsettled Defaults",
+                        "parameterValue": "6",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Outstanding Court Cases",
+                        "parameterValue": "6",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "commercial": {
+                "rules": [
+                    {
+                        "parameterName": "30-dpd on existing facilities",
+                        "parameterValue": "25",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Bounced Cheques",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">5",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "1-5",
+                                "flag": "AMBER"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Unsettled Defaults",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Outstanding Court Cases",
+                        "parameterValue": "12",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             "qawaemRequestId": 379,
@@ -3903,7 +3202,124 @@
                         }
                     }
                 }
-            ]
+            ],
+            "consumer": {
+                "rules": [
+                    {
+                        "parameterName": "30-dpd on existing facilities",
+                        "parameterValue": "5",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Bounced Cheques",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">5",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "1-5",
+                                "flag": "AMBER"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Unsettled Defaults",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Outstanding Court Cases",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "commercial": {
+                "rules": [
+                    {
+                        "parameterName": "30-dpd on existing facilities",
+                        "parameterValue": "3",
+                        "flag": "RED",
+                        "rules": [
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Unsettled Defaults",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Outstanding Court Cases",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             "qawaemRequestId": 381,
@@ -4876,7 +4292,143 @@
                         }
                     }
                 }
-            ]
+            ],
+            "consumer": {
+                "rules": [
+                    {
+                        "parameterName": "30-dpd on existing facilities",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Bounced Cheques",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">5",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "1-5",
+                                "flag": "AMBER"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Unsettled Defaults",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Outstanding Court Cases",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "commercial": {
+                "rules": [
+                    {
+                        "parameterName": "30-dpd on existing facilities",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Bounced Cheques",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">5",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "1-5",
+                                "flag": "AMBER"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Unsettled Defaults",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": "0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    },
+                    {
+                        "parameterName": "Outstanding Court Cases",
+                        "parameterValue": "0",
+                        "flag": "GREEN",
+                        "rules": [
+                            {
+                                "ruleName": ">0",
+                                "flag": "RED"
+                            },
+                            {
+                                "ruleName": ">0",
+                                "flag": "GREEN"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     ]
 }

@@ -39,7 +39,8 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
                 "netProfitMargin": float - Profitability ratio showing net profit as a percentage of revenue,
                 "leverageRatio": float - Degree of financial leverage used by the company,
                 "gearingRatio": float - Proportion of debt to equity capital,
-                "totalEquity": float - Shareholders' total equity at the end of the year
+                "totalEquity": float - Shareholders' total equity at the end of the year,
+       
             }
         }
     """
@@ -54,6 +55,68 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
         cr_number = company.get("commercialRegistrationNumber", "")
         organization_id = company.get("organizationId", "")
         financial_statements = company.get("financialStatement", [])
+        consumer = company.get("consumer",{})
+        commercial = company.get("commercial",{})
+
+              
+        dpd_commercial = None
+        dpd_commercial_flag = None
+        bounced_cheque_commercial = None
+        bounced_cheque_commercial_flag = None
+        unsettled_commercial = None
+        unsettled_commercial_flag = None
+        court_cases_commercial = None
+        court_cases_commercial_flag = None
+
+         # Handle commercial rules extraction
+        if commercial and "rules" in commercial:
+            for commercial_rule_data in commercial["rules"]:
+                param_name = commercial_rule_data.get("parameterName")
+
+                if param_name == "30-dpd on existing facilities":
+                    dpd_commercial = commercial_rule_data.get("parameterValue")
+                    dpd_commercial_flag = commercial_rule_data.get("flag")
+
+                elif param_name == "Bounced Cheques":
+                    bounced_cheque_commercial = commercial_rule_data.get("parameterValue")
+                    bounced_cheque_commercial_flag = commercial_rule_data.get("flag")
+
+                elif param_name == "Unsettled Defaults":
+                    unsettled_commercial = commercial_rule_data.get("parameterValue")
+                    unsettled_commercial_flag = commercial_rule_data.get("flag")
+
+                elif param_name == "Outstanding Court Cases":
+                    court_cases_commercial = commercial_rule_data.get("parameterValue")
+                    court_cases_commercial_flag = commercial_rule_data.get("flag")
+
+            dpd_consumer = None   
+            dpd_consumer_flag = None
+            bounced_cheque_consumer = None
+            bounced_cheque_consumer_flag = None
+            unsettled_consumer = None
+            unsettled_consumer_flag = None
+            court_cases_consumer = None
+            court_cases_consumer_flag = None
+        
+        if consumer and "rules" in consumer:
+            for consumer_rule_data in consumer["rules"]:
+                param_name = consumer_rule_data.get("parameterName")
+
+                if param_name == "30-dpd on existing facilities":
+                    dpd_consumer = consumer_rule_data.get("parameterValue")
+                    dpd_consumer_flag = consumer_rule_data.get("flag")
+
+                elif param_name == "Bounced Cheques":
+                    bounced_cheque_consumer = consumer_rule_data.get("parameterValue")
+                    bounced_cheque_consumer_flag = consumer_rule_data.get("flag")
+
+                elif param_name == "Unsettled Defaults":
+                    unsettled_consumer = consumer_rule_data.get("parameterValue")
+                    unsettled_consumer_flag = consumer_rule_data.get("flag")
+
+                elif param_name == "Outstanding Court Cases":
+                    court_cases_consumer = consumer_rule_data.get("parameterValue")
+                    court_cases_consumer_flag = consumer_rule_data.get("flag")
 
         for yearly_data in financial_statements:
             year = yearly_data.get("year", "")
@@ -61,6 +124,7 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
             spreading = ratios.get("financialSpreading", {})
             profit_loss = yearly_data.get("profitAndLoss", {})
             cashflow = yearly_data.get("cashflow", {})
+      
 
             simplified_data.append({
                 "companyName": company_name,
@@ -76,7 +140,23 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
                 "netProfitMargin": spreading.get("netProfitMargin", 0),
                 "leverageRatio": spreading.get("leverageRatio", 0),
                 "gearingRatio": spreading.get("gearingRatio", 0),
-                "totalEquity": yearly_data.get("totalEquity",0)
+                "totalEquity": yearly_data.get("totalEquity",0),
+                "dpd_commercial": dpd_commercial,
+                "dpd_commercial_flag": dpd_commercial_flag,
+                "bounced_cheque_commercial": bounced_cheque_commercial,
+                "bounced_cheque_commercial_flag": bounced_cheque_commercial_flag,
+                 "unsettled_commercial": unsettled_commercial,
+                 "unsettled_commercial_flag": unsettled_commercial_flag,
+                 "court_cases_commercial": court_cases_commercial,
+                 "court_cases_commercial_flag" : court_cases_commercial_flag,
+                "dpd_consumer": dpd_consumer,
+                "dpd_consumer_flag": dpd_consumer_flag,
+                "bounced_cheque_consumer": bounced_cheque_consumer,
+                "bounced_cheque_consumer_flag": bounced_cheque_consumer_flag,
+                 "unsettled_consumer": unsettled_consumer,
+                 "unsettled_consumer_flag": unsettled_consumer_flag,
+                 "court_cases_consumer": court_cases_consumer,
+                 "court_cases_consumer_flag" : court_cases_consumer_flag
             })
     return {
         "status":"Success",

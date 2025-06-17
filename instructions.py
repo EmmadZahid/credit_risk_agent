@@ -17,6 +17,14 @@ COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION ="""
     - Current Ratio: Asset Light ≥ 1.5, Asset Heavy ≥ 1.2 — Reject if below.
     - External Debt/Sales: Asset Light < 40%, Asset Heavy < 50% — Reject if exceeded.
     - Total Equity: Must exceed SAR 100,000 — Reject if not met.
+    - court_cases_commercial_flag: Rejected if Red
+    - dpd_commercial_flag: Rejected if Red (30-dpd on existing facilities)
+    - unsettled_commercial_flag: Rejected if Red
+    - bounced_cheque_commercial_flag: Rejected if Red
+    - court_cases_consumer_flag: Rejected if Red
+    - dpd_consumer_flag: Rejected if Red
+    - unsettled_consumer_flag: Rejected if Red
+    - bounced_cheque_consumer_flag: Rejected if Red
 
     3.  **Provide Decision and Justification:** For each company, you must clearly state the following:
         - Company Name
