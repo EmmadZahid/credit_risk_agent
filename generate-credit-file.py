@@ -7,10 +7,10 @@ from docx.shared import RGBColor
 from docx.oxml import parse_xml
 from docx.oxml.ns import nsdecls
 
-def create_lendo_credit_file(output_filename="Lendo Credit File (Etihad Jeddah Factory #5637) - ADK AGENT.docx"):
+def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx"):
     """
     Creates a DOCX file mimicking the structure, content, and basic styles
-    of the "Lendo Credit File (Etihad Jeddah Factory #5637).docx" file.
+    of the "Lendo Credit File - ADK AGENT.docx" file.
 
     Args:
         output_filename (str): The name of the DOCX file to create.
@@ -30,8 +30,8 @@ def create_lendo_credit_file(output_filename="Lendo Credit File (Etihad Jeddah F
     section.left_margin = Inches(0.5)
     section.right_margin = Inches(0.5)
 
-    # --- Executive Summary ---
-    document.add_heading('Executive Summary', level=1)
+    # --- Underwriter Decision ---
+    document.add_heading('Underwriter Decision ', level=1)
 
     # Risk Recommendation Table
     document.add_paragraph() # Add a little spacing
@@ -54,9 +54,9 @@ def create_lendo_credit_file(output_filename="Lendo Credit File (Etihad Jeddah F
 
     # Data Row
     data_cells = table.rows[1].cells
-    data_cells[0].text = 'Approved with Ammendments'
-    data_cells[1].text = 'Chief Credit Risk Officer'
-    data_cells[2].text = 'Faisal Almisfer'
+    data_cells[0].text = 'Approved as Requested'
+    data_cells[1].text = 'AI Credit Risk Officer'
+    data_cells[2].text = 'Google ADK agent developed by Emmad, Imran, Saad, Shafeeque, Sumayyah, Hamza'
     for cell in data_cells:
         cell.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
 

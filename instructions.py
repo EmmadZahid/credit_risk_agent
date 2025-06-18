@@ -70,7 +70,7 @@ User can ask you to analyze all companies or a specific company by ID.
      - dscr
      - bouncedCheques
      - riskRating
-     - finalRecommendation: "ACCEPTED" or "REJECTED"
+     - finalRecommendation: "✅ Recommend for financing" or "❌ Not Recommend for financing"
    The `send_email_tool` will automatically generate the email body.
    Inform the user whether the email was successfully sent or if there was an error.
 """

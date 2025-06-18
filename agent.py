@@ -15,7 +15,7 @@ file_path = os.path.join(current_dir, "qawaem_data.json")
 with open(file_path, "r", encoding="utf-8") as f:
     qawaem_data = json.load(f)
     
-def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
+def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
     """
     Reads financial data from a JSON file and parses/prepares it to be used by an agent for approving or rejecting a company.
 
@@ -164,7 +164,7 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
         "data": simplified_data
     }
 
-def send_email_tool(input: Dict[str, Any]) -> Dict[str, str]:
+def send_email(input: Dict[str, Any]) -> Dict[str, str]:
     """
     Sends an email using MailHog SMTP.
 
@@ -239,7 +239,7 @@ Please find the credit file for Company: {summary_data.get("companyName", "Unkno
 🔹 DSCR: {summary_data.get("dscr", "N/A")}
 🔹 Bounced Cheques: {summary_data.get("bouncedCheques", "N/A")}
 🔹 Risk Rating: {summary_data.get("riskRating", "N/A")}
-🔹 FINAL RECOMMENDATION: {summary_data.get("finalRecommendation", "N/A")}
+📌 Final Recommendation: {summary_data.get("finalRecommendation", "N/A")}
 
 Attached: Credit File <TODO: CREATE CREDIT FILE>
 
@@ -252,8 +252,8 @@ financial_analysis_agent = Agent(
     model="gemini-2.0-flash",
     instruction=COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION,
     tools=[
-        get_financial_raw_data_approval_or_rejection_tool,
-        send_email_tool  # Register the email sending tool
+        Lendo_Credit_Decision_Engine, # Register the main decisioning tool
+        send_email # Register the email sending tool
     ]
     )
 
