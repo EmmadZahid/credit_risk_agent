@@ -797,4 +797,5 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
         print(f"Error saving document: {e}")
 
 # Call the function to create the document
-create_lendo_credit_file()
+if __name__ == "__main__":
+    create_lendo_credit_file()

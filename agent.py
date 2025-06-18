@@ -1,9 +1,11 @@
-from google.adk.agents import Agent
 import os
 import json
 import smtplib
+import subprocess
+from google.adk.agents import Agent
 from email.message import EmailMessage
 from typing import Dict, Any, Optional
+from .generate_credit_file import create_lendo_credit_file
 from .instructions import (
    COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION
 )
@@ -182,7 +184,6 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
         to_email = input.get("to")
         subject = input.get("subject", "Credit Analysis Result")
         summary_data = input.get("summary_data")
-        body = input.get("body")
 
         if not to_email:
             return {"status": "Error", "message": "Missing 'to' email address."}
@@ -193,17 +194,39 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
         if not body:
             return {"status": "Error", "message": "Missing email body or summary data."}
 
+        # Step 1: Generate credit file directly
+        create_lendo_credit_file()
+
+        # Step 2: Locate the generated file
+        file_name = "Lendo Credit File - ADK AGENT.docx"
+        if not os.path.exists(file_name):
+            return {"status": "Error", "message": f"File '{file_name}' not found after generation."}
+
+        # Step 3: Create email message
         msg = EmailMessage()
-        msg["From"] = "noreply@lendo.local"
+        msg["From"] = "noreply@lendo.local.adk"
         msg["To"] = to_email
         msg["Subject"] = subject
         msg.set_content(body)
 
+        # Step 4: Attach the Word file
+        with open(file_name, "rb") as f:
+            file_data = f.read()
+            msg.add_attachment(
+                file_data,
+                maintype="application",
+                subtype="vnd.openxmlformats-officedocument.wordprocessingml.document",
+                filename=file_name
+            )
+
+        # Step 5: Send email
         with smtplib.SMTP("localhost", 1025) as smtp:
             smtp.send_message(msg)
 
         return {"status": "Success", "message": f"Email sent to {to_email}"}
 
+    except subprocess.CalledProcessError as e:
+        return {"status": "Error", "message": f"Failed to run generate-credit-file.py: {e}"}
     except Exception as e:
         return {"status": "Error", "message": str(e)}
     
@@ -241,12 +264,13 @@ Please find the credit file for Company: {summary_data.get("companyName", "Unkno
 🔹 Risk Rating: {summary_data.get("riskRating", "N/A")}
 📌 Final Recommendation: {summary_data.get("finalRecommendation", "N/A")}
 
-Attached: Credit File <TODO: CREATE CREDIT FILE>
+Attached: Credit File
 
 Regards,
 ADK AGENT
 """
 
+# Agent config
 financial_analysis_agent = Agent(
     name="CreditPolicyAgent",
     model="gemini-2.0-flash",
@@ -257,4 +281,5 @@ financial_analysis_agent = Agent(
     ]
     )
 
+# init agent
 root_agent = financial_analysis_agent
