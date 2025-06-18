@@ -1,11 +1,14 @@
-from google.adk.agents import Agent
+from google.adk.agents import Agent, ParallelAgent, SequentialAgent
 import os
 import json
 import smtplib
 from email.message import EmailMessage
 from typing import Dict, Any, Optional
 from .instructions import (
-   COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION
+   COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION,
+   COMPANY_SCORE_CALCULATION_INSTRCUTION,
+   COMPILING_AGENT_INSTRCUTION,
+   MAIN_AGENT_INSTRCUTION
 )
 
 # Load your AllCompanies.json file
@@ -163,50 +166,50 @@ def get_financial_raw_data_approval_or_rejection_tool() -> Dict[str, any]:
         "data": simplified_data
     }
 
-def send_email_tool(input: Dict[str, Any]) -> Dict[str, str]:
-    """
-    Sends an email using MailHog SMTP.
+# def send_email_tool(input: Dict[str, Any]) -> Dict[str, str]:
+#     """
+#     Sends an email using MailHog SMTP.
 
-    Args:
-        input: {
-            "to": str,
-            "subject": str,
-            "summary_data": dict (required - body is generated from these parameters)
-        }
+#     Args:
+#         input: {
+#             "to": str,
+#             "subject": str,
+#             "summary_data": dict (required - body is generated from these parameters)
+#         }
 
-    Returns:
-        dict: {"status": "Success" | "Error", "message": str}
-    """
-    try:
-        to_email = input.get("to")
-        subject = input.get("subject", "Credit Analysis Result")
-        summary_data = input.get("summary_data")
-        body = input.get("body")
+#     Returns:
+#         dict: {"status": "Success" | "Error", "message": str}
+#     """
+#     try:
+#         to_email = input.get("to")
+#         subject = input.get("subject", "Credit Analysis Result")
+#         summary_data = input.get("summary_data")
+#         body = input.get("body")
 
-        if not to_email:
-            return {"status": "Error", "message": "Missing 'to' email address."}
+#         if not to_email:
+#             return {"status": "Error", "message": "Missing 'to' email address."}
 
-        if summary_data:
-            body = build_credit_summary_email_body(summary_data)
+#         if summary_data:
+#             body = build_credit_summary_email_body(summary_data)
 
-        if not body:
-            return {"status": "Error", "message": "Missing email body or summary data."}
+#         if not body:
+#             return {"status": "Error", "message": "Missing email body or summary data."}
 
-        msg = EmailMessage()
-        msg["From"] = "noreply@lendo.local"
-        msg["To"] = to_email
-        msg["Subject"] = subject
-        msg.set_content(body)
+#         msg = EmailMessage()
+#         msg["From"] = "noreply@lendo.local"
+#         msg["To"] = to_email
+#         msg["Subject"] = subject
+#         msg.set_content(body)
 
-        with smtplib.SMTP("localhost", 1025) as smtp:
-            smtp.send_message(msg)
+#         with smtplib.SMTP("localhost", 1025) as smtp:
+#             smtp.send_message(msg)
 
-        return {"status": "Success", "message": f"Email sent to {to_email}"}
+#         return {"status": "Success", "message": f"Email sent to {to_email}"}
 
-    except Exception as e:
-        return {"status": "Error", "message": str(e)}
+#     except Exception as e:
+#         return {"status": "Error", "message": str(e)}
     
-def build_credit_summary_email_body(summary_data: Dict[str, Any]) -> str:
+# def build_credit_summary_email_body(summary_data: Dict[str, Any]) -> str:
     """
     Builds a credit decision email body using dynamic values from summary_data.
 
@@ -246,14 +249,97 @@ Regards,
 ADK AGENT
 """
 
-financial_analysis_agent = Agent(
-    name="CreditPolicyAgent",
+def send_email_tool(recipient_email: str, subject:str, body: str) -> Dict[str, str]:
+    """
+    Sends an email to the specified recipient.
+
+    Args:
+        recipient_email: The email address of the recipient.
+        subject: The subject of the email
+        body: The plain text body of the email which is the explanation of the credit assessment.
+
+    Returns:
+        A dictionary with a status and a message.
+    """
+    print(f"\n--- Simulating Email Send ---")
+    print(f"To: {recipient_email}")
+    print(f"Subject: {subject}")
+    print(f"Body:\n{body}")
+    print(f"--- End Simulation ---\n")
+    return {"status": "success", "message": f"Email sent to {recipient_email}."}
+
+def get_financial_score() -> Dict[str, any]:
+    """
+    Just returns the static score data for each borrower/company
+
+    Returns:
+        dict: A dictionary with borrower id, score and its grade.
+    """
+
+    return {
+        "data":[
+            {
+                "organizationId":4560,
+                "score": 100,
+                "grade": "A"
+            },
+            {
+                "organizationId":1742,
+                "score": 70,
+                "grade": "B"
+            },
+            {
+                "organizationId":1901,
+                "score": 60,
+                "grade": "C"
+            },
+            {
+                "organizationId":2140,
+                "score": 50,
+                "grade": "D"
+            }
+        ]
+    }
+
+creditRiskCompilingAgent = Agent(
+    name="CreditRiskCompilingAgent",
+    model="gemini-2.0-flash",
+    instruction=COMPILING_AGENT_INSTRCUTION,
+    tools=[
+        send_email_tool
+    ]
+    )
+
+recommendationAgent = Agent(
+    name="RecommendationAgent",
     model="gemini-2.0-flash",
     instruction=COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION,
     tools=[
         get_financial_raw_data_approval_or_rejection_tool,
-        send_email_tool  # Register the email sending tool
-    ]
+    ],
+    output_key="recommendation_output",
     )
 
-root_agent = financial_analysis_agent
+scoreCalculationAgent = Agent(
+    name="ScoreCalculationAgent",
+    model="gemini-2.0-flash",
+    instruction=COMPANY_SCORE_CALCULATION_INSTRCUTION,
+    tools=[
+        get_financial_score,
+    ],
+    output_key="score_output",
+    )
+
+creditRiskAssessmentAgent = ParallelAgent(
+    sub_agents=[recommendationAgent, scoreCalculationAgent],
+    description="An agent that uses recommendation agent and score calculation agent to create the credit risk assessment",
+    name="CreditRiskAssessmentAgent",
+)
+
+#====================================
+
+root_agent = SequentialAgent(
+    name="CreditPolicyAgent",
+    description="An agent that do the credit risk assessment for an organization by using multiple agents",
+    sub_agents=[creditRiskAssessmentAgent, creditRiskCompilingAgent],
+)
