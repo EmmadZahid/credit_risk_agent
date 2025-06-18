@@ -59,7 +59,7 @@ def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
         financial_statements = company.get("financialStatement", [])
         consumer = company.get("consumer",{})
         commercial = company.get("commercial",{})
-
+        bms = company.get("bms",{});
               
         dpd_commercial = None
         dpd_commercial_flag = None
@@ -133,17 +133,27 @@ def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
                 "cr_number": cr_number,
                 "organization_id": organization_id,
                 "year": year,
-                "netProfit": profit_loss.get("netProfit", 0),
+                "qawaem": {"netProfit": profit_loss.get("netProfit", 0),
                 "revenue": profit_loss.get("totalRevenue", 0),
                 "cashFlowFromOperatingActivities": cashflow.get("netCashFlowsFromUsedInOperatingActivities", 0),
                 "currentRatio": spreading.get("currentRatio", 0),
                 "dscr": spreading.get("dscr", 0),
                 "debtRatio": spreading.get("debtRatio", 0),
                 "netProfitMargin": spreading.get("netProfitMargin", 0),
+                "netProfitMarginGrowth":spreading.get("npmGrowth", 0),
+                "grossProfitMargin": spreading.get("grossProfitMargin", 0),
+                "grossProfitMarginGrowth":spreading.get("gpmGrowth", 0),
                 "leverageRatio": spreading.get("leverageRatio", 0),
                 "gearingRatio": spreading.get("gearingRatio", 0),
                 "totalEquity": yearly_data.get("totalEquity",0),
+                "revenueGrowth":spreading.get("revenueGrowth", 0),
+                "interestCoverage": spreading.get("interestCoverage", 0),
                 "externalDebtSales": spreading.get("externalDebtSalesRatio", 0),
+                "receivablePercentageSales": spreading.get("receivablePercentageSales", 0),
+                "daysSalesOutstanding": spreading.get("daysSalesOutstanding", 0),
+
+                },
+                "commercial":{
                 "dpd_commercial": dpd_commercial,
                 "dpd_commercial_flag": dpd_commercial_flag,
                 "bounced_cheque_commercial": bounced_cheque_commercial,
@@ -152,6 +162,8 @@ def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
                 "unsettled_commercial_flag": unsettled_commercial_flag,
                 "court_cases_commercial": court_cases_commercial,
                 "court_cases_commercial_flag" : court_cases_commercial_flag,
+                },
+                "consumer":{
                 "dpd_consumer": dpd_consumer,
                 "dpd_consumer_flag": dpd_consumer_flag,
                 "bounced_cheque_consumer": bounced_cheque_consumer,
@@ -160,6 +172,15 @@ def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
                 "unsettled_consumer_flag": unsettled_consumer_flag,
                 "court_cases_consumer": court_cases_consumer,
                 "court_cases_consumer_flag" : court_cases_consumer_flag
+                },
+                "bms":{
+                    "nitaqatColor": "Low Green",
+                    "yearsInBusiness": "2016-03-18",
+                    "market": "Local Market (Including GCC)", 
+                    "industry": "Information & Communication, Arts & Recreation",
+                    "typeOfCustomer": "Govt. & Semi Govt. Entities, and well-known Corporation",
+                    "customerConcentration": bms.get("customerConcentration",0)
+                }
             })
     return {
         "status":"Success",
