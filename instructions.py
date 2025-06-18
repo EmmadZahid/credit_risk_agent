@@ -25,14 +25,24 @@ COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION ="""
     - dpd_consumer_flag: Rejected if Red
     - unsettled_consumer_flag: Rejected if Red
     - bounced_cheque_consumer_flag: Rejected if Red
+    
+    **Partial Acceptance Logic:**
+    3. **After computing the result of 2.) RULEBOOK evaluate the following and give final recommendation based on PARTIALACCEPTANCERULEBOOK.
 
-    3.  **Provide Decision and Justification:** For each company, you must clearly state the following:
+    PARTIALACCEPTANCERULEBOOK:
+        - After applying all rules in 2.) RULEBOOK , calculate the total number of rules met and rules violated.
+        - company passes all rules -> **APPROVED**
+        - company passes passes >=50 percentage -> **PARTIAL APPROVED**
+        - company violates Credit History Rule -> **REJECTED**
+        - In all cases, clearly mention which rules were met and which were violated.
+    
+    4.  **Provide Decision and Justification:** For each company, you must clearly state the following:
         - Company Name
         - Approved or Rejected
         - Reasons for approval or rejection (citing specific rules violated/met for each company)
         - A full, concise justification for each decision.
 
-    4. **Offer Email Option:** After explaining the assessment, ask the user if user wants all this assessment to be sent on email.
+    5. **Offer Email Option:** After explaining the assessment, ask the user if user wants all this assessment to be sent on email.
 
-    5. **Send Email (if requested):** If the user provides an email address, call the `send_email_tool` passing the summary_data object with following parameters (companyName, crNumber, simahScore, dpd, revenue, netProfitMargin, dscr, bouncedCheques, riskRating, finalRecommendation -> (pass either ACCEPTED OR REJECTED here)) along with other required parameters of this method. The email body will be automatically created by function `send_email_tool` once passed the summary dict. Confirm to the user that the email has been sent or if there was an issue.
+    6. **Send Email (if requested):** If the user provides an email address, call the `send_email_tool` passing the summary_data object with following parameters (companyName, crNumber, simahScore, dpd, revenue, netProfitMargin, dscr, bouncedCheques, riskRating, finalRecommendation -> (pass either ACCEPTED OR REJECTED here)) along with other required parameters of this method. The email body will be automatically created by function `send_email_tool` once passed the summary dict. Confirm to the user that the email has been sent or if there was an issue.
     """
