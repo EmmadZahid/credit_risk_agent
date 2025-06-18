@@ -1,0 +1,775 @@
+{
+    "message": "Borrower profile details fetched successfully",
+    "status": "SUCCESS",
+    "responseTimestamp": "18-06-2025T09:56:41.530Z",
+    "data": {
+        "summaryDetails": {
+            "registrationDate": "11/10/2022",
+            "virtualIBAN": "SA5820EC0528995200102910",
+            "crNumber": "1010085648",
+            "crExpiryDate": "01/08/2025",
+            "facilityExpiryDate": "31/07/2025",
+            "city": "الرياض",
+            "cityCode": "RIY",
+            "industryType": "Agriculture, Forestry and Fishing,Manufacturing,Construction,Wholesale and retail trade; repair of motor vehicles and motorcycles,Transportation and storage,Accommodation and food services activities,Professional, scientific and technical activities,Administrative and support service activities,Public administration and defense; compulsory social security"
+        },
+        "registeredInformation": {
+            "assignedRm": "Khalid Alshuwaier",
+            "complianceStatus": "APPROVED",
+            "lastUpdatedDate": null
+        },
+        "userInput": {
+            "financingProgram": "Lendo SME Financing",
+            "companyOrTradingName": "شركة محمد عبد الله آل طالب ",
+            "annualSales": "40-100m",
+            "productType": "Invoice Financing",
+            "requiredFinancingAmount": null,
+            "sizeofBusiness": "Medium",
+            "totalNumberOfEmployees": 135,
+            "lastUpdatedDate": null
+        },
+        "registeredUserInformation": {
+            "userAccountId": 23715,
+            "fullNameEnglish": "mohammed altaleb ",
+            "fullNameArabic": null,
+            "email": "aly@altalebgroup.com",
+            "dateOfBirthHijri": "1391-11-14",
+            "dateOfBirthGregorian": "1972-01-01",
+            "phoneNumber": "+966505204443",
+            "nin": "1014126864",
+            "idExpiryDateHijri": null,
+            "idExpiryDateGregorian": null,
+            "nationality": "SAU",
+            "gender": null,
+            "jobTitle": "MANAGER",
+            "nationalAddress": null,
+            "sanctionScreeningResult": null,
+            "sanctionScreeningApprovalStatus": null,
+            "sanctionScreeningReviewDate": null,
+            "focalScore": null,
+            "lastUpdatedAt": "2024-07-25T11:45:08.357",
+            "assignedRm": "Khalid Alshuwaier",
+            "assignedRmUserId": 38036
+        },
+        "smeLegalInformation": {
+            "ramResult": null,
+            "companyArabicName": "شركة محمد عبدالله آل طالب وشركاه للتجارة والزراعة",
+            "companyEnglishName": null,
+            "crNumber": "1010085648",
+            "crStatus": "active",
+            "crEntityNumber": "7001620421",
+            "capital": 1.0E7,
+            "crExpiryDateHijri": "1447-02-07",
+            "crExpiryDateGregorian": "2025-08-01",
+            "crIssueDateHijri": "1412-02-10",
+            "crIssueDateGregorian": "1991-08-21",
+            "entityStructure": "ذات مسئولية محدودة",
+            "legalType": "LLC",
+            "isCrMain": true,
+            "mainCr": null,
+            "misaLicense": null,
+            "misaExpiryDate": null,
+            "isECommerce": null,
+            "url": null,
+            "generalAddress": null,
+            "isicCodes": "477386,477343,811003,811005,466926,422033,466923,466921,016400,032202,466922,813020,331256,014611,712052,464991,712054,014614,014613,014612,432240,433010,014617,014616,477354,331923,429074,429073,477351,422044,422045,813030,562902,422041,462012,331322,422042,462013,422043,712040,712041,712042,712043,016104,439061,016105,429071,410023,749076,749075,101011,101012,331314,032102,331315,461011,016103,331316,422010,461014,462071,712038,477357,521092,431210,477358,493007,521093,410030,432220,813014,773050,813013,813016,813015,477371,465305,421052,421051,331221,332036,465983,331222,332035,462034,465982,813012,813011,465991,477327,823006,432210,432254,477324,841211",
+            "companyIndustryList": [
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477386",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477343",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "811003",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "811005",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466926",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422033",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466923",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466921",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "016400",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "032202",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466922",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813020",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "331256",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "014611",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "712052",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464991",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "712054",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "014614",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "014613",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "014612",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432240",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "014617",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "014616",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477354",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "331923",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429074",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429073",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477351",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422044",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422045",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813030",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Accommodation and food services activities",
+                    "isicCode": "562902",
+                    "industryId": "8"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422041",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "462012",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "331322",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422042",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "462013",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422043",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "712040",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "712041",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "712042",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "712043",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "016104",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439061",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "016105",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429071",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410023",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "749076",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "749075",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "101011",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "101012",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "331314",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "032102",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "331315",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461011",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Agriculture, Forestry and Fishing",
+                    "isicCode": "016103",
+                    "industryId": "1"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "331316",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461014",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "462071",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "712038",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477357",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Transportation and storage",
+                    "isicCode": "521092",
+                    "industryId": "9"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431210",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477358",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Transportation and storage",
+                    "isicCode": "493007",
+                    "industryId": "9"
+                },
+                {
+                    "industryName": "Transportation and storage",
+                    "isicCode": "521093",
+                    "industryId": "9"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432220",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813014",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773050",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813013",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813016",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813015",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477371",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465305",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421052",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421051",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "331221",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "332036",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465983",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "331222",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Manufacturing",
+                    "isicCode": "332035",
+                    "industryId": "4"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "462034",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465982",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813012",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813011",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465991",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477327",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "823006",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432210",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432254",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477324",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Public administration and defense; compulsory social security",
+                    "isicCode": "841211",
+                    "industryId": "12"
+                }
+            ],
+            "primarySectorDetails": {
+                "primaryActivity": null,
+                "primarySector": "Agriculture, Forestry and Fishing",
+                "industryId": "1"
+            },
+            "sanctionDetails": null,
+            "lastUpdatedDate": "2025-04-07"
+        },
+        "capitalInformation": {
+            "paidAmount": "10000000.00",
+            "subscribedAmount": null,
+            "announcedAmount": null,
+            "sharePrice": "1000.00",
+            "shareCount": "10000",
+            "lastUpdatedDate": "2024-07-22T10:46:10.453548"
+        },
+        "financialInformation": {
+            "organizationId": 2140,
+            "annualRevenue": 1.19488641E8,
+            "annualNetProfit": 2.1108189E7,
+            "isAudited": true,
+            "updatedAt": "2024-07-28T07:39:52.012+00:00",
+            "revenueGrowth": "39.00",
+            "debtServiceCoverageRatio": "0.66",
+            "currentRatio": "1.09",
+            "leverageRatio": "1.27",
+            "externalDebtRevenue": "42.10",
+            "financialInformationAuditResponseDTOList": [
+                {
+                    "financialInformationAuditId": 142,
+                    "year": 2023,
+                    "revenue": 1.19488641E8,
+                    "netIncome": 2.1108189E7,
+                    "totalAssets": 9.1193501E7,
+                    "totalEquity": 4.0175844E7,
+                    "totalLiability": 5.1017624E7
+                }
+            ]
+        },
+        "otherInformation": {
+            "zakatCertType": "Certified",
+            "zakatCertExpiryDate": "02-11-1446",
+            "branchName": "شركة محمد عبدالله آل طالب وشركاه للتجارة والزراعة",
+            "vatRegistrationStatus": "Yes",
+            "vatRegistrationNumber": "100241108844834",
+            "vatAccount": "300505732500003",
+            "nitaqatColor": "High Green",
+            "saudizationCertExpiryDate": "2024-10-09 00:00:00",
+            "numberOfSaudiEmployees": 57,
+            "numberOfResidentEmployees": 78,
+            "lastUpdatedDate": "2024-07-24T16:22:54.088",
+            "employeeBand": "I"
+        },
+        "allParties": {
+            "parties": [
+                {
+                    "partyId": 1071,
+                    "organizationId": 2140,
+                    "partyName": "محمد عبدالله ابراهيم ال طالب",
+                    "partyNameEnglish": "mohammed altaleb ",
+                    "partyType": null,
+                    "relationName": "شــريك",
+                    "email": "aly@altalebgroup.com",
+                    "phoneNumber": "+966505204443",
+                    "identityId": "1014126864",
+                    "allPermissions": [
+                        "Signing loan contract",
+                        "Opening letters of credit",
+                        "Deposit",
+                        "Opening Account",
+                        "Applying for facilities",
+                        "Extracting statements of account",
+                        "Updating accounts",
+                        "Withdrawing",
+                        "issuingChecks",
+                        "Applying for guarantees"
+                    ],
+                    "sharesCount": 1,
+                    "partnerType": "فرد سعودي بدون وصي",
+                    "isAuthorizedPerson": true,
+                    "decisionType": "منفرد",
+                    "abilityToDelegate": true,
+                    "nationalityId": "SAU",
+                    "birthDate": "1969-07-08",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": true,
+                    "isOtpExpired": true,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": "MALE",
+                    "shareHoldingPercentage": 0.0,
+                    "isGuarantor": true,
+                    "isSeniorManagement": true,
+                    "isKeyPersonInBusiness": true,
+                    "totalYearsOfExperience": 22,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                },
+                {
+                    "partyId": 1072,
+                    "organizationId": 2140,
+                    "partyName": "شركة تال القابضة",
+                    "partyNameEnglish": "TAL",
+                    "partyType": null,
+                    "relationName": "شــريك",
+                    "email": "aly@altalebgroup.com",
+                    "phoneNumber": "+966505204443",
+                    "identityId": "1010784994",
+                    "allPermissions": [
+                        "NA"
+                    ],
+                    "sharesCount": 499,
+                    "partnerType": null,
+                    "isAuthorizedPerson": false,
+                    "decisionType": "منفرد",
+                    "abilityToDelegate": true,
+                    "nationalityId": "SAU",
+                    "birthDate": "2024-07-09",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": false,
+                    "isOtpExpired": null,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": "MALE",
+                    "shareHoldingPercentage": 100.0,
+                    "isGuarantor": false,
+                    "isSeniorManagement": false,
+                    "isKeyPersonInBusiness": false,
+                    "totalYearsOfExperience": 28,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                },
+                {
+                    "partyId": 1073,
+                    "organizationId": 2140,
+                    "partyName": "محمد عبدالله ابراهيم ال طالب",
+                    "partyNameEnglish": "mohammed altaleb",
+                    "partyType": null,
+                    "relationName": "مدير",
+                    "email": "aly@altalebgroup.com",
+                    "phoneNumber": "+966505204443",
+                    "identityId": "1014126864",
+                    "allPermissions": [
+                        "NA"
+                    ],
+                    "sharesCount": 0,
+                    "partnerType": "فرد سعودي بدون وصي",
+                    "isAuthorizedPerson": true,
+                    "decisionType": "منفرد",
+                    "abilityToDelegate": true,
+                    "nationalityId": "SAU",
+                    "birthDate": "1969-07-08",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": true,
+                    "isOtpExpired": true,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": "MALE",
+                    "shareHoldingPercentage": null,
+                    "isGuarantor": true,
+                    "isSeniorManagement": true,
+                    "isKeyPersonInBusiness": true,
+                    "totalYearsOfExperience": 18,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                }
+            ],
+            "wathqPartyLastUpdatedAt": "2024-07-24T16:32:31.75",
+            "additionalPartyLastUpdatedAt": null,
+            "isSubsidiary": false
+        },
+        "bankDetails": {
+            "accountHolderName": "MOHAMED ALTALEB AGRICULTURE",
+            "bankName": "AL RAJHI BANK",
+            "iban": "SA7180000449608010397403",
+            "city": "RIYADH",
+            "cityCode": "RIY",
+            "beneficiaryCode": "RJHISARIXXX",
+            "lastUpdatedDate": "2024-07-28T10:39:52.012"
+        },
+        "contactAddressInformation": {
+            "organizationId": 2140,
+            "buildingNumber": "6613",
+            "unitNumber": "9",
+            "streetName": "الدائري الشرقي الفرعي ",
+            "districtName": "حي الروضة ",
+            "additionalNumber": "2456",
+            "city": "الرياض",
+            "cityCode": "RIY",
+            "zipCode": "13213",
+            "addressSource": "WATHQ",
+            "lastUpdatedAt": "2024-09-24T10:07:54.557465",
+            "companyEmail": "aly@altalebgroup.com",
+            "companyPhone": "+966505204443",
+            "companyMobile": "+966505204443"
+        },
+        "organizationLoanDetails": null
+    }
+}

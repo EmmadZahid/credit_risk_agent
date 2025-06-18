@@ -1,0 +1,2779 @@
+{
+    "message": "Borrower profile details fetched successfully",
+    "status": "SUCCESS",
+    "responseTimestamp": "18-06-2025T09:55:26.354Z",
+    "data": {
+        "summaryDetails": {
+            "registrationDate": "27/02/2022",
+            "virtualIBAN": "SA7620EC0528995200044677",
+            "crNumber": "2051160014",
+            "crExpiryDate": "13/08/2028",
+            "facilityExpiryDate": "31/05/2025",
+            "city": " الخبر",
+            "cityCode": null,
+            "industryType": "Construction,Wholesale and retail trade; repair of motor vehicles and motorcycles,Information and Communication,Real estate activities,Professional, scientific and technical activities,Administrative and support service activities,Human health and social work activities,Other service activities"
+        },
+        "registeredInformation": {
+            "assignedRm": "Moatasem Almelihani",
+            "complianceStatus": "REVIEW_REQUIRED",
+            "lastUpdatedDate": null
+        },
+        "userInput": {
+            "financingProgram": "Lendo SME Financing",
+            "companyOrTradingName": "شركة مشرق الحلول الطبية ",
+            "annualSales": "11-25m",
+            "productType": "Invoice Financing",
+            "requiredFinancingAmount": null,
+            "sizeofBusiness": null,
+            "totalNumberOfEmployees": 0,
+            "lastUpdatedDate": null
+        },
+        "registeredUserInformation": {
+            "userAccountId": 13725,
+            "fullNameEnglish": "Nawaf hussain alshuwayrid",
+            "fullNameArabic": null,
+            "email": "nawaf.h@orientms.com",
+            "dateOfBirthHijri": "1445-11-22",
+            "dateOfBirthGregorian": "2024-05-29",
+            "phoneNumber": "+966590062348",
+            "nin": "1063267668",
+            "idExpiryDateHijri": null,
+            "idExpiryDateGregorian": null,
+            "nationality": "SAU",
+            "gender": null,
+            "jobTitle": "OTHER",
+            "nationalAddress": null,
+            "sanctionScreeningResult": null,
+            "sanctionScreeningApprovalStatus": null,
+            "sanctionScreeningReviewDate": null,
+            "focalScore": null,
+            "lastUpdatedAt": "2024-05-22T12:44:49.351199",
+            "assignedRm": "Moatasem Almelihani",
+            "assignedRmUserId": 38063
+        },
+        "smeLegalInformation": {
+            "ramResult": null,
+            "companyArabicName": "شركة مشرق الحلول الطبية",
+            "companyEnglishName": null,
+            "crNumber": "2051160014",
+            "crStatus": "active",
+            "crEntityNumber": "7012733460",
+            "capital": null,
+            "crExpiryDateHijri": "1450-03-22",
+            "crExpiryDateGregorian": "2028-08-13",
+            "crIssueDateHijri": "1436-05-13",
+            "crIssueDateGregorian": "2015-03-04",
+            "entityStructure": "ذات مسئولية محدودة",
+            "legalType": "LLC",
+            "isCrMain": true,
+            "mainCr": null,
+            "misaLicense": null,
+            "misaExpiryDate": null,
+            "isECommerce": null,
+            "url": null,
+            "generalAddress": null,
+            "isicCodes": "477385,477386,432113,477387,454020,477381,477140,477261,477382,452081,477262,477383,452082,477384,773080,466130,741010,466370,429060,432240,432122,432121,477396,773073,477397,773072,773074,477271,477392,429074,477151,429073,452070,477152,477394,477395,477391,773071,960110,960230,466381,466140,466382,429071,432111,432112,432230,477121,477363,773062,477122,477364,773061,477365,477366,476391,477361,952930,477362,466231,466352,471930,466232,464171,466351,464172,952940,432260,477114,477116,477117,477374,773050,477376,454030,477130,477372,477373,421010,799020,466360,952950,432251,432254,477367,821100,432131,432252,432253,452043,453011,475283,477341,799032,431101,453012,477342,811001,452041,475160,475281,477222,477343,811002,452042,477344,811003,429020,475286,811005,475285,475284,464153,466332,464152,466333,464155,464154,466210,466331,464151,464150,431230,452034,477337,452032,477352,478200,452033,477111,477353,812100,477112,452031,477113,429030,477230,477351,464157,466334,466220,439061,466340,464162,464161,952410,477224,477345,452023,477347,431220,452024,452065,453033,475140,477440,475260,452063,453031,452064,453032,477322,452061,452062,773021,429040,465212,960120,466310,464130,465101,477316,773015,477317,773014,477318,773016,477312,477313,477314,432220,477315,475150,476121,477331,452052,453020,475270,476122,477332,452053,476123,773011,452051,429050,773012,960130,466320,464140,477327,477328,432210,477323,477324,477325,477326,474153,474152,475120,475240,721001,721004,721005,721002,721003,464111,439030,952200,951230,951110,952320,475250,477430,477311,475130,465206,465205,465208,465207,465202,464112,465201,465204,465203,681022,439020,681021,464122,465211,681024,464121,881013,476212,477422,951120,451011,452021,472191,452022,479940,475220,472193,474130,466992,466993,439050,731030,732000,951210,452014,452015,431210,452012,452013,452011,429010,479950,475110,475230,474140,465305,465303,465302,466995,829901,721006,829902,439040,476315,823006,952310,476311,823004,476312,951220,476313,823001,472170,473020,474110,475320,474230,465994,465993,813020,465996,465995,772902,772901,772904,772903,461042,772906,772907,475310,731013,479910,472181,475210,475330,473030,461051,476410,479920,461018,461013,461011,461017,461016,465971,682010,461015,681042,465973,466940,439012,439011,952100,951130,813014,813013,813016,813015,472162,474220,473010,472161,461024,682020,466950,813012,813011,465992,465991,474210,951140,466927,466928,466925,466922,464982,465950,464981,464991,712010,472121,464997,464998,464993,466930,464992,464995,464994,475980,465936,464964,465932,465931,464962,469061,475970,620111,620112,620113,466910,464972,465940,472111,620107,472112,620108,620104,620106,422070,620101,465910,464940,433093,433091,433092,472200,469040,620214,475950,464957,464956,464958,464953,722001,464952,465920,722002,464955,464954,464951,722003,829208,433082,433081,829203,829201,829202,464922,464921,711020,469020,475930,464935,464934,464931,469030,475940,422033,422031,422032,433051,475910,433052,464912,422044,422045,422046,464911,422047,422041,475924,469010,433042,433043,475921,433041,433044,433045,422050,960950,433071,433072,812901,433073,812903,812902,812905,812904,812907,812906,422060,772120,960962,960961,433061,829101,433062,952910,421020,712051,631121,410010,433010,952920,421030,702017,702014,702012,410022,410021,410023,421040,422010,433030,410030,702031,781012,421052,421051,422020,433021,410040,433024,433022,433023",
+            "companyIndustryList": [
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477385",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477386",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432113",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477387",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "454020",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477381",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477140",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477261",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477382",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452081",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477262",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477383",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452082",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477384",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773080",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466130",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "741010",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466370",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429060",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432240",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432122",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432121",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477396",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773073",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477397",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773072",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773074",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477271",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477392",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429074",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477151",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429073",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452070",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477152",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477394",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477395",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477391",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773071",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "960110",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "960230",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466381",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466140",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466382",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429071",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432111",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432112",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432230",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477121",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477363",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773062",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477122",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477364",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773061",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477365",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477366",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476391",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477361",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952930",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477362",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466231",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466352",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "471930",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466232",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464171",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466351",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464172",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952940",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432260",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477114",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477116",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477117",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477374",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773050",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477376",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "454030",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477130",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477372",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477373",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "799020",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466360",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952950",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432251",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432254",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477367",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "821100",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432131",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432252",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432253",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452043",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "453011",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475283",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477341",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "799032",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431101",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "453012",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477342",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "811001",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452041",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475160",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475281",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477222",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477343",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "811002",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452042",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477344",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "811003",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429020",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475286",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "811005",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475285",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475284",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464153",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466332",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464152",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466333",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464155",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464154",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466210",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466331",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464151",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464150",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431230",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452034",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477337",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452032",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477352",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "478200",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452033",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477111",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477353",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "812100",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477112",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452031",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477113",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477230",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477351",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464157",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466334",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466220",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439061",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466340",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464162",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464161",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952410",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477224",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477345",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452023",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477347",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431220",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452024",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452065",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "453033",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475140",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477440",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475260",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452063",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "453031",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452064",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "453032",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477322",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452061",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452062",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773021",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429040",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465212",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "960120",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466310",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464130",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465101",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477316",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773015",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477317",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773014",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477318",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773016",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477312",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477313",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477314",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432220",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477315",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475150",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476121",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477331",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452052",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "453020",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475270",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476122",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477332",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452053",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476123",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773011",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452051",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429050",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "773012",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "960130",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466320",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464140",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477327",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477328",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432210",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477323",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477324",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477325",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477326",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "474153",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "474152",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475120",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475240",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "721001",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "721004",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "721005",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "721002",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "721003",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464111",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952200",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "951230",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "951110",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952320",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475250",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477430",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477311",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475130",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465206",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465205",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465208",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465207",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465202",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464112",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465201",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465204",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465203",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Real estate activities",
+                    "isicCode": "681022",
+                    "industryId": "11"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439020",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Real estate activities",
+                    "isicCode": "681021",
+                    "industryId": "11"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464122",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465211",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Real estate activities",
+                    "isicCode": "681024",
+                    "industryId": "11"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464121",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Human health and social work activities",
+                    "isicCode": "881013",
+                    "industryId": "14"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476212",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "477422",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "951120",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "451011",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452021",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472191",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452022",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "479940",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475220",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472193",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "474130",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466992",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466993",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439050",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "731030",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "732000",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "951210",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452014",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452015",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431210",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452012",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452013",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "452011",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "479950",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475110",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475230",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "474140",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465305",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465303",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465302",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466995",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "829901",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "721006",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "829902",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439040",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476315",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "823006",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952310",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476311",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "823004",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476312",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "951220",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476313",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "823001",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472170",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "473020",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "474110",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475320",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "474230",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465994",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465993",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813020",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465996",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465995",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "772902",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "772901",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "772904",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "772903",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461042",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "772906",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "772907",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475310",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "731013",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "479910",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472181",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475210",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475330",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "473030",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461051",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "476410",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "479920",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461018",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461013",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461011",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461017",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461016",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465971",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Real estate activities",
+                    "isicCode": "682010",
+                    "industryId": "11"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461015",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Real estate activities",
+                    "isicCode": "681042",
+                    "industryId": "11"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465973",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466940",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439012",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439011",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952100",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "951130",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813014",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813013",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813016",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813015",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472162",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "474220",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "473010",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472161",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "461024",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Real estate activities",
+                    "isicCode": "682020",
+                    "industryId": "11"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466950",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813012",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813011",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465992",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465991",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "474210",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "951140",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466927",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466928",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466925",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466922",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464982",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465950",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464981",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464991",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "712010",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472121",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464997",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464998",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464993",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466930",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464992",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464995",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464994",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475980",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465936",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464964",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465932",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465931",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464962",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "469061",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475970",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "620111",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "620112",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "620113",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "466910",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464972",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465940",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472111",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "620107",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472112",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "620108",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "620104",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "620106",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422070",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "620101",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465910",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464940",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433093",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433091",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433092",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "472200",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "469040",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "620214",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475950",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464957",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464956",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464958",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464953",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "722001",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464952",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "465920",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "722002",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464955",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464954",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464951",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "722003",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "829208",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433082",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433081",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "829203",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "829201",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "829202",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464922",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464921",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "711020",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "469020",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475930",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464935",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464934",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464931",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "469030",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475940",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422033",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422031",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422032",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433051",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475910",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433052",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464912",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422044",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422045",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422046",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "464911",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422047",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422041",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475924",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "469010",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433042",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433043",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                    "isicCode": "475921",
+                    "industryId": "7"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433041",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433044",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433045",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422050",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "960950",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433071",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433072",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "812901",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433073",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "812903",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "812902",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "812905",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "812904",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "812907",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "812906",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422060",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "772120",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "960962",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "960961",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433061",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "829101",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433062",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952910",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421020",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "712051",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Information and Communication",
+                    "isicCode": "631121",
+                    "industryId": "17"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Other service activities",
+                    "isicCode": "952920",
+                    "industryId": "15"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "702017",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "702014",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "702012",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410022",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410021",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410023",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421040",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Professional, scientific and technical activities",
+                    "isicCode": "702031",
+                    "industryId": "18"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "781012",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421052",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421051",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422020",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433021",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410040",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433024",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433022",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433023",
+                    "industryId": "6"
+                }
+            ],
+            "primarySectorDetails": {
+                "primaryActivity": "Wholesale and retail sale of new specialized passenger motor vehicles including (ambulances, minibuses and jeeps)",
+                "primarySector": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                "industryId": "7"
+            },
+            "sanctionDetails": null,
+            "lastUpdatedDate": "2024-08-31"
+        },
+        "capitalInformation": {
+            "paidAmount": null,
+            "subscribedAmount": null,
+            "announcedAmount": null,
+            "sharePrice": null,
+            "shareCount": "0",
+            "lastUpdatedDate": null
+        },
+        "financialInformation": {
+            "organizationId": 1742,
+            "annualRevenue": 2.0790913E7,
+            "annualNetProfit": 5121923.0,
+            "isAudited": true,
+            "updatedAt": "2024-08-19T11:58:17.171+00:00",
+            "revenueGrowth": "20.00",
+            "debtServiceCoverageRatio": "0.88",
+            "currentRatio": "1.30",
+            "leverageRatio": "4.25",
+            "externalDebtRevenue": "60",
+            "financialInformationAuditResponseDTOList": [
+                {
+                    "financialInformationAuditId": 143,
+                    "year": 2023,
+                    "revenue": 2.0790913E7,
+                    "netIncome": 5121923.0,
+                    "totalAssets": 1.8881377E7,
+                    "totalEquity": 3599527.0,
+                    "totalLiability": 1.528185E7
+                }
+            ]
+        },
+        "otherInformation": {
+            "zakatCertType": "Certified",
+            "zakatCertExpiryDate": "02-11-1446",
+            "branchName": "شركة مشرق الحلول الطبية",
+            "vatRegistrationStatus": "Yes",
+            "vatRegistrationNumber": "100211041220231",
+            "vatAccount": "311037992200003",
+            "nitaqatColor": "بلاتيني",
+            "saudizationCertExpiryDate": "2024-11-06 00:00:00",
+            "numberOfSaudiEmployees": null,
+            "numberOfResidentEmployees": null,
+            "lastUpdatedDate": "1988-01-20",
+            "employeeBand": "U"
+        },
+        "allParties": {
+            "parties": [
+                {
+                    "partyId": 1519,
+                    "organizationId": 1742,
+                    "partyName": "نواف حسين ابن صالح الشويرد",
+                    "partyNameEnglish": null,
+                    "partyType": null,
+                    "relationName": "شــريك",
+                    "email": null,
+                    "phoneNumber": null,
+                    "identityId": "1063267668",
+                    "allPermissions": [
+                        "Signing loan contract"
+                    ],
+                    "sharesCount": 99,
+                    "partnerType": "فرد سعودي بدون وصي",
+                    "isAuthorizedPerson": true,
+                    "decisionType": "منفرد",
+                    "abilityToDelegate": null,
+                    "nationalityId": "SAU",
+                    "birthDate": "1988-02-01",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": false,
+                    "isOtpExpired": null,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": null,
+                    "shareHoldingPercentage": 99.0,
+                    "isGuarantor": null,
+                    "isSeniorManagement": null,
+                    "isKeyPersonInBusiness": null,
+                    "totalYearsOfExperience": null,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                },
+                {
+                    "partyId": 1520,
+                    "organizationId": 1742,
+                    "partyName": "اروى بنت حسين بن صالح الشويرد",
+                    "partyNameEnglish": null,
+                    "partyType": null,
+                    "relationName": "شــريك",
+                    "email": null,
+                    "phoneNumber": null,
+                    "identityId": "1085475547",
+                    "allPermissions": null,
+                    "sharesCount": 1,
+                    "partnerType": null,
+                    "isAuthorizedPerson": false,
+                    "decisionType": null,
+                    "abilityToDelegate": null,
+                    "nationalityId": "SAU",
+                    "birthDate": "1990-07-23",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": false,
+                    "isOtpExpired": null,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": null,
+                    "shareHoldingPercentage": 1.0,
+                    "isGuarantor": null,
+                    "isSeniorManagement": null,
+                    "isKeyPersonInBusiness": null,
+                    "totalYearsOfExperience": null,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                },
+                {
+                    "partyId": 1521,
+                    "organizationId": 1742,
+                    "partyName": "نواف حسين ابن صالح الشويرد",
+                    "partyNameEnglish": null,
+                    "partyType": null,
+                    "relationName": "مدير",
+                    "email": null,
+                    "phoneNumber": null,
+                    "identityId": "1063267668",
+                    "allPermissions": [
+                        "Withdrawing"
+                    ],
+                    "sharesCount": 0,
+                    "partnerType": "فرد سعودي بدون وصي",
+                    "isAuthorizedPerson": true,
+                    "decisionType": "منفرد",
+                    "abilityToDelegate": null,
+                    "nationalityId": "SAU",
+                    "birthDate": "1988-02-01",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": false,
+                    "isOtpExpired": null,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": null,
+                    "shareHoldingPercentage": null,
+                    "isGuarantor": null,
+                    "isSeniorManagement": null,
+                    "isKeyPersonInBusiness": null,
+                    "totalYearsOfExperience": null,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                },
+                {
+                    "partyId": 1522,
+                    "organizationId": 1742,
+                    "partyName": "اروى بنت حسين بن صالح الشويرد",
+                    "partyNameEnglish": null,
+                    "partyType": null,
+                    "relationName": "مدير",
+                    "email": null,
+                    "phoneNumber": null,
+                    "identityId": "1085475547",
+                    "allPermissions": null,
+                    "sharesCount": 0,
+                    "partnerType": "فرد سعودي بدون وصي",
+                    "isAuthorizedPerson": false,
+                    "decisionType": "NA",
+                    "abilityToDelegate": null,
+                    "nationalityId": "SAU",
+                    "birthDate": "1990-07-23",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": false,
+                    "isOtpExpired": null,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": null,
+                    "shareHoldingPercentage": null,
+                    "isGuarantor": null,
+                    "isSeniorManagement": null,
+                    "isKeyPersonInBusiness": null,
+                    "totalYearsOfExperience": null,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                }
+            ],
+            "wathqPartyLastUpdatedAt": "2023-06-10T05:17:00.35",
+            "additionalPartyLastUpdatedAt": null,
+            "isSubsidiary": false
+        },
+        "bankDetails": {
+            "accountHolderName": "Orient Medical Solutions Company",
+            "bankName": "BANK AL-JAZIRA",
+            "iban": "SA7960100020495003883001",
+            "city": "AL KHOBAR",
+            "cityCode": null,
+            "beneficiaryCode": "BJAZSAJEXXX",
+            "lastUpdatedDate": "2023-05-01T13:46:01.624"
+        },
+        "contactAddressInformation": {
+            "organizationId": 1742,
+            "buildingNumber": "7819",
+            "unitNumber": "34",
+            "streetName": "فراس بن النظر",
+            "districtName": "العليا ",
+            "additionalNumber": "2157",
+            "city": " الخبر",
+            "cityCode": null,
+            "zipCode": "34445",
+            "addressSource": "WATHQ",
+            "lastUpdatedAt": "2022-02-27T08:43:53.687",
+            "companyEmail": null,
+            "companyPhone": null,
+            "companyMobile": null
+        },
+        "organizationLoanDetails": null
+    }
+}

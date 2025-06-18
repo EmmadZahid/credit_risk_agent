@@ -1,0 +1,649 @@
+{
+    "message": "Borrower profile details fetched successfully",
+    "status": "SUCCESS",
+    "responseTimestamp": "18-06-2025T09:56:11.453Z",
+    "data": {
+        "summaryDetails": {
+            "registrationDate": "06/06/2022",
+            "virtualIBAN": "SA7720EC0528995200093644",
+            "crNumber": "4030179290",
+            "crExpiryDate": "04/09/2025",
+            "facilityExpiryDate": "31/03/2025",
+            "city": "جدة",
+            "cityCode": "JED",
+            "industryType": "Construction,Accommodation and food services activities,Administrative and support service activities"
+        },
+        "registeredInformation": {
+            "assignedRm": "Khalid Alshuwaier",
+            "complianceStatus": "APPROVED",
+            "lastUpdatedDate": null
+        },
+        "userInput": {
+            "financingProgram": "Lendo SME Financing",
+            "companyOrTradingName": "Crystal Asia trading company ",
+            "annualSales": "40-100m",
+            "productType": "Invoice Financing",
+            "requiredFinancingAmount": 1000000,
+            "sizeofBusiness": "Medium",
+            "totalNumberOfEmployees": 35,
+            "lastUpdatedDate": null
+        },
+        "registeredUserInformation": {
+            "userAccountId": 17209,
+            "fullNameEnglish": "HUSSAIN TURKI YOUSEF ALGOUFI",
+            "fullNameArabic": "حسين تركي يوسف القوفي",
+            "email": "shaif@alqoufi.com",
+            "dateOfBirthHijri": "1400-01-01",
+            "dateOfBirthGregorian": "1979-11-21",
+            "phoneNumber": "+966559993064",
+            "nin": "1008301234",
+            "idExpiryDateHijri": "1453-02-01",
+            "idExpiryDateGregorian": "2031-05-23",
+            "nationality": "SAU",
+            "gender": "MALE",
+            "jobTitle": "OTHER",
+            "nationalAddress": "5075,8428,جدة,حي الصفا,39.22191991 21.60168209,23456,محمد صالح نصيف,0",
+            "sanctionScreeningResult": "Match",
+            "sanctionScreeningApprovalStatus": "Approved",
+            "sanctionScreeningReviewDate": "2024-03-24",
+            "focalScore": "99",
+            "lastUpdatedAt": "2024-09-18T22:08:05.903",
+            "assignedRm": "Khalid Alshuwaier",
+            "assignedRmUserId": 38036
+        },
+        "smeLegalInformation": {
+            "ramResult": null,
+            "companyArabicName": "شركة كريستال آسيا للتجاره",
+            "companyEnglishName": null,
+            "crNumber": "4030179290",
+            "crStatus": "active",
+            "crEntityNumber": "7011030751",
+            "capital": null,
+            "crExpiryDateHijri": "1447-03-12",
+            "crExpiryDateGregorian": "2025-09-04",
+            "crIssueDateHijri": "1429-05-16",
+            "crIssueDateGregorian": "2008-05-21",
+            "entityStructure": "ذات مسئولية محدودة",
+            "legalType": "LLC",
+            "isCrMain": true,
+            "mainCr": null,
+            "misaLicense": null,
+            "misaExpiryDate": null,
+            "isECommerce": null,
+            "url": null,
+            "generalAddress": null,
+            "isicCodes": "422070,431101,432113,432950,421020,813020,433093,433091,439030,433092,429060,433010,433051,433052,431230,432122,432121,812100,429075,429030,429074,429073,429072,422044,562901,421030,562903,813030,562902,562904,439020,433082,433081,429071,433042,410021,433043,433041,432111,432112,433044,431220,433045,432135,429040,422010,439012,433071,433072,433073,433030,431210,410030,422060,429050,421052,421051,422020,421010,802002,433061,433021,433062,410040,433024,802001,431240,433022",
+            "companyIndustryList": [
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422070",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431101",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432113",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432950",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421020",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813020",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433093",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433091",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433092",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429060",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433051",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433052",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431230",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432122",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432121",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "812100",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429075",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429074",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429073",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429072",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422044",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Accommodation and food services activities",
+                    "isicCode": "562901",
+                    "industryId": "8"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Accommodation and food services activities",
+                    "isicCode": "562903",
+                    "industryId": "8"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "813030",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Accommodation and food services activities",
+                    "isicCode": "562902",
+                    "industryId": "8"
+                },
+                {
+                    "industryName": "Accommodation and food services activities",
+                    "isicCode": "562904",
+                    "industryId": "8"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439020",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433082",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433081",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429071",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433042",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410021",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433043",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433041",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432111",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432112",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433044",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431220",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433045",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "432135",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429040",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "439012",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433071",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433072",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433073",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431210",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410030",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422060",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "429050",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421052",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421051",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "422020",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "421010",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "802002",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433061",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433021",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433062",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "410040",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433024",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Administrative and support service activities",
+                    "isicCode": "802001",
+                    "industryId": "19"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "431240",
+                    "industryId": "6"
+                },
+                {
+                    "industryName": "Construction",
+                    "isicCode": "433022",
+                    "industryId": "6"
+                }
+            ],
+            "primarySectorDetails": {
+                "primaryActivity": "Operation of food concessions at sports and similar\nfacilities",
+                "primarySector": "Accommodation and food service activities",
+                "industryId": "8"
+            },
+            "sanctionDetails": null,
+            "lastUpdatedDate": "2025-04-10"
+        },
+        "capitalInformation": {
+            "paidAmount": null,
+            "subscribedAmount": null,
+            "announcedAmount": null,
+            "sharePrice": null,
+            "shareCount": "0",
+            "lastUpdatedDate": null
+        },
+        "financialInformation": {
+            "organizationId": 1901,
+            "annualRevenue": 1.0363413E8,
+            "annualNetProfit": 1.2585371E7,
+            "isAudited": true,
+            "updatedAt": "2025-04-10T15:03:26.224+00:00",
+            "revenueGrowth": "-49.00",
+            "debtServiceCoverageRatio": "1.40",
+            "currentRatio": "1.28",
+            "leverageRatio": "4.17",
+            "externalDebtRevenue": "11.95",
+            "financialInformationAuditResponseDTOList": [
+                {
+                    "financialInformationAuditId": 136,
+                    "year": 2023,
+                    "revenue": 1.0363413E8,
+                    "netIncome": 1.2585371E7,
+                    "totalAssets": 7.0256725E7,
+                    "totalEquity": 1.3600371E7,
+                    "totalLiability": 5.6656354E7
+                }
+            ]
+        },
+        "otherInformation": {
+            "zakatCertType": "Certificate has expired",
+            "zakatCertExpiryDate": "Certificate has expired",
+            "branchName": "شركة كريستال آسيا للتجاره",
+            "vatRegistrationStatus": "Yes",
+            "vatRegistrationNumber": "100191005498442",
+            "vatAccount": "310309229900003",
+            "nitaqatColor": "Very Small Red",
+            "saudizationCertExpiryDate": "2024-05-20 00:00:00",
+            "numberOfSaudiEmployees": 5,
+            "numberOfResidentEmployees": 30,
+            "lastUpdatedDate": "2024-03-24T19:42:21.873",
+            "employeeBand": "G"
+        },
+        "allParties": {
+            "parties": [
+                {
+                    "partyId": 140,
+                    "organizationId": 1901,
+                    "partyName": "حسين تركي يوسف القوفي",
+                    "partyNameEnglish": null,
+                    "partyType": null,
+                    "relationName": "شــريك",
+                    "email": "shaif@alqoufi.com",
+                    "phoneNumber": "+966555531529",
+                    "identityId": "1008301234",
+                    "allPermissions": [
+                        "Opening Account",
+                        "Opening letters of credit",
+                        "Deposit",
+                        "issuingChecks",
+                        "Signing loan contract",
+                        "Applying for guarantees",
+                        "Applying for facilities",
+                        "Extracting statements of account",
+                        "Updating accounts",
+                        "Withdrawing"
+                    ],
+                    "sharesCount": 10,
+                    "partnerType": "فرد سعودي بدون وصي",
+                    "isAuthorizedPerson": true,
+                    "decisionType": "منفرد",
+                    "abilityToDelegate": null,
+                    "nationalityId": "SAU",
+                    "birthDate": "1979-11-20",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": false,
+                    "isOtpExpired": null,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": "MALE",
+                    "shareHoldingPercentage": 9.0,
+                    "isGuarantor": null,
+                    "isSeniorManagement": null,
+                    "isKeyPersonInBusiness": null,
+                    "totalYearsOfExperience": null,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                },
+                {
+                    "partyId": 141,
+                    "organizationId": 1901,
+                    "partyName": "شركة رؤيا العربية للتجارة القابضة",
+                    "partyNameEnglish": null,
+                    "partyType": null,
+                    "relationName": "شــريك",
+                    "email": "shaif@alqoufi.com",
+                    "phoneNumber": "+966555531529",
+                    "identityId": "4030413726",
+                    "allPermissions": [
+                        "NA"
+                    ],
+                    "sharesCount": 90,
+                    "partnerType": "شركة سعودية",
+                    "isAuthorizedPerson": null,
+                    "decisionType": null,
+                    "abilityToDelegate": null,
+                    "nationalityId": "SAU",
+                    "birthDate": "2024-03-12",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": false,
+                    "isOtpExpired": null,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": "MALE",
+                    "shareHoldingPercentage": 82.0,
+                    "isGuarantor": null,
+                    "isSeniorManagement": null,
+                    "isKeyPersonInBusiness": null,
+                    "totalYearsOfExperience": null,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                },
+                {
+                    "partyId": 142,
+                    "organizationId": 1901,
+                    "partyName": "حسين تركي يوسف القوفي",
+                    "partyNameEnglish": null,
+                    "partyType": null,
+                    "relationName": "مدير",
+                    "email": "shaif@alqoufi.com",
+                    "phoneNumber": "+966555531529",
+                    "identityId": "1008301234",
+                    "allPermissions": [
+                        "Opening Account",
+                        "Opening letters of credit",
+                        "Deposit",
+                        "Signing loan contract",
+                        "Applying for guarantees",
+                        "Applying for facilities",
+                        "Extracting statements of account",
+                        "Updating accounts",
+                        "Withdrawing",
+                        "issuingChecks"
+                    ],
+                    "sharesCount": 10,
+                    "partnerType": "فرد سعودي بدون وصي",
+                    "isAuthorizedPerson": true,
+                    "decisionType": "منفرد",
+                    "abilityToDelegate": null,
+                    "nationalityId": "SAU",
+                    "birthDate": "1979-11-20",
+                    "isAdditionalParty": false,
+                    "isSimahAuthorized": null,
+                    "isSimahAuthorizationRequested": null,
+                    "isOtpSent": false,
+                    "isOtpExpired": null,
+                    "focalScore": null,
+                    "focalScreeningStatus": null,
+                    "gender": "MALE",
+                    "shareHoldingPercentage": 9.0,
+                    "isGuarantor": null,
+                    "isSeniorManagement": null,
+                    "isKeyPersonInBusiness": null,
+                    "totalYearsOfExperience": null,
+                    "buildingNumber": null,
+                    "additionalNumber": null,
+                    "streetName": null,
+                    "districtName": null,
+                    "city": null,
+                    "cityCode": null,
+                    "zipCode": null,
+                    "isOwnerCompany": false
+                }
+            ],
+            "wathqPartyLastUpdatedAt": "2024-03-24T23:53:17.22",
+            "additionalPartyLastUpdatedAt": null,
+            "isSubsidiary": false
+        },
+        "bankDetails": {
+            "accountHolderName": "CRYSTAL ASIA TRADING CO",
+            "bankName": "ARAB NATIONAL BANK",
+            "iban": "SA4330400108057851650022",
+            "city": "RIYADH",
+            "cityCode": "RIY",
+            "beneficiaryCode": "ARNBSARIXXX",
+            "lastUpdatedDate": "2024-09-19T16:14:51.230"
+        },
+        "contactAddressInformation": {
+            "organizationId": 1901,
+            "buildingNumber": "4224",
+            "unitNumber": "",
+            "streetName": null,
+            "districtName": "حي الصفا",
+            "additionalNumber": "7230",
+            "city": "جدة",
+            "cityCode": "JED",
+            "zipCode": "21381",
+            "addressSource": "WATHQ",
+            "lastUpdatedAt": "2025-04-10T18:04:12.446376",
+            "companyEmail": "shaif@alqoufi.com",
+            "companyPhone": null,
+            "companyMobile": "+966555531529"
+        },
+        "organizationLoanDetails": null
+    }
+}
