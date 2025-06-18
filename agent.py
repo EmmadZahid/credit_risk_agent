@@ -164,7 +164,7 @@ def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
         "data": simplified_data
     }
 
-def send_email(input: Dict[str, Any]) -> Dict[str, str]:
+def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
     """
     Sends an email using MailHog SMTP.
 
@@ -253,7 +253,7 @@ financial_analysis_agent = Agent(
     instruction=COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION,
     tools=[
         Lendo_Credit_Decision_Engine, # Register the main decisioning tool
-        send_email # Register the email sending tool
+        Send_Email # Register the email sending tool
     ]
     )
 
