@@ -179,7 +179,11 @@ def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
                     "market": "Local Market (Including GCC)", 
                     "industry": "Information & Communication, Arts & Recreation",
                     "typeOfCustomer": "Govt. & Semi Govt. Entities, and well-known Corporation",
-                    "customerConcentration": bms.get("customerConcentration",0)
+                    "customerConcentration": bms.get("customerConcentration",0),
+                    "changeInOwnership": "No",
+                    "changeInManagement": "No",
+                    "breachInFinancialCovenant": "No",
+                    "delayedAfs": "No"
                 }
             })
     return {
