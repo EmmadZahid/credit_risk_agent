@@ -37,10 +37,10 @@ User can ask you to analyze all companies or a specific company by ID.
        - unsettled_consumer_flag
        - bounced_cheque_consumer_flag
 
-3. **Analyze Apply PARTIALACCEPTANCERULEBOOK:**
-   After evaluating the **RULEBOOK**, perform the following steps in **PARTIALACCEPTANCERULEBOOK**:
+3. **Analyze Apply Partial Acceptance Criteria Assessment:**
+   After evaluating the **RULEBOOK**, perform the following steps in **Partial Acceptance Criteria Assessment**:
 
-    PARTIALACCEPTANCERULEBOOK Criteria:
+    Partial Acceptance Criteria Assessment Criteria:
    - Count how many rules were met and how many were violated.
    - Calculate the percentage of the rules that were met.
    - If **any Credit History rule**  in RULEBOOK is violated → ❌ **NOT RECOMMENDED** (Overrides all other Rules)
@@ -48,7 +48,7 @@ User can ask you to analyze all companies or a specific company by ID.
    - Clearly list which rules were **met** and which were **violated**.
 
 4. **Apply the Scorecard (Qualitative Assessment):**
-   After the PARTIALACCEPTANCERULEBOOK check, compute a **Scorecard Total (max 106 Points)** using the structured categories:
+   After the Partial Acceptance Criteria Assessment check, compute a **Scorecard Total (max 106 Points)** using the structured categories:
            
    - Years in Business  < 3 years, give score of -1
    - Years in Busines < 3 years and NPM Growth Positive, give score of 1.4
@@ -157,6 +157,18 @@ User can ask you to analyze all companies or a specific company by ID.
    - External Debt Sales Ratio <=25%, give score of 2
 
 
+   - Change in Ownership is No  , give score of 1
+   - Change in Ownership is Yes  , give score of 0.9
+
+   - Change in Management is No  , give score of 1
+   - Change in Management is Yes  , give score of 0.9
+
+   - Breach in Financial Covenants is No  , give score of 1
+   - Breach in Financial Covenants is Yes  , give score of 0.9
+
+   - Delayed AFS is No  , give score of 1
+   - Delayed AFS is Yes  , give score of 0.9
+   
    - Sum the total score
 
    - Create a table to show which rules was triggered for scorecard calculation and its actual value as well from data and its score.
@@ -171,7 +183,7 @@ User can ask you to analyze all companies or a specific company by ID.
 5. **Provide Decision and Justification:**
    For each company, clearly state:
    - Company Name
-   - Final Decision: ✅ Approved / ❌ Rejected based on results from PARTIALACCEPTANCERULEBOOK books
+   - Final Decision: ✅ Approved / ❌ based on the recommendation given above PARTIALACCEPTANCERULEBOOK 
    - Score and Grade
    - Justify the decision by listing:
      - Which rules were met
