@@ -225,7 +225,7 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
 
         # Step 3: Create email message
         msg = EmailMessage()
-        msg["From"] = "noreply@lendo.local.adk"
+        msg["From"] = "imran.shafqat@lendo.sa"
         msg["To"] = to_email
         msg["Subject"] = subject
         msg.set_content(body)
@@ -240,8 +240,19 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
                 filename=file_name
             )
 
-        # Step 5: Send email
-        with smtplib.SMTP("localhost", 1025) as smtp:
+        # Step 5: Send email with local mailhog docker
+        #with smtplib.SMTP("localhost", 1025) as smtp:
+        #    smtp.send_message(msg)
+
+        # Step 5: Send email with sendgrid
+        SMTP_SERVER = "smtp.sendgrid.net"
+        SMTP_PORT = 587
+        SMTP_USERNAME = "apikey"  # literally the word 'apikey'
+        SMTP_PASSWORD = "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"  # replace with your actual SendGrid API key
+
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
+            smtp.starttls()  # upgrade the connection to secure
+            smtp.login(SMTP_USERNAME, SMTP_PASSWORD)
             smtp.send_message(msg)
 
         return {"status": "Success", "message": f"Email sent to {to_email}"}
@@ -250,7 +261,7 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
         return {"status": "Error", "message": f"Failed to run generate-credit-file.py: {e}"}
     except Exception as e:
         return {"status": "Error", "message": str(e)}
-    
+
 def build_credit_summary_email_body(summary_data: Dict[str, Any]) -> str:
     """
     Builds a credit decision email body using dynamic values from summary_data.
