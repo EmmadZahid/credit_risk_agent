@@ -16,4 +16,4 @@ EXPOSE 8080
 WORKDIR /app
 
 # Run the agent using adk.yaml
-CMD ["adk", "web", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["adk", "api_server", "--allow_origins", "*", "--port", "8080"]
