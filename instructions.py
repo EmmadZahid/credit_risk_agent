@@ -198,7 +198,7 @@ User can ask you to analyze all companies or a specific company by ID.
    If the user provides an email address, call the `send_email_tool` with a `summary_data` object including:
      - companyName
      - crNumber
-     - simahScore
+     - simahScore: "send the total score calculated in this parameter from `Sum the total` score step"
      - dpd
      - revenue
      - netProfitMargin
