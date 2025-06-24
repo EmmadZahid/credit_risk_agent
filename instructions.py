@@ -46,6 +46,7 @@ User can ask you to analyze all companies or a specific company by ID.
    - If **any Credit History rule**  in RULEBOOK is violated → ❌ **NOT RECOMMENDED** (Overrides all other Rules)
    - If **≥ 60% of the rules in RULEBOOK** are met → ✅ **RECOMMENDED, Credit officier needs evaluate some of the ratios**
    - Clearly list which rules were **met** and which were **violated**.
+   - This would be the final recommendation used everywhere 
 
 4. **Apply the Scorecard (Qualitative Assessment):**
    After the Partial Acceptance Criteria Assessment check, compute a **Scorecard Total (max 106 Points)** using the structured categories:
