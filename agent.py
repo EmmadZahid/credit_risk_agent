@@ -220,10 +220,10 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
             return {"status": "Error", "message": "Missing email body or summary data."}
 
         # Step 1: Generate credit file directly
-        create_lendo_credit_file(summary_data, subject)
+        file_name = f"Lendo Credit File - {summary_data.get("crNumber", "N/A")}.docx"
+        create_lendo_credit_file(summary_data, file_name)
 
         # Step 2: Locate the generated file
-        file_name = "Lendo Credit File - ADK AGENT.docx"
         if not os.path.exists(file_name):
             return {"status": "Error", "message": f"File '{file_name}' not found after generation."}
 
