@@ -244,22 +244,20 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
                 filename=file_name
             )
 
-        #Step 5: Send email with local mailhog docker
-        with smtplib.SMTP("localhost", 1025) as smtp:
-           smtp.send_message(msg)
-
-        # TODO: FIX THIS, TEMPORARILY DISABLED EMAILS
+        # Step 5: Send email with local mailhog docker
+        # with smtplib.SMTP("localhost", 1025) as smtp:
+        #    smtp.send_message(msg)
 
         # Step 5: Send email with sendgrid
-        # SMTP_SERVER = "smtp.sendgrid.net"
-        # SMTP_PORT = 587
-        # SMTP_USERNAME = "apikey"  # literally the word 'apikey'
-        # SMTP_PASSWORD = "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"  # replace with your actual SendGrid API key
-        # Send email
-        # with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
-        #     smtp.starttls()  # upgrade the connection to secure
-        #     smtp.login(SMTP_USERNAME, SMTP_PASSWORD)
-        #     smtp.send_message(msg)
+        SMTP_SERVER = "smtp.sendgrid.net"
+        SMTP_PORT = 587
+        SMTP_USERNAME = "apikey"  # literally the word 'apikey'
+        SMTP_PASSWORD = "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"  # replace with your actual SendGrid API key
+        # Send email now
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
+            smtp.starttls()  # upgrade the connection to secure
+            smtp.login(SMTP_USERNAME, SMTP_PASSWORD)
+            smtp.send_message(msg)
 
         return {"status": "Success", "message": f"Email sent to {to_email}"}
 
