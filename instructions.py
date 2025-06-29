@@ -206,6 +206,7 @@ User can ask you to analyze all companies or a specific company by ID.
      - bouncedCheques
      - riskRating
      - finalRecommendation: "✅ Recommend for financing" or "❌ Not Recommend for financing"
+     - finalDecision: "send the `Final Decision` string you created here"
    The `send_email_tool` will automatically generate the email body.
    Inform the user whether the email was successfully sent or if there was an error.
 """

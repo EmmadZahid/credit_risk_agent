@@ -6,8 +6,10 @@ from docx.oxml.ns import qn
 from docx.shared import RGBColor
 from docx.oxml import parse_xml
 from docx.oxml.ns import nsdecls
+from typing import Dict, Any
+import logging
 
-def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx"):
+def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lendo Credit File - ADK AGENT.docx"):
     """
     Creates a DOCX file mimicking the structure, content, and basic styles
     of the "Lendo Credit File - ADK AGENT.docx" file.
@@ -15,6 +17,18 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     Args:
         output_filename (str): The name of the DOCX file to create.
     """
+    logging.basicConfig(
+        level=logging.DEBUG,
+        filename='adk_agent.log',  # This file will be created in the current working directory
+        filemode='w',              # 'w' to overwrite each run; use 'a' to append
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
+    logger = logging.getLogger(__name__)
+
+    logger.info(f"Summary data: {summary_data}")
+    logger.info(f"output_filename: {output_filename}")
+
+    # Start creating document file
     document = Document()
 
     # Set default font to Calibri (common default, might need to be adjusted if original is different)
@@ -30,8 +44,8 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     section.left_margin = Inches(0.5)
     section.right_margin = Inches(0.5)
 
-    # --- Underwriter Decision ---
-    document.add_heading('Underwriter Decision ', level=1)
+    # --- Credit Decision ---
+    document.add_heading('Credit Decision', level=1)
 
     # Risk Recommendation Table
     document.add_paragraph() # Add a little spacing
@@ -54,7 +68,8 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
 
     # Data Row
     data_cells = table.rows[1].cells
-    data_cells[0].text = 'Approved as Requested'
+    data_cells[0].text = summary_data.get("finalDecision", "Not Recommend for financing (default)")
+    #data_cells[0].text = 'Approved as Requested'
     data_cells[1].text = 'AI Credit Risk Officer'
     data_cells[2].text = 'Google ADK agent developed by Emmad, Imran, Saad, Shafeeque, Sumayyah, Hamza'
     for cell in data_cells:
@@ -64,7 +79,7 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
 
     # --- Product Table ---
     document.add_paragraph() # Add a little spacing
-    table = document.add_table(rows=3, cols=11)
+    table = document.add_table(rows=3, cols=9)
     table.style = 'Table Grid'
 
     # Header Row 1
@@ -72,15 +87,15 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     # Merge cells[0] and cells[1]
     merged_cell = hdr_cells[0].merge(hdr_cells[1])
     merged_cell.text = 'Product'
-    hdr_cells[2].text = 'Limit '
-    hdr_cells[3].text = 'Available % For First Utilization '
-    hdr_cells[4].text = 'Neo Risk Rating'
-    hdr_cells[5].text = 'Internal Risk Rating'
-    hdr_cells[6].text = 'Wiser Funding Risk Rating'
-    hdr_cells[7].text = 'Pricing'
-    hdr_cells[8].text = 'Mgmt Fee'
-    hdr_cells[9].text = 'Tenor'
-    hdr_cells[10].text = 'Advance Rate'
+    hdr_cells[2].text = 'Limit'
+    hdr_cells[3].text = 'Available % For First Utilization'
+    #hdr_cells[4].text = 'Neo Risk Rating'
+    hdr_cells[4].text = 'Internal Risk Rating'
+    #hdr_cells[6].text = 'Wiser Funding Risk Rating'
+    hdr_cells[5].text = 'Pricing'
+    hdr_cells[6].text = 'Mgmt Fee'
+    hdr_cells[7].text = 'Tenor'
+    hdr_cells[8].text = 'Advance Rate'
     for cell in hdr_cells:
         #cell.paragraphs[0].runs[0].bold = True
         cell.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
@@ -95,13 +110,13 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     data_cells[1].text = 'Invoice Discounting '
     data_cells[2].text = '3.5mn'
     data_cells[3].text = '100%'
-    data_cells[4].text = 'C'
-    data_cells[5].text = 'D (41.33)'
-    data_cells[6].text = 'B'
-    data_cells[7].text = '18%'
-    data_cells[8].text = '3%'
-    data_cells[9].text = 'Based on Contracts ad repayment history'
-    data_cells[10].text = '80%'
+    #data_cells[4].text = 'C'
+    data_cells[4].text = f"{summary_data.get("riskRating", "N/A")} ({summary_data.get("simahScore", "N/A")})"
+    #data_cells[6].text = 'B'
+    data_cells[5].text = '18%'
+    data_cells[6].text = '3%'
+    data_cells[7].text = 'Based on Contracts ad repayment history'
+    data_cells[8].text = '80%'
     for cell in data_cells:
         cell.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
         cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
@@ -112,12 +127,12 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     data_cells[1].text = '' # Merged cell originally, but `python-docx` handles width well
     data_cells[2].text = '3.5mn'
     data_cells[3].text = ''
+    #data_cells[4].text = ''
     data_cells[4].text = ''
+    #data_cells[6].text = ''
     data_cells[5].text = ''
     data_cells[6].text = ''
     data_cells[7].text = ''
-    data_cells[8].text = ''
-    data_cells[9].text = ''
     for cell in data_cells:
         cell.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
         cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
@@ -798,4 +813,18 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
 
 # Call the function to create the document
 if __name__ == "__main__":
-    create_lendo_credit_file()
+    # Sample data for testing
+    summary_data = {
+        "companyName": "شركة الأقتصاد الأفتراضي للتجارة",
+        "crNumber": "1234567890",
+        "simahScore": 789,
+        "dpd": "30 days",
+        "revenue": "2,000,000 SAR",
+        "netProfitMargin": "15%",
+        "dscr": "2.1",
+        "bouncedCheques": "None",
+        "riskRating": "Low",
+        "finalRecommendation": "Approve",
+        "finalDecision": "Approved"
+    }
+    create_lendo_credit_file(summary_data)
