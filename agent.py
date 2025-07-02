@@ -253,6 +253,7 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
         SMTP_PORT = 587
         SMTP_USERNAME = "apikey"  # literally the word 'apikey'
         SMTP_PASSWORD = "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"  # replace with your actual SendGrid API key
+        
         # Send email now
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
             smtp.starttls()  # upgrade the connection to secure
