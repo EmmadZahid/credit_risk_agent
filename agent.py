@@ -171,7 +171,7 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         3 if 5 <= revenue_growth <= 30 else
         1 if revenue_growth < 5 else
         -2 if revenue_growth > 10 else
-        -1
+        None
     )
 
     gpm_growth = ratios.get("gpmGrowth",0)
@@ -182,7 +182,7 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         0.75 if gpm_growth > 3 else
         2.25 if 3 <= gpm_growth <= 20 else
         3 if gpm_growth > 20 else
-        0
+        None
     )
 
     npm = ratios.get("netProfitMargin",0)
@@ -192,7 +192,7 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         -0.75 if  npm < 5 else
         1.5 if 5 < npm < 15 else
         3 if npm > 15 else
-        0
+        None
     )
 
     npm_growth = ratios.get("npmGrowth",0)
@@ -203,7 +203,7 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         0.75 if  npm_growth < 3 else
         2.25 if 3 < npm_growth < 20 else
         3 if npm_growth > 20 else
-        0
+        None
     )
 
     cashFlowFromOperatingActivities = ratios.get("cashFlowFromOperatingActivities",0)
@@ -211,21 +211,291 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
     cashFlowFromOperatingActivities_score = (
         -2   if cashFlowFromOperatingActivities < 0 else
          2   if cashFlowFromOperatingActivities > 0 else
-         0 
+         None 
     )
 
-    # Minimal table for demonstration
+    current_ratio = ratios.get("currentRatio",0)
+
+    current_ratio_score = (
+        -2   if current_ratio < 1 else
+        1.5 if  1 < current_ratio < 4 else
+        2 if  current_ratio < 4 else
+        None
+    )
+
+    leverage_ratio = ratios.get("leverageRatio",0)
+
+    leverage_ratio_score = (
+        -2   if current_ratio < 1 else
+        1 if  1 < current_ratio < 2 else
+        2 if  current_ratio > 2 else
+        None
+    )
+
+    interest_coverage_ratio = ratios.get("interestCoverage",0)
+
+    interest_coverage_ratio_score = (
+        -2 if interest_coverage_ratio < 1 else
+         2  if interest_coverage_ratio >  4 else
+         1.5  if 1 < interest_coverage_ratio < 4 else
+         None
+    )
+
+    dso_ratio = ratios.get("daysSalesOutstanding",0)
+
+    dso_ratio_score = (
+        -2 if dso_ratio > 270 else
+        -1 if 180 < dso_ratio < 270 else
+         0 if 120 < dso_ratio < 180 else
+         2 if dso_ratio < 120 else
+         None
+    )
+
+    receivables_ratio = ratios.get("receivablePercentageSales",0)
+
+    receivables_ratio_score = (
+        -2 if receivables_ratio > 100 else
+        -1 if 70 < receivables_ratio < 100  else
+         0 if 50 < receivables_ratio < 70 else
+         2 if receivables_ratio < 50 else
+         None
+    )
+
+    external_sales_debt_ratio = ratios.get("externalDebtSalesRatio",0)
+
+    external_sales_debt_ratio_score = (
+        -1  if external_sales_debt_ratio > 50 else
+         0  if 25 < external_sales_debt_ratio < 50 else
+         2  if external_sales_debt_ratio < 25 else
+         None
+    )
+
+    dscr_ratio = ratios.get("dscr",0)
+
+    dscr_ratio_score = (
+        -2 if dscr_ratio < 1 else
+         2  if dscr_ratio >  2 else
+         1  if 1 < dscr_ratio < 2 else
+         None
+    )
+
+    change_in_ownership = "No"
+
+    change_in_ownership_score = (
+        1 if change_in_ownership == "No" else
+        0.9 if change_in_ownership == "Yes" else
+        None
+    )
+
+    change_in_management = "No"
+
+    change_in_management_score = (
+        1 if   change_in_management == "No" else
+        0.9 if change_in_management == "Yes" else
+        None
+    )
+
+    breach_financial_covenants = "No"
+
+    breach_financial_covenants_score = (
+        1 if   breach_financial_covenants == "No" else
+        0.9 if breach_financial_covenants == "Yes" else
+        None
+    )
+
+    delayed_afs = "No"
+
+    delayed_afs_score = (
+        1 if   delayed_afs == "No" else
+        0.9 if delayed_afs == "Yes" else
+        None
+    )
+
+    legal_structure = "Company 100% owned by Locals (ultimately)"
+
+    legal_structure_score = (
+    -1.5 if legal_structure == "Sole Proprietorship / One Person Company (local / foreign investment)" else
+    -1.5 if legal_structure == "Non-Saudi Company" else
+     0   if legal_structure == "Foreign Investment (Saudi Company 100% owned by foreign)" else
+     3   if legal_structure == "Mixed ownership (Local & Foreign)" else
+     4.5 if legal_structure == "Company 100% owned by Locals (ultimately)" else
+     6   if legal_structure == "Public Listed" else
+     None
+    )
+
+    succession_risk = "Complementary management by partners and/or experienced team"
+
+    succession_risk_score = (
+    -1.25 if succession_risk == "Sole Proprietorship with no second line involved in business" else
+     1.25 if succession_risk == "Sole Proprietorship / experienced second line involved in business" else
+     2.5  if succession_risk == "Company managed only by one of the partners" else
+     5    if succession_risk == "Complementary management by partners and/or experienced team" else
+     None
+    )
+
+    owners_experience = "Experience in different field of business (> 5 years)"
+    owners_experience_score = (
+    -1.25 if owners_experience == "No Experience" else
+     1.25 if owners_experience == "Experience in different field of business (< 5 years)" else
+     2.5  if owners_experience == "Experience in different field of business (> 5 years)" else
+     3.75 if owners_experience == "Experience in same / related field (< 5 years)" else
+     5    if owners_experience == "Experience in same / related field (> 5 years)" else
+     None
+    )
+
+    management_experience = "Managed by an experienced team (with Co. for > 3 years)"
+
+    management_experience_score = (
+     3    if management_experience == "Managed by Owner(s)" else
+     1.5  if management_experience == "Managed by an experienced team (with Co. for < 3 years)" else
+     3    if management_experience == "Managed by an experienced team (with Co. for > 3 years)" else
+     None
+    )
+
+    credit_history = "At least 1 loan fully settled w/ regular repayment and clean records"
+
+    credit_history_score = (
+    -3    if credit_history == "Irregular (Defaults, Past dues, Write off, Court cases)" else
+     0    if credit_history == "No credit history with clean records (or report is not obtained)" else
+     4.5  if credit_history == "O/s Financing w/ regular repayment and clean records (no full settlement)" else
+     6    if credit_history == "At least 1 loan fully settled w/ regular repayment and clean records" else
+     None
+    )
+
+    years_in_business_value = 9
+
+    years_in_business_score = (
+    -1 if years_in_business_value < 3 else
+    1.4 if years_in_business_value == 3 else
+    3 if 3< years_in_business_value <10 else
+    4 if years_in_business_value >=10  else
+    None
+    )
+
+    netaqat_value = "Green"
+
+    netaqat_score = (
+        -4 if netaqat_value == "Red" else
+        -2 if netaqat_value == "Yellow" else
+        0 if netaqat_value == "Green" else
+        2 if netaqat_value == "Platinum" else
+        None
+    )
+
+    market_value = "Local market (including GCC)"
+    
+    market_score = (
+        -1.5 if market_value == ">25% of sales for high-risk countries" else
+        1.5 if market_value == ">25% of sales for other countries (excluding GCC)" else
+        3 if market_value == "Local market (including GCC)" else
+        None
+    )
+
+    industry_value = ""
+
+    industry_score = (
+        2 if industry_value == "Water supply, waste mgmt, defense, other services, households" else
+        3.5 if industry_value == "Agriculture, Forestry, Manufacturing, Transport, Real Estate" else
+        5 if industry_value == "Health, Retail, Motor Repair" else
+        6 if industry_value == "Mining, Utilities, Food, Finance, Education, Prof. Services" else
+        7 if industry_value == "Information & Communication, Arts & Recreation" else
+        None
+    )
+
+    type_of_customers_value = "Govt. & Semi Govt. Entities, and well-known Corporation"
+
+    type_of_customers_score = (
+        2 if type_of_customers_value == "Consumers or unknown entities" else
+        3 if type_of_customers_value == "Well-known Corporations (Public listed and/or closed)" else
+        3.6 if type_of_customers_value == "Govt. & Semi Govt. Entities, and well-known Corporation" else
+        4 if type_of_customers_value == "Govt. & Semi Govt. Entities" else
+        None
+    )
+
+    customers_concentration_value ="6 to <20 Customers"
+
+    customers_concentration_score = (
+        1.25 if customers_concentration_value == "<=5 Customers" else
+        3.75 if customers_concentration_value == "6 to <20 Customers" else
+        5 if customers_concentration_value == "20 Customers or more" else
+        None
+    )
+
+    inventory_liquidity_value = "Ready for sale w/ proper management system"
+
+    inventory_liquidity_score = (
+        -3 if inventory_liquidity_value == "Inventory liquidity/management is concerning" else
+        3 if inventory_liquidity_value == "N.A. (Low inventory or service industry)" else
+        1.5 if inventory_liquidity_value == "Liquidity/management uncertain" else
+        3 if inventory_liquidity_value == "Ready for sale w/ proper management system" else
+        None
+    )
+
+    access_to_fund_value = "Proven support from owners/related parties"
+
+    access_to_fund_score = (
+        0 if access_to_fund_value == "No access" else
+        1 if access_to_fund_value == "Proven access to FI" else
+        2 if access_to_fund_value == "Proven support from owners/related parties" else
+        None
+    )
+
+    relationship_with_lendo  = "No Relationship"
+
+    relationship_with_lendo_score = (
+        1 if relationship_with_lendo == "No Relationship" else
+        0.75 if relationship_with_lendo == "Frequent PDs, unsatisfactory relationship" else
+        1.05 if relationship_with_lendo == "Satisfactory relationship with some PDs" else
+        1.15 if relationship_with_lendo == "Satisfactory relationship with timely repayments" else
+        None
+    )
+
+    control_over_cashflow = "Full Control (AACP, noncancellable standing order, etc.)"
+    control_over_cashflow_score = (
+        1.25 if control_over_cashflow == "Full Control (AACP, noncancellable standing order, etc.)" else
+        1.05 if control_over_cashflow == "Partial control (cancelled by third party)" else
+        1.01 if control_over_cashflow == "Partial control (cancelled by client)" else
+        1.15 if control_over_cashflow == "Satisfactory relationship with timely repayments" else
+        1.15 if control_over_cashflow == "No Control" else
+        None
+    )
+
     scorecard_table = [
         {"rule": "Years in Business", "value": years_value, "score": years_score},
         {"rule": "Nitaqat Color", "value": bms.get("nitaqatColor"), "score": nitaqat_score},
         {"rule": "Revenue Growth", "value": revenue_growth, "score": revenue_growth_score},
         {"rule": "GPM Growth", "value": gpm_growth, "score": gpm_score},
         {"rule": "NPM", "value": npm, "score": npm_score},
-        {"rule": "NPM Growth", "value": gpm_growth, "score": npm_growth_score},
-        {"rule": "CashFlow From Operating Activities", "value": cashFlowFromOperatingActivities, "score": cashFlowFromOperatingActivities_score}
+        {"rule": "NPM Growth", "value": npm_growth, "score": npm_growth_score},
+        {"rule": "CashFlow From Operating Activities", "value": cashFlowFromOperatingActivities, "score": cashFlowFromOperatingActivities_score},
+        {"rule": "Current Ratio", "value": current_ratio, "score": current_ratio_score},
+        {"rule": "Leverage Ratio", "value": leverage_ratio, "score": leverage_ratio_score},
+        {"rule": "Interest Coverage", "value": interest_coverage_ratio, "score": interest_coverage_ratio_score},
+        {"rule": "DSR Ratio", "value": dscr_ratio, "score": dscr_ratio_score},
+        {"rule": "Receivables Ratio", "value": receivables_ratio, "score": receivables_ratio_score},
+        {"rule": "External Sales Ratio", "value": external_sales_debt_ratio, "score": external_sales_debt_ratio_score},
+        {"rule": "Change in Ownership", "value": change_in_ownership_score, "score": change_in_ownership_score},
+        {"rule": "Change in Management", "value": change_in_management, "score": change_in_management_score},
+        {"rule": "Breach in Financial Covenants", "value": breach_financial_covenants, "score": breach_financial_covenants_score},
+        {"rule": "Delayed AFS", "value": delayed_afs, "score": delayed_afs_score},
+        {"rule": "Succession Risk ", "value": succession_risk, "score": succession_risk_score},
+        {"rule": "Owner Experience", "value": owners_experience, "score": owners_experience_score},
+        {"rule": "Management Experience", "value": management_experience, "score": management_experience_score},
+        {"rule": "Credit History", "value": credit_history, "score": credit_history_score},
+        {"rule": "Years in Business Value", "value": years_in_business_value, "score": years_in_business_score},
+        {"rule": "Market Value", "value": market_value, "score": market_score},
+        {"rule": "Industry", "value": industry_value, "score": industry_score},
+        {"rule": "Type of Customer", "value": type_of_customers_value, "score": type_of_customers_score},
+        {"rule": "Customer Concenteration", "value": customers_concentration_value, "score": customers_concentration_score},
+        {"rule": "Inventory Liquidity Management", "value": inventory_liquidity_value, "score": inventory_liquidity_score},
+        {"rule": "Access to Additional Fund", "value": access_to_fund_value, "score": access_to_fund_score},
+        {"rule": "Relationship with Lendo", "value": relationship_with_lendo, "score": relationship_with_lendo_score},
+        {"rule": "Access to Additional Fund", "value": access_to_fund_value, "score": access_to_fund_score},
+        {"rule": "Control over Cash Flow", "value": control_over_cashflow, "score": control_over_cashflow_score},
+
     ]
 
-    total_score = round(sum(x["score"] for x in scorecard_table), 2)
+    total_score = round(sum(x["score"] if x["score"] is not None else 0 for x in scorecard_table), 2)
 
     if total_score >= 90:
         grade = "A+"
