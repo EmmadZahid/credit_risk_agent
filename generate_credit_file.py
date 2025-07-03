@@ -111,7 +111,8 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
     data_cells[2].text = '3.5mn'
     data_cells[3].text = '100%'
     #data_cells[4].text = 'C'
-    data_cells[4].text = f"{summary_data.get("riskRating", "N/A")} ({summary_data.get("simahScore", "N/A")})"
+    data_cells[4].text = f"{summary_data.get('riskRating', 'N/A')} ({summary_data.get('simahScore', 'N/A')})"
+
     #data_cells[6].text = 'B'
     data_cells[5].text = '18%'
     data_cells[6].text = '3%'
