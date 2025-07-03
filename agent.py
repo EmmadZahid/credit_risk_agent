@@ -220,7 +220,8 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
             return {"status": "Error", "message": "Missing email body or summary data."}
 
         # Step 1: Generate credit file directly
-        file_name = f"Lendo Credit File - {summary_data.get("crNumber", "N/A")}.docx"
+        file_name = f"Lendo Credit File - {summary_data.get('crNumber', 'N/A')}.docx"
+
         create_lendo_credit_file(summary_data, file_name)
 
         # Step 2: Locate the generated file
