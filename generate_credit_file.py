@@ -6,8 +6,9 @@ from docx.oxml.ns import qn
 from docx.shared import RGBColor
 from docx.oxml import parse_xml
 from docx.oxml.ns import nsdecls
+from typing import Dict, Any, Optional
 
-def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx"):
+def create_lendo_credit_file(output_data: Dict[str, Any], output_filename="Lendo Credit File - ADK AGENT.docx"):
     """
     Creates a DOCX file mimicking the structure, content, and basic styles
     of the "Lendo Credit File - ADK AGENT.docx" file.
@@ -16,6 +17,8 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
         output_filename (str): The name of the DOCX file to create.
     """
     document = Document()
+
+    print("File Data", output_data)
 
     # Set default font to Calibri (common default, might need to be adjusted if original is different)
     style = document.styles['Normal']
@@ -31,7 +34,7 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     section.right_margin = Inches(0.5)
 
     # --- Underwriter Decision ---
-    document.add_heading('Underwriter Decision ', level=1)
+    document.add_heading('Credit Decision ', level=1)
 
     # Risk Recommendation Table
     document.add_paragraph() # Add a little spacing
@@ -42,7 +45,7 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     hdr_cells = table.rows[0].cells
     hdr_cells[0].text = 'Risk Recommendation'
     hdr_cells[1].text = 'Approving Authority'
-    hdr_cells[2].text = 'Underwriter Name'
+    hdr_cells[2].text = 'Credit Name'
 
     # Set blue background for header cells
     for cell in hdr_cells:
@@ -54,8 +57,8 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
 
     # Data Row
     data_cells = table.rows[1].cells
-    data_cells[0].text = 'Approved as Requested'
-    data_cells[1].text = 'AI Credit Risk Officer'
+    data_cells[0].text = output_data.get("finalDecision")
+    data_cells[1].text = 'Credit Risk Officer'
     data_cells[2].text = 'Google ADK agent developed by Emmad, Imran, Saad, Shafeeque, Sumayyah, Hamza'
     for cell in data_cells:
         cell.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
@@ -89,6 +92,9 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
         shading_elm_1 = parse_xml(r'<w:shd {} w:fill="DEEBF6"/>'.format(nsdecls('w')))
         cell._tc.get_or_add_tcPr().append(shading_elm_1)
 
+    score = str(output_data.get("score", ""))
+    grade = str(output_data.get("grade", ""))
+    
     # Data Row 1 (A, Invoice Discounting)
     data_cells = table.rows[1].cells
     data_cells[0].text = 'A'
@@ -96,7 +102,7 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     data_cells[2].text = '3.5mn'
     data_cells[3].text = '100%'
     data_cells[4].text = 'C'
-    data_cells[5].text = 'D (41.33)'
+    data_cells[5].text = f"{score} ({grade})"
     data_cells[6].text = 'B'
     data_cells[7].text = '18%'
     data_cells[8].text = '3%'
@@ -279,7 +285,13 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
 
     # --- 3 positives Table ---
     # Create a table with 5 rows (1 for title, 4 for data) and 2 columns
-    table = document.add_table(rows=5, cols=2)
+
+
+    positives_list = output_data.get("positives", [])
+    count = len(positives_list)
+    print("Count of positives:", count)
+
+    table = document.add_table(rows=count+1, cols=2)
     table.style = 'Table Grid'
 
     # Merge all cells in the first row for title
@@ -293,16 +305,13 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     shading = parse_xml(r'<w:shd {} w:fill="DEEBF6"/>'.format(nsdecls('w')))
     title_cell._tc.get_or_add_tcPr().append(shading)
 
-    # Data rows
-    positives = [
-        ("Large-Scale Operations", "The company operates on a large scale with multiple branches and facilities across Saudi Arabia."),
-        ("Experienced Management.", "The company has over 25 years of experience in the metal and iron industry."),
-        ("Strong Sales Growth", "Annual sales increased to SAR 197.56 million YTD, a 24% rise year-on-year."),
-        ("Clean Credit History", "The company has maintained a clean credit history, showing no significant past defaults")
-    ]
+   
 
     # Fill in rows 1–4 with the data
-    for idx, (title, desc) in enumerate(positives):
+    for idx, item in enumerate(positives_list):
+        title = item.get("title", "")
+        desc = item.get("desc", "")
+        
         row = table.rows[idx + 1]
         cell1 = row.cells[0]
         cell2 = row.cells[1]
@@ -319,7 +328,11 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
 
     # --- 3 Negatives Table ---
     # Create a table with 5 rows (1 for title, 4 for data) and 2 columns
-    table = document.add_table(rows=5, cols=2)
+    negative_list = output_data.get("negatives", [])
+    count = len(negative_list)
+    print("Count of negatives:", count)
+
+    table = document.add_table(rows=count+1, cols=2)
     table.style = 'Table Grid'
 
     # Merge all cells in the first row for title
@@ -334,15 +347,8 @@ def create_lendo_credit_file(output_filename="Lendo Credit File - ADK AGENT.docx
     title_cell._tc.get_or_add_tcPr().append(shading)
 
     # Data rows
-    positives = [
-        ("High Receivables Concentration", "82% of receivables, totaling SAR 32 million, are from a single client (Al Arabat and Ashghal Factory Co)."),
-        ("Leverage Increase", "The leverage ratio jumped from 1.99x in 2023 to 2.93x in 2024."),
-        ("Weak Debt Service Coverage", "DSCR is low at 0.41x"),
-        ("Past Losses", "The company incurred losses in 2023 due to rising iron prices and the launch of a new rebar plant.")
-    ]
-
     # Fill in rows 1–4 with the data
-    for idx, (title, desc) in enumerate(positives):
+    for idx, (title, desc) in enumerate( output_data.get("negatives")):
         row = table.rows[idx + 1]
         cell1 = row.cells[0]
         cell2 = row.cells[1]
