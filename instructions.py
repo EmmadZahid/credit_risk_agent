@@ -46,6 +46,7 @@ User will give you the company id for which you will analyze the financial data.
    - If **any Credit History rule**  in RULEBOOK is violated → ❌ **NOT RECOMMENDED** (Overrides all other Rules)
    - If **≥ 60% of the rules in RULEBOOK** are met → ✅ **RECOMMENDED, Credit officier needs evaluate some of the ratios**
    - Clearly list which rules were **met** and which were **violated**.
+   - This would be the final recommendation used everywhere 
 
 4. **Apply the Scorecard (Qualitative Assessment):**
    After the Partial Acceptance Criteria Assessment check, compute a **Scorecard Total (max 106 Points)** using the structured categories:
@@ -202,5 +203,7 @@ User will give you the company id for which you will analyze the financial data.
      - bouncedCheques
      - riskRating
      - finalRecommendation: "✅ Recommend for financing" or "❌ Not Recommend for financing"
+     - finalDecision: "send the `Final Decision` string you created here but don't add emoji at start of string, remove emoji and send english sentense only"
+   The `send_email_tool` will automatically generate the email body.
    Inform the user whether the email was successfully sent or if there was an error.
 """
