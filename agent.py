@@ -6,6 +6,7 @@ from google.adk.agents import Agent
 from email.message import EmailMessage
 from typing import Dict, Any, Optional
 from .generate_credit_file import create_lendo_credit_file
+from datetime import datetime
 from .instructions import (
    COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION
 )
@@ -128,7 +129,7 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
 
     ratios = fs_data.get("ratios", {}).get("financialSpreading", {})
     profit_loss = fs_data.get("profitAndLoss", {})
-    bms = company_data.get("bms", {})
+   # bms = company_data.get("bms", {})
 
     # Years in business
     def years_in_business(date_str):
@@ -138,7 +139,9 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         except:
             return None
 
-    years = years_in_business(bms.get("yearsInBusiness"))
+    inc_date_str = "2016-03-18"
+    years = years_in_business(inc_date_str)
+    print("yearsInBusiness =", years)
     if years is None:
         years_score = 0
         years_value = "Unknown"
@@ -163,7 +166,16 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         "Low Green": 0,
         "Platinum": 2
     }
-    nitaqat_score = nitaqat_map.get(bms.get("nitaqatColor", "Unknown"), 0)
+   # nitaqat_score = nitaqat_map.get(bms.get("nitaqatColor", "Unknown"), 0)
+
+    nitaqat_value = "Green"
+    nitaqat_score = (
+        -4 if nitaqat_value == "Red" else
+        -2 if nitaqat_value == "Yellow" else
+        0 if nitaqat_value == "Green" else
+        2 if nitaqat_value == "Platinum" else
+        None
+    )
 
     revenue_growth = ratios.get("revenueGrowth", 0)
     revenue_growth_score = (
@@ -460,9 +472,97 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         None
     )
 
+
+
+    results = {
+    f"{prefix}_{suffix}": next(
+        (
+            r.get("parameterValue") if suffix == "value" else r.get("flag")
+            for r in company_data.get(section, {}).get("rules", [])
+            if r.get("parameterName") == param_name
+        ),
+        None,
+    )
+    for section, param_name, prefix, suffix in [
+        ("commercial", "Bounced Cheques", "bcc", "value"),
+        ("commercial", "Bounced Cheques", "bcc", "flag"),
+        ("consumer", "Bounced Cheques", "bccs", "value"),
+        ("consumer", "Bounced Cheques", "bccs", "flag"),
+        ("commercial", "Outstanding Court Cases", "ccc", "value"),
+        ("commercial", "Outstanding Court Cases", "ccc", "flag"),
+        ("consumer", "Outstanding Court Cases", "cccs", "value"),
+        ("consumer", "Outstanding Court Cases", "cccs", "flag"),
+    ]
+}
+
+ 
+    bcc_flag = results["bcc_flag"]
+    bccs_flag = results["bccs_flag"]
+    ccc_flag = results["ccc_flag"]
+    cccs_flag = results["cccs_flag"]
+
+    returned_cheques_score = None
+    
+    returned_cheques_score = (
+    -3 if (bcc_flag in ("GREEN", None) and
+          bccs_flag in ("GREEN", None) and
+          ccc_flag in ("RED", None) and
+          cccs_flag in ("RED", None)) else
+    3 if (bcc_flag == "GREEN" or bccs_flag == "GREEN") and
+         (ccc_flag == "GREEN" or cccs_flag == "GREEN") else
+   -1.5 if (bcc_flag == "RED" or bccs_flag == "RED") and
+           (ccc_flag == "GREEN" and cccs_flag == "GREEN") else
+    0
+    )
+
+    dpd_value = int(company_data["commercial"].get("dpd_commercial", 0) or 0)
+    years_in_business = years
+    dpd_commercial_flag = company_data["commercial"].get("dpd_commercial_flag")
+    dpd_consumer_flag = company_data["consumer"].get("dpd_consumer_flag")
+    
+    unsettled_commercial_flag = company_data["commercial"].get("unsettled_commercial_flag")
+    unsettled_consumer_flag = company_data["consumer"].get("unsettled_consumer_flag")
+
+    results = {
+    f"{prefix}_{suffix}": next(
+        (
+            r.get("parameterValue") if suffix == "value" else r.get("flag")
+            for r in company_data.get(section, {}).get("rules", [])
+            if r.get("parameterName") == param_name
+        ),
+        None,
+    )
+    for section, param_name, prefix, suffix in [
+        ("commercial", "30-dpd on existing facilities", "dpd", "value"),
+        ("consumer", "30-dpd on existing facilities", "dpd", "value"),
+    ]
+}
+
+    defaults_pd_score = (
+        -35 if dpd_value > 90 else
+        -14 if 30 <= dpd_value <= 90 else
+        -7 if 1 <= dpd_value < 30 else
+        7 if (years_in_business and years_in_business > 2) else
+        0
+    )
+
+    all_flags = [
+        dpd_commercial_flag,
+        dpd_consumer_flag,
+        unsettled_commercial_flag,
+        unsettled_consumer_flag,
+        bcc_flag,
+        bccs_flag,
+        ccc_flag,
+        cccs_flag,
+    ]
+
+    # Check if any flag is RED
+    has_red_flags = any(flag == "RED" for flag in all_flags)
+
     scorecard_table = [
         {"rule": "Years in Business", "value": years_value, "score": years_score},
-        {"rule": "Nitaqat Color", "value": bms.get("nitaqatColor"), "score": nitaqat_score},
+        {"rule": "Nitaqat Color", "value": nitaqat_value, "score": nitaqat_score},
         {"rule": "Revenue Growth", "value": revenue_growth, "score": revenue_growth_score},
         {"rule": "GPM Growth", "value": gpm_growth, "score": gpm_score},
         {"rule": "NPM", "value": npm, "score": npm_score},
@@ -492,7 +592,8 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         {"rule": "Relationship with Lendo", "value": relationship_with_lendo, "score": relationship_with_lendo_score},
         {"rule": "Access to Additional Fund", "value": access_to_fund_value, "score": access_to_fund_score},
         {"rule": "Control over Cash Flow", "value": control_over_cashflow, "score": control_over_cashflow_score},
-
+        {"rule": "Return Cheque Score", "value": f"BCC:{bcc_flag}, BCCS:{bccs_flag}, CCC:{ccc_flag}, CCCS:{cccs_flag}", "score": returned_cheques_score},
+        {"rule": "Defaults / PDs","value": f"Has RED Flags: {has_red_flags}, Years in Business: {years_in_business}","score": defaults_pd_score}
     ]
 
     total_score = round(sum(x["score"] if x["score"] is not None else 0 for x in scorecard_table), 2)
@@ -739,6 +840,8 @@ financial_analysis_agent = Agent(
     tools=[
         Lendo_Credit_Decision_Engine, 
         analyze_company,
+        apply_rulebook_from_raw,
+        calculate_scorecard_from_raw
         #Send_Email, 
         #CreateDoc
     ]
