@@ -197,8 +197,9 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
 
     Args:
         input: {
-            "to": str,
-            "subject": str,
+            "companyId": number (like 1742, 4560, 2140 OR 1901)
+            "to": str (email address to send email to),
+            "subject": str (email subject),
             "summary_data": dict (required - body is generated from these parameters)
         }
 
@@ -222,7 +223,7 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
         # Step 1: Generate credit file directly
         file_name = f"Lendo Credit File - {summary_data.get('crNumber', 'N/A')}.docx"
 
-        create_lendo_credit_file(summary_data, file_name)
+        create_lendo_credit_file(input.get("companyId"), summary_data, file_name)
 
         # Step 2: Locate the generated file
         if not os.path.exists(file_name):

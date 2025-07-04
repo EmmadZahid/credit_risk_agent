@@ -1,0 +1,30 @@
+{
+    "BR" : 1901,
+    "userInput_productType": "Invoice Financing",
+    "userInput_requiredFinancingAmount": "1mn",
+    "smeLegalInformation_companyArabicName": "شركة كريستال آسيا للتجاره",
+    "smeLegalInformation_crNumber": "4030179290",
+    "smeLegalInformation_crEntityNumber": "7011030751",
+    "smeLegalInformation_legalType": "LLC",
+    "smeLegalInformation_crIssueDateGregorian": "2008",
+    "contactAddressInformation_city": "جدة",
+    "summaryDetails_industryType": "Construction,Accommodation and food services activities",
+    "otherInformation_nitaqatColor": "Very Small Red",
+    "conditions-covenant_securityDescription": "1. Order Note from the Crystal Asia for trading company with the value of SAR 3,867,500/-\n2. Personal Order Note from owner Hussain Turki AlGoufi with the value of SAR 3,867,500/-",
+    "conditions-covenant_conditionsCovenantDescription": "Precedent Condition\n• RAM approval to be provided",
+    "conditions-covenant_internalConditionsDescription": "",    
+    "approved-buyer" : [
+        {
+            "buyerEnglishName": "G*************************************s",
+            "averageCap": 100.0
+        },
+        {
+            "buyerEnglishName": "M*****************e",
+            "averageCap": 100.0
+        },
+        {
+            "buyerEnglishName": "W*********************s",
+            "averageCap": 50.0
+        }
+    ]
+}

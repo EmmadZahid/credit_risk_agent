@@ -1,0 +1,34 @@
+{
+    "BR" : 4560,
+    "userInput_productType": "Invoice Financing",
+    "userInput_requiredFinancingAmount": "7.5mn",
+    "smeLegalInformation_companyArabicName": "شركة الأقتصاد الأفتراضي للتجارة",
+    "smeLegalInformation_crNumber": "4030437519",
+    "smeLegalInformation_crEntityNumber": "7013156992",
+    "smeLegalInformation_legalType": "LLC",
+    "smeLegalInformation_crIssueDateGregorian": "2016",
+    "contactAddressInformation_city": "جدة",
+    "summaryDetails_industryType": "Construction,Wholesale and retail trade",
+    "otherInformation_nitaqatColor": "Low Green",
+    "conditions-covenant_securityDescription": "• Order Note from Virtual Economy Trading Company with the value of SAR 5,300,000/-\n• Personal Order Note from Omar Abdulaleem A Albiladi\n  with the value of SAR 2,650,000/-\n• Personal Order Note from Ahmed bin Abdulaleem Abdul Hameed Albiladi\n  with the value of SAR 2,650,000/-",
+    "conditions-covenant_conditionsCovenantDescription": "Precedent Conditions\n• RAM to be provided.\n\nConditions\n• A bank standing order must be provided for each loan disbursement.\n\nInternal Conditions\n• Max tenor is up to 120 days.",
+    "conditions-covenant_internalConditionsDescription": "",
+    "approved-buyer" : [
+        {
+            "buyerEnglishName": "A********a",
+            "averageCap": 25.0
+        },
+        {
+            "buyerEnglishName": "N***o",
+            "averageCap": 25.0
+        },
+        {
+            "buyerEnglishName": "N**n",
+            "averageCap": 50.0
+        },
+        {
+            "buyerEnglishName": "W**************************s",
+            "averageCap": 50.0
+        }
+    ]
+}

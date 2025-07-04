@@ -1,0 +1,42 @@
+{
+    "BR" : 2140,
+    "userInput_productType": "Invoice Financing",
+    "userInput_requiredFinancingAmount": "7.5mn",
+    "smeLegalInformation_companyArabicName": "شركة محمد عبدالله آل طالب وشركاه للتجارة والزراعة",
+    "smeLegalInformation_crNumber": "1010085648",
+    "smeLegalInformation_crEntityNumber": "7001620421",
+    "smeLegalInformation_legalType": "LLC",
+    "smeLegalInformation_crIssueDateGregorian": "1991",
+    "contactAddressInformation_city": "الرياض",
+    "summaryDetails_industryType": "Agriculture, Forestry and Fishing",
+    "otherInformation_nitaqatColor": "High Green",
+    "conditions-covenant_securityDescription": "Order Note from Al Taleb Co for trading and agriculture with the value of SAR 7,950,000/-\nPersonal Order Note from Mohammad Al Taleb with the value of SAR 7,950,000/-",
+    "conditions-covenant_conditionsCovenantDescription": "Internal Condition:\n1. Maximum tenor is up to 6 months",
+    "conditions-covenant_internalConditionsDescription": "",
+    "approved-buyer" : [
+        {
+            "buyerEnglishName": "G*************************************s",
+            "averageCap": 100.0
+        },
+        {
+            "buyerEnglishName": "I*******************************************e",
+            "averageCap": 100.0
+        },
+        {
+            "buyerEnglishName": "N**************************************************************************n",
+            "averageCap": 100.0
+        },
+        {
+            "buyerEnglishName": "N******************************************t",
+            "averageCap": 100.0
+        },
+        {
+            "buyerEnglishName": "R*************************a",
+            "averageCap": 100.0
+        },
+        {
+            "buyerEnglishName": "W*********************s",
+            "averageCap": 50.0
+        }
+    ]
+}

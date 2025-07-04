@@ -8,8 +8,11 @@ from docx.oxml import parse_xml
 from docx.oxml.ns import nsdecls
 from typing import Dict, Any
 import logging
+import os
+import json
+from datetime import datetime
 
-def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lendo Credit File - ADK AGENT.docx"):
+def create_lendo_credit_file(companyId, summary_data: Dict[str, Any], output_filename="Lendo Credit File - ADK AGENT.docx"):
     """
     Creates a DOCX file mimicking the structure, content, and basic styles
     of the "Lendo Credit File - ADK AGENT.docx" file.
@@ -17,16 +20,28 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
     Args:
         output_filename (str): The name of the DOCX file to create.
     """
-    logging.basicConfig(
-        level=logging.DEBUG,
-        filename='adk_agent.log',  # This file will be created in the current working directory
-        filemode='w',              # 'w' to overwrite each run; use 'a' to append
-        format='%(asctime)s - %(levelname)s - %(message)s'
-    )
-    logger = logging.getLogger(__name__)
+    # logging.basicConfig(
+    #     level=logging.DEBUG,
+    #     filename='adk_agent_generate_file.log',  # This file will be created in the current working directory
+    #     filemode='a',                            # 'w' to overwrite each run; use 'a' to append
+    #     format='%(asctime)s - %(levelname)s - %(message)s'
+    # )
+    # logger = logging.getLogger(__name__)
+    #logger.info(f"*******************************************************************")
 
-    logger.info(f"Summary data: {summary_data}")
-    logger.info(f"output_filename: {output_filename}")
+    #logger.info(f"Summary data: {summary_data}")
+    #logger.info(f"output_filename: {output_filename}")
+
+    # Loan Credit File specific BMS Data
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    credit_file_bms_file_path = os.path.join(current_dir, "credit-file-data", f"BR{companyId}.json")
+    #logger.info(f"credit_file_bms_file_path: {credit_file_bms_file_path}")
+
+    with open(credit_file_bms_file_path, "r", encoding="utf-8") as f:
+        credit_file_bms_data = json.load(f)
+
+    #logger.info(f"credit_file_bms_data: {credit_file_bms_data}")
+    #logger.info(f"credit_file_bms_data.BR: {credit_file_bms_data.get('BR')}")
 
     # Start creating document file
     document = Document()
@@ -68,7 +83,7 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
 
     # Data Row
     data_cells = table.rows[1].cells
-    data_cells[0].text = summary_data.get("finalDecision", "Not Recommend for financing (default)")
+    data_cells[0].text = summary_data.get('finalDecision', 'Not Recommend for financing (default)')
     #data_cells[0].text = 'Approved as Requested'
     data_cells[1].text = 'AI Credit Risk Officer'
     data_cells[2].text = 'Google ADK agent developed by Emmad, Imran, Saad, Shafeeque, Sumayyah, Hamza'
@@ -107,8 +122,8 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
     # Data Row 1 (A, Invoice Discounting)
     data_cells = table.rows[1].cells
     data_cells[0].text = 'A'
-    data_cells[1].text = 'Invoice Discounting '
-    data_cells[2].text = '3.5mn'
+    data_cells[1].text = credit_file_bms_data.get('userInput_productType', 'Invoice Financing')
+    data_cells[2].text = credit_file_bms_data.get('userInput_requiredFinancingAmount', '3.5mn')
     data_cells[3].text = '100%'
     #data_cells[4].text = 'C'
     data_cells[4].text = f"{summary_data.get('riskRating', 'N/A')} ({summary_data.get('simahScore', 'N/A')})"
@@ -126,7 +141,7 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
     data_cells = table.rows[2].cells
     data_cells[0].text = 'Total'
     data_cells[1].text = '' # Merged cell originally, but `python-docx` handles width well
-    data_cells[2].text = '3.5mn'
+    data_cells[2].text = credit_file_bms_data.get('userInput_requiredFinancingAmount', '3.5mn')
     data_cells[3].text = ''
     #data_cells[4].text = ''
     data_cells[4].text = ''
@@ -158,18 +173,24 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
     #cell1.paragraphs[0].runs[0].bold = True
     cell1.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
 
-    # Format right cell
-    p = cell2.paragraphs[0]
-    p.add_run("Precedent Conditions")
-    p = cell2.add_paragraph()
-    p.style = 'List Bullet'
-    p.add_run("Valid Zakat Certificated.")
+    # # Format right cell
+    # p = cell2.paragraphs[0]
+    # p.add_run("Precedent Conditions")
+    # p = cell2.add_paragraph()
+    # p.style = 'List Bullet'
+    # p.add_run("Valid Zakat Certificated.")
 
-    p = cell2.add_paragraph()
-    p.add_run("Internal Conditions")
-    p = cell2.add_paragraph()
-    p.style = 'List Bullet'
-    p.add_run("Max tenor is up to 180 days.")
+    # p = cell2.add_paragraph()
+    # p.add_run("Internal Conditions")
+    # p = cell2.add_paragraph()
+    # p.style = 'List Bullet'
+    # p.add_run("Max tenor is up to 180 days.")
+
+    # Clear the default empty paragraph in cell2
+    cell2._element.clear_content()
+
+    for line in credit_file_bms_data.get('conditions-covenant_conditionsCovenantDescription', "").splitlines():
+        cell2.add_paragraph(line)
 
     # Row 2
     cell1 = table.rows[1].cells[0]
@@ -181,22 +202,28 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
     #cell1.paragraphs[0].runs[0].bold = True
     cell1.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
 
-    # Bullets for security items
-    p = cell2.paragraphs[0]
-    p.clear()  # Clear default paragraph
-    p = cell2.add_paragraph()
-    p.style = 'List Bullet'
-    p.add_run("Order Note from Etihad Jeddah Factory company with the value of SAR 4,130,000/-")
+    # # Bullets for security items
+    # p = cell2.paragraphs[0]
+    # p.clear()  # Clear default paragraph
+    # p = cell2.add_paragraph()
+    # p.style = 'List Bullet'
+    # p.add_run("Order Note from Etihad Jeddah Factory company with the value of SAR 4,130,000/-")
 
-    p = cell2.add_paragraph()
-    p.style = 'List Bullet'
-    p.add_run("Personal Order Note from Each Anwar Alhashri and Fahad Alhabrdi with the value of SAR 4,130,000 /-")
+    # p = cell2.add_paragraph()
+    # p.style = 'List Bullet'
+    # p.add_run("Personal Order Note from Each Anwar Alhashri and Fahad Alhabrdi with the value of SAR 4,130,000 /-")
+
+    # Clear the default empty paragraph in cell2
+    cell2._element.clear_content()
+
+    for line in credit_file_bms_data.get('conditions-covenant_securityDescription', "").splitlines():
+        cell2.add_paragraph(line)
 
     document.add_paragraph()  # One blank line
 
     # --- Approved buyers Table ---
     document.add_paragraph()
-    table = document.add_table(rows=6, cols=3)
+    table = document.add_table(rows=1, cols=3)
     table.style = 'Table Grid'
 
     # Header Row
@@ -211,19 +238,31 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
         shading_elm_1 = parse_xml(r'<w:shd {} w:fill="DEEBF6"/>'.format(nsdecls('w')))
         cell._tc.get_or_add_tcPr().append(shading_elm_1)
 
-    # Data Rows
-    data = [
-        ['Govt & Semi-Govt', '100%', '--'],
-        ['Well known Cooperation', '50%', '--'],
-        ['Ajeej Steel Manufacturing Co', '50%', '--'],
-        ['Abdulkarim Alrajhi Steel', '50%', '--'],
-        ['Kema Gulg Trading Co', '50%', '--']
-    ]
-    for i, row_data in enumerate(data):
-        cells = table.rows[i+1].cells
-        for j, text in enumerate(row_data):
-            cells[j].text = text
-            cells[j].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
+    # # Data Rows
+    # data = [
+    #     ['Govt & Semi-Govt', '100%', '--'],
+    #     ['Well known Cooperation', '50%', '--'],
+    #     ['Ajeej Steel Manufacturing Co', '50%', '--'],
+    #     ['Abdulkarim Alrajhi Steel', '50%', '--'],
+    #     ['Kema Gulg Trading Co', '50%', '--']
+    # ]
+    # for i, row_data in enumerate(data):
+    #     cells = table.rows[i+1].cells
+    #     for j, text in enumerate(row_data):
+    #         cells[j].text = text
+    #         cells[j].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
+
+    approved_buyers = credit_file_bms_data.get('approved-buyer', [])
+
+    # Dynamically add rows for each buyer
+    for i, buyer in enumerate(approved_buyers):
+        cells = table.add_row().cells
+        cells[0].text = buyer.get('buyerEnglishName', '')
+        cells[1].text = f'{buyer.get('averageCap', '')}%'
+        cells[2].text = "--"  # Tenor is not available in the JSON
+
+        for cell in cells:
+            cell.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
 
     document.add_page_break()
 
@@ -249,11 +288,11 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
 
     # Headers for 'Deal Deets'
     deal_deets_headers = [
-        'Credit File Date', '02-06-2025', 'Next Review Date', '31-06-2026', 'Last Review Date', 'New',
-        'Entity Name', 'Etihad Jeddah Factory Co', 'BR#', '5637', 'CR# ', '4030298618',
-        'Assessment', 'NewBiz / Full Review', 'Entity#', '7007994770', 'Legal Structure', 'LLC',
-        'Type of Product', 'Invoice Finance', 'Incorporation Date ', '2018', 'Business Address ', 'Jeddah',
-        'Industry / Sector', 'Manufacturing ', 'Zakat ', 'Not valid', 'Nitaqat ', 'Grean ',
+        'Credit File Date', datetime.today().strftime('%d-%m-%Y'), 'Next Review Date', '31-06-2026', 'Last Review Date', 'New',
+        'Entity Name', credit_file_bms_data.get('smeLegalInformation_companyArabicName', ''), 'BR#', credit_file_bms_data.get('BR', ''), 'CR# ', credit_file_bms_data.get('smeLegalInformation_crNumber', ''),
+        'Assessment', 'NewBiz / Full Review', 'Entity#', credit_file_bms_data.get('smeLegalInformation_crEntityNumber', ''), 'Legal Structure', credit_file_bms_data.get('smeLegalInformation_legalType', ''),
+        'Type of Product', credit_file_bms_data.get('userInput_productType', ''), 'Incorporation Date ', credit_file_bms_data.get('smeLegalInformation_crIssueDateGregorian', ''), 'Business Address ', credit_file_bms_data.get('contactAddressInformation_city', ''),
+        'Industry / Sector', credit_file_bms_data.get('summaryDetails_industryType', ''), 'Zakat', 'Not valid', 'Nitaqat ', credit_file_bms_data.get('otherInformation_nitaqatColor', ''),
         '# of branches', '3', 'RAM', 'High Risk', 'PEPs Sanctions', 'No',
         'Deal Source', 'RM', 'Relationship with Lendo (mos)', 'New', 'Watchlist Status', 'NewBiz'
     ]
@@ -262,7 +301,7 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
         cells = table.rows[i+1].cells
         for j in range(6):
             cell_text = deal_deets_headers[i * 6 + j]
-            cells[j].text = cell_text
+            cells[j].text = str(cell_text)
             # Bold first column items in each row
             if j % 2 == 0:
                 #cells[j].paragraphs[0].runs[0].bold = True
@@ -284,7 +323,7 @@ def create_lendo_credit_file(summary_data: Dict[str, Any], output_filename="Lend
         merged_cell = merged_cell.merge(last_row.cells[i])
 
     # Set last row merged column text
-    merged_cell.text = "Client asks limit of 7.5mn."
+    merged_cell.text = f"Client asks limit of {credit_file_bms_data.get('userInput_requiredFinancingAmount', '')}."
     merged_paragraph = merged_cell.paragraphs[0]
     #merged_paragraph.runs[0].bold = True
     merged_paragraph.alignment = WD_ALIGN_PARAGRAPH.LEFT
@@ -828,4 +867,4 @@ if __name__ == "__main__":
         "finalRecommendation": "Approve",
         "finalDecision": "Approved"
     }
-    create_lendo_credit_file(summary_data)
+    create_lendo_credit_file(1742, summary_data)
