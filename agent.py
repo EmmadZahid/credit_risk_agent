@@ -2,7 +2,7 @@ import os
 import json
 import smtplib
 import subprocess
-from google.adk.agents import Agent
+from google.adk.agents import Agent, ParallelAgent, SequentialAgent
 from email.message import EmailMessage
 from typing import Dict, Any, Optional
 from .generate_credit_file import create_lendo_credit_file
@@ -11,29 +11,60 @@ from .instructions import (
    COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION
 )
 
-# Load your AllCompanies.json file
-current_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(current_dir, "qawaem_data.json")
+def years_in_business(date_str):
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        return round((datetime.now() - dt).days / 365.25, 1)
+    except:
+        return None
 
-with open(file_path, "r", encoding="utf-8") as f:
-    qawaem_data = json.load(f)
-    
-def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
+def load_file(fileName: str, folderName: str = '') -> Dict[str, Any]:
     """
-    Loads raw Qawaem JSON data from file.
+    Loads a JSON file given a folder and file name (without extension).
+    
+    Args:
+        folderName: Name of the folder containing the file.
+        fileName: Name of the JSON file (without `.json` extension).
+    
+    Returns:
+        Parsed JSON data (from the "data" field), or empty list if not found.
     """
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(current_dir, "qawaem_data.json")
+    file_path = os.path.join(current_dir, folderName, f"{fileName}.json")
 
     with open(file_path, "r", encoding="utf-8") as f:
         raw_data = json.load(f)
+    
+    return raw_data.get("data", [])
 
+all_companies = load_file("qawaem_data")
+
+def financial_data_analysis_tool(borrower_id: str, year: int) -> Dict[str, any]:
+    """
+    Retrieves financial data of company for any anyalysis.
+    Gives reasons of the analysis. Also it can explain the financial data relate questions.
+
+    ARGS:
+        borrower_id: This is the company id that will be provided by the user
+    
+    Returns:
+        - analysis: this is the dictionary of whole analysis 
+        - scorecard: this is the scorecard and all its details
+        - company_data: This is the raw data of company. It can be used to answer some deep questions
+    """
+    for company_data in all_companies:
+        if borrower_id and str(company_data["organizationId"]) == str(borrower_id):
+            break
+
+    analysis = analyze_company(company_data, year)
+    scoring = calculate_scorecard(company_data, year)
     return {
-        "status": "Success",
-        "data": raw_data.get("data", [])
+        "analysis": analysis,
+        "scorecard": scoring,
+        "company_data": company_data
     }
 
-def apply_rulebook_from_raw(company_data: dict, year: int = 2023) -> dict:
+def apply_rulebook(company_data: dict, year:int) -> dict:
     """
     Applies the rulebook using original Qawaem JSON structure.
     """
@@ -68,10 +99,16 @@ def apply_rulebook_from_raw(company_data: dict, year: int = 2023) -> dict:
             all_flags.append(rule.get("flag"))
 
     credit_history_green = all(f == "GREEN" or f is None for f in all_flags)
+    
+    bms = load_file(f"BR{company_data.get("organizationId")}", "bms")
+
+    inc_date_str = bms["smeLegalInformation"]["crIssueDateGregorian"]
+    years_in_business_value = years_in_business(inc_date_str)
 
     rules = {
+        "Years in business > 2": years_in_business_value > 2,
         "Revenue > 1M": revenue > 1_000_000,
-        "Operating Profit > 0": net_profit > 0,
+        "Net Profit > 0": net_profit > 0,
         "DSCR ≥ 1.5": dscr >= 1.5,
         "Gearing Ratio ≤ 1.7": gearing_ratio <= 1.7,
         "Leverage Ratio ≤ 2.0": leverage_ratio <= 2.0,
@@ -101,6 +138,7 @@ def apply_rulebook_from_raw(company_data: dict, year: int = 2023) -> dict:
         "percent_met": round(percent_met, 2),
         "final_recommendation": final_recommendation,
         "data_used": {
+            "years_in_business_value":years_in_business_value,
             "revenue": revenue,
             "net_profit": net_profit,
             "dscr": dscr,
@@ -113,10 +151,28 @@ def apply_rulebook_from_raw(company_data: dict, year: int = 2023) -> dict:
         }
     }
 
-def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
+def calculate_scorecard(company_data: dict, year:int) -> dict:
     """
-    Computes scorecard using raw JSON structure.
+    Calculates the credit risk score and risk grade of company using company_data. It will apply some rules to calculate the score and grade.
+
+        - if score is between 90 to 100, give grade A+
+        - if score is between 70 to 89.99, give grade A
+        - if score is between 60 to 69.99, give grade B
+        - if score is between 50 to 59.99, give grade C
+        - if score is between 40 to 49.99, give grade D
+        - if score is between 0 to 39.99, give grade R 
+    Args:
+        company_data: This is the all financial data of a single company. 
+        year: This is the year of financial data for which analysis is required. If year is not provided by user, then use the latest financialStatement year from the data.
+
+    Returns:
+        A dictionary containing the score and grade and score table.
+            credit_score: The total score or credit risk score
+            grade: The grade calculated from score
+            score_table: The table that has the rule name, value from data and assigned value for that rule
     """
+
+    bms = load_file(f"BR{company_data.get("organizationId")}", "bms")
 
     # Fetch financials
     fs_data = next(
@@ -131,48 +187,22 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
     profit_loss = fs_data.get("profitAndLoss", {})
    # bms = company_data.get("bms", {})
 
-    # Years in business
-    def years_in_business(date_str):
-        try:
-            dt = datetime.strptime(date_str, "%Y-%m-%d")
-            return (datetime.now() - dt).days / 365.25
-        except:
-            return None
+    inc_date_str = bms["smeLegalInformation"]["crIssueDateGregorian"]
+    years_in_business_value = years_in_business(inc_date_str)
 
-    inc_date_str = "2016-03-18"
-    years = years_in_business(inc_date_str)
-    print("yearsInBusiness =", years)
-    if years is None:
-        years_score = 0
-        years_value = "Unknown"
-    elif years < 3:
-        if ratios.get("npmGrowth", 0) > 0:
-            years_score = 1.4
-        else:
-            years_score = -1
-        years_value = f"{years:.1f} years"
-    elif 3 <= years < 10:
-        years_score = 3
-        years_value = f"{years:.1f} years"
-    else:
-        years_score = 4
-        years_value = f"{years:.1f} years"
+    years_in_business_score = (
+    -1 if years_in_business_value < 3 else
+    1.4 if years_in_business_value == 3 else
+    3 if 3 < years_in_business_value <10 else
+    4 if years_in_business_value >=10  else
+    None
+    )
 
-    # Example: only a few scores for brevity
-    nitaqat_map = {
-        "Red": -4,
-        "Yellow": -2,
-        "Green": 0,
-        "Low Green": 0,
-        "Platinum": 2
-    }
-   # nitaqat_score = nitaqat_map.get(bms.get("nitaqatColor", "Unknown"), 0)
-
-    nitaqat_value = "Green"
+    nitaqat_value = bms["otherInformation"]["nitaqatColor"]
     nitaqat_score = (
-        -4 if nitaqat_value == "Red" else
+        -4 if nitaqat_value == "Red" or nitaqat_value =="Very Small Red" else
         -2 if nitaqat_value == "Yellow" else
-        0 if nitaqat_value == "Green" else
+        0 if nitaqat_value == "Green" or nitaqat_value == "Low Green" or nitaqat_value == "High Green" else
         2 if nitaqat_value == "Platinum" else
         None
     )
@@ -374,16 +404,6 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
      None
     )
 
-    years_in_business_value = 9
-
-    years_in_business_score = (
-    -1 if years_in_business_value < 3 else
-    1.4 if years_in_business_value == 3 else
-    3 if 3< years_in_business_value <10 else
-    4 if years_in_business_value >=10  else
-    None
-    )
-
     netaqat_value = "Green"
 
     netaqat_score = (
@@ -403,14 +423,14 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         None
     )
 
-    industry_value = ""
+    industry_value = "Agriculture, Forestry and Fishing"
 
     industry_score = (
-        2 if industry_value == "Water supply, waste mgmt, defense, other services, households" else
-        3.5 if industry_value == "Agriculture, Forestry, Manufacturing, Transport, Real Estate" else
-        5 if industry_value == "Health, Retail, Motor Repair" else
-        6 if industry_value == "Mining, Utilities, Food, Finance, Education, Prof. Services" else
-        7 if industry_value == "Information & Communication, Arts & Recreation" else
+        2 if any(keyword in industry_value for keyword in ["Water supply", "waste mgmt", "defense", "other services", "households"]) else
+        3.5 if any(keyword in industry_value for keyword in ["Agriculture", "Forestry", "Manufacturing", "Transport", "Real Estate"]) else
+        5 if any(keyword in industry_value for keyword in ["Health", "Retail", "Motor Repair"]) else
+        6 if any(keyword in industry_value for keyword in ["Mining", "Utilities", "Food", "Finance", "Education", "Prof. Services"]) else
+        7 if any(keyword in industry_value for keyword in ["Information", "Communication", "Arts", "Recreation"]) else
         None
     )
 
@@ -516,7 +536,6 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
     )
 
     dpd_value = int(company_data["commercial"].get("dpd_commercial", 0) or 0)
-    years_in_business = years
     dpd_commercial_flag = company_data["commercial"].get("dpd_commercial_flag")
     dpd_consumer_flag = company_data["consumer"].get("dpd_consumer_flag")
     
@@ -542,7 +561,7 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         -35 if dpd_value > 90 else
         -14 if 30 <= dpd_value <= 90 else
         -7 if 1 <= dpd_value < 30 else
-        7 if (years_in_business and years_in_business > 2) else
+        7 if (years_in_business_value and years_in_business_value > 2) else
         0
     )
 
@@ -561,7 +580,6 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
     has_red_flags = any(flag == "RED" for flag in all_flags)
 
     scorecard_table = [
-        {"rule": "Years in Business", "value": years_value, "score": years_score},
         {"rule": "Nitaqat Color", "value": nitaqat_value, "score": nitaqat_score},
         {"rule": "Revenue Growth", "value": revenue_growth, "score": revenue_growth_score},
         {"rule": "GPM Growth", "value": gpm_growth, "score": gpm_score},
@@ -593,102 +611,74 @@ def calculate_scorecard_from_raw(company_data: dict, year: int = 2023) -> dict:
         {"rule": "Access to Additional Fund", "value": access_to_fund_value, "score": access_to_fund_score},
         {"rule": "Control over Cash Flow", "value": control_over_cashflow, "score": control_over_cashflow_score},
         {"rule": "Return Cheque Score", "value": f"BCC:{bcc_flag}, BCCS:{bccs_flag}, CCC:{ccc_flag}, CCCS:{cccs_flag}", "score": returned_cheques_score},
-        {"rule": "Defaults / PDs","value": f"Has RED Flags: {has_red_flags}, Years in Business: {years_in_business}","score": defaults_pd_score}
+        {"rule": "Defaults / PDs","value": f"Has RED Flags: {has_red_flags}, Years in Business: {years_in_business_value}","score": defaults_pd_score}
     ]
 
-    total_score = round(sum(x["score"] if x["score"] is not None else 0 for x in scorecard_table), 2)
+    credit_score = round(sum(x["score"] if x["score"] is not None else 0 for x in scorecard_table), 2)
 
-    if total_score >= 90:
+    if credit_score >= 90:
         grade = "A+"
-    elif total_score >= 70:
+    elif credit_score >= 70:
         grade = "A"
-    elif total_score >= 60:
+    elif credit_score >= 60:
         grade = "B"
-    elif total_score >= 50:
+    elif credit_score >= 50:
         grade = "C"
-    elif total_score >= 40:
+    elif credit_score >= 40:
         grade = "D"
     else:
         grade = "R"
 
     return {
         "scorecard_table": scorecard_table,
-        "total_score": total_score,
+        "credit_score": credit_score,
         "grade": grade
     }
 
-def analyze_company(input: Dict[str, Any]) -> Dict[str, Any]:
+def analyze_company(company_data:Dict[str, any], year:int) -> Dict[str, Any]:
     """
-    Runs analysis on raw Qawaem data.
+    Runs analysis on raw data.
+
+    Args:
+        company_data: This is the all financial data of a single company. 
+        year: This is the year of financial data for which analysis is required. If year is not provided by user, then use the latest financialStatement year from the data.
+
+    Returns:
+        A dictionary with the analysis results.
     """
 
-    data_response = Lendo_Credit_Decision_Engine()
-    if data_response.get("status") != "Success":
-        return {"status": "Error", "message": "Failed to load financial data."}
+    rulebook_result = apply_rulebook(company_data, year)
 
-    all_companies = data_response.get("data", [])
-    results = []
+    summary_data = {
+        "companyName": company_data.get("companyName"),
+        "crNumber": company_data.get("commercialRegistrationNumber"),
+        "dpd": str(company_data.get("commercial", {}).get("dpd_commercial")),
+        "revenue": str(rulebook_result["data_used"]["revenue"]),
+        "netProfitMargin": str(rulebook_result["data_used"]["net_profit"]),
+        "dscr": str(rulebook_result["data_used"]["dscr"]),
+        "bouncedCheques": str(company_data.get("commercial", {}).get("bounced_cheque_commercial")),
+        "riskRating": rulebook_result["final_recommendation"],
+        "finalRecommendation": rulebook_result["final_recommendation"],
+    }
 
-    for company_data in all_companies:
-        if input.get("organization_id") and str(company_data["organizationId"]) != str(input["organization_id"]):
-            continue
+    result = {
+        "companyName": company_data.get("companyName"),
+        "organization_id": company_data.get("organizationId"),
+        "cr_number": company_data.get("commercialRegistrationNumber"),
+        "year": year,
+        "final_recommendation": rulebook_result["final_recommendation"],
+        "met_rules": rulebook_result["met_rules"],
+        "failed_rules": rulebook_result["failed_rules"],
+        "summary_data": summary_data
+    }
 
-        rulebook_result = apply_rulebook_from_raw(company_data)
-        scorecard_result = calculate_scorecard_from_raw(company_data)
-
-        justification = f"""
-Company: {company_data.get('companyName')}
-CR#: {company_data.get('commercialRegistrationNumber')}
-
-✅ Met Rules:
-{', '.join(rulebook_result['met_rules'])}
-
-❌ Failed Rules:
-{', '.join(rulebook_result['failed_rules'])}
-
-Financial Data Used:
-{json.dumps(rulebook_result['data_used'], indent=2)}
-
-Scorecard:
-{json.dumps(scorecard_result, indent=2)}
-"""
-
-        summary_data = {
-            "companyName": company_data.get("companyName"),
-            "crNumber": company_data.get("commercialRegistrationNumber"),
-            "simahScore": scorecard_result.get("total_score"),
-            "dpd": str(company_data.get("commercial", {}).get("dpd_commercial")),
-            "revenue": str(rulebook_result["data_used"]["revenue"]),
-            "netProfitMargin": str(rulebook_result["data_used"]["net_profit"]),
-            "dscr": str(rulebook_result["data_used"]["dscr"]),
-            "bouncedCheques": str(company_data.get("commercial", {}).get("bounced_cheque_commercial")),
-            "riskRating": rulebook_result["final_recommendation"],
-            "finalRecommendation": rulebook_result["final_recommendation"],
-        }
-
-        result = {
-            "companyName": company_data.get("companyName"),
-            "organization_id": company_data.get("organizationId"),
-            "cr_number": company_data.get("commercialRegistrationNumber"),
-            "year": company_data.get("financialStatement", [{}])[0].get("year"),
-            "final_recommendation": rulebook_result["final_recommendation"],
-            "score": scorecard_result["total_score"],
-            "grade": scorecard_result["grade"],
-            "met_rules": rulebook_result["met_rules"],
-            "failed_rules": rulebook_result["failed_rules"],
-            "justification": justification.strip(),
-            "summary_data": summary_data,
-            "pdf_data": summary_data,
-        }
-        results.append(result)
-
-    if not results:
-        return {"status": "Error", "message": "No matching companies found."}
-
-    return results[0] if len(results) == 1 else {"status": "Success", "results": results}
+    return result
 
 
-def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
+
+
+
+def send_email_tool(input: Dict[str, Any]) -> Dict[str, str]:
     """
     Sends an email using MailHog SMTP.
 
@@ -814,20 +804,34 @@ Regards,
 ADK AGENT
 """
 
+root_agent = Agent(
+    model=os.environ.get("GOOGLE_GENAI_MODEL"),
+    name="CrediRiskAgent",
+    description="An agent that analyze the financial data",
+    instruction="""
+    You are credit risk financial agent that will answer to user quesitons.
+    User can ask you about analyzing or recommendation of the company.
+    
+    You have to format the response for recommendation as below. The financial values e.g. revenue, net profit etc. are in SAR:
+    - **Company Name**
+    - **Year**
+    - **Recommendation**
+    - **Met Rules** in table view with values
+    - **Failed Rules** in table view with values
+    - **Credit Score**
+    - **Grade**
+    - **Score card** in table view
+    - **Justificaiton**
 
-# Agent config
-financial_analysis_agent = Agent(
-    name="CreditPolicyAgent",
-    model="gemini-2.0-flash",
-    instruction=COMPANY_APPROVAL_OR_REJECTION_DECISION_INSTRCUTION,
-    tools=[
-        Lendo_Credit_Decision_Engine, 
-        analyze_company,
-        apply_rulebook_from_raw,
-        calculate_scorecard_from_raw
-        #Send_Email
-    ]
-    )
-
-# init agent
-root_agent = financial_analysis_agent
+    Also user can ask some more details about your analysis and the data.
+    IF user has not provided you the company id second time, use the previous one and do same for year
+    Answer him professionally.
+    User can ask to send email by providing the email address. If user ask for email:
+        - Call the `send_email_tool`.
+        - Provide:
+            - `summary_data` dictionary as received from `analyze_company`.
+            - recipient email address.
+    Format the all the output in Markdown format. 
+    """,
+    tools=[financial_data_analysis_tool, send_email_tool]
+)
