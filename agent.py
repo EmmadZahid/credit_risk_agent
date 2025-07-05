@@ -688,33 +688,6 @@ Scorecard:
     return results[0] if len(results) == 1 else {"status": "Success", "results": results}
 
 
-def CreateDoc(input: Dict[str, Any]) -> Dict[str, str]:
-    """
-    Creates the credit file for email.
-
-    Args:
-        input: {
-            "pdf_data": dict
-        }
-
-    Returns:
-        dict: {"status": "Success" | "Error", "message": str}
-    """
-    try:
-        pdf_data = input.get("pdf_data")
-        if pdf_data is None:
-            return {"status": "Error", "message": "Missing pdf_data for file creation."}
-
-        pdf_data["score"] = str(pdf_data.get("score", ""))
-        pdf_data["grade"] = str(pdf_data.get("grade", ""))
-        create_lendo_credit_file(output_data=pdf_data)
-        return {"status": "Success", "message": "Credit file created successfully."}
-
-    except subprocess.CalledProcessError as e:
-        return {"status": "Error", "message": f"Failed to run generate-credit-file.py: {e}"}
-    except Exception as e:
-        return {"status": "Error", "message": str(e)}
-
 def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
     """
     Sends an email using MailHog SMTP.
@@ -852,8 +825,7 @@ financial_analysis_agent = Agent(
         analyze_company,
         apply_rulebook_from_raw,
         calculate_scorecard_from_raw
-        #Send_Email, 
-        #CreateDoc
+        #Send_Email
     ]
     )
 
