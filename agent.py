@@ -721,8 +721,9 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
 
     Args:
         input: {
-            "to": str,
-            "subject": str,
+            "companyId": number (like 1742, 4560, 2140 OR 1901)
+            "to": str (email address to send email to),
+            "subject": str (email subject),
             "summary_data": dict (required - body is generated from these parameters)
         }
 
@@ -745,10 +746,11 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
             return {"status": "Error", "message": "Missing email body or summary data."}
 
         # Step 1: Generate credit file directly
-        #create_lendo_credit_file(output_data=pdf_data)
+        file_name = f"Lendo Credit File - {summary_data.get('crNumber', 'N/A')}.docx"
+
+        create_lendo_credit_file(input.get("companyId"), summary_data, file_name)
 
         # Step 2: Locate the generated file
-        file_name = "Lendo Credit File - ADK AGENT.docx"
         if not os.path.exists(file_name):
             return {"status": "Error", "message": f"File '{file_name}' not found after generation."}
 
@@ -770,15 +772,22 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
             )
 
         # Step 5: Send email with local mailhog docker
-        #with smtplib.SMTP("localhost", 1025) as smtp:
+        # with smtplib.SMTP("localhost", 1025) as smtp:
         #    smtp.send_message(msg)
 
         # Step 5: Send email with sendgrid
         SMTP_SERVER = "smtp.sendgrid.net"
         SMTP_PORT = 587
         SMTP_USERNAME = "apikey"  # literally the word 'apikey'
-        SMTP_PASSWORD = "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"  # replace with your actual SendGrid API key
+        SMTP_PASSWORD = os.getenv("EMAIL_API_KEY")
 
+        # Error handling if the api key is missing
+        if not SMTP_PASSWORD:
+            raise EnvironmentError("❌ EMAIL_API_KEY environment variable is missing or not set.")
+        else:
+            print("✅ EMAIL_API_KEY loaded successfully.")
+        
+        # Send email now
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
             smtp.starttls()  # upgrade the connection to secure
             smtp.login(SMTP_USERNAME, SMTP_PASSWORD)
@@ -806,7 +815,8 @@ def build_credit_summary_email_body(summary_data: Dict[str, Any]) -> str:
             "dscr": str,
             "bouncedCheques": str,
             "riskRating": str,
-            "finalRecommendation": str
+            "finalRecommendation": str,
+            "finalDecision": str
         }
 
     Returns:

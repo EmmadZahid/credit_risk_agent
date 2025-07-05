@@ -1,0 +1,42 @@
+{
+    "BR" : 1742,
+    "userInput_productType": "Invoice Financing",
+    "userInput_requiredFinancingAmount": "3.5mn",
+    "smeLegalInformation_companyArabicName": "شركة مشرق الحلول الطبية",
+    "smeLegalInformation_crNumber": "2051160014",
+    "smeLegalInformation_crEntityNumber": "7012733460",
+    "smeLegalInformation_legalType": "LLC",
+    "smeLegalInformation_crIssueDateGregorian": "2015",
+    "contactAddressInformation_city": " الخبر",
+    "summaryDetails_industryType": "Construction,Wholesale and retail trade",
+    "otherInformation_nitaqatColor": "بلاتيني",                
+    "conditions-covenant_securityDescription": "1. Order Note from Mashreq Medical Solutions with the value of SAR    4,300,000/-\n2. Personal Order Note from Nawaf Hussein Alshuwaired with the value of SAR     4,300,000/-",
+    "conditions-covenant_conditionsCovenantDescription": "Internal Condition:\n1. Ehab Jabrand and Nawaf al should sign together on behalf of the company",
+    "conditions-covenant_internalConditionsDescription": "",
+    "approved-buyer" : [
+        {
+            "buyerEnglishName": "A**************************y",
+            "averageCap": 50.0
+        },
+        {
+            "buyerEnglishName": "A********************r",
+            "averageCap": 100.0
+        },
+        {
+            "buyerEnglishName": "N***o",
+            "averageCap": 50.0
+        },
+        {
+            "buyerEnglishName": "P*********************g",
+            "averageCap": 50.0
+        },
+        {
+            "buyerEnglishName": "T*********************l",
+            "averageCap": 50.0
+        },
+        {
+            "buyerEnglishName": "W**************************s",
+            "averageCap": 50.0
+        }
+    ]
+}
