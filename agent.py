@@ -735,26 +735,26 @@ def send_email_tool(input: Dict[str, Any]) -> Dict[str, str]:
             )
 
         # Step 5: Send email with local mailhog docker
-        # with smtplib.SMTP("localhost", 1025) as smtp:
-        #    smtp.send_message(msg)
+        with smtplib.SMTP("localhost", 1025) as smtp:
+           smtp.send_message(msg)
 
         # Step 5: Send email with sendgrid
-        SMTP_SERVER = "smtp.sendgrid.net"
-        SMTP_PORT = 587
-        SMTP_USERNAME = "apikey"  # literally the word 'apikey'
-        SMTP_PASSWORD = os.getenv("EMAIL_API_KEY")
+        # SMTP_SERVER = "smtp.sendgrid.net"
+        # SMTP_PORT = 587
+        # SMTP_USERNAME = "apikey"  # literally the word 'apikey'
+        # SMTP_PASSWORD = os.getenv("EMAIL_API_KEY")
 
         # Error handling if the api key is missing
-        if not SMTP_PASSWORD:
-            raise EnvironmentError("❌ EMAIL_API_KEY environment variable is missing or not set.")
-        else:
-            print("✅ EMAIL_API_KEY loaded successfully.")
+        # if not SMTP_PASSWORD:
+        #     raise EnvironmentError("❌ EMAIL_API_KEY environment variable is missing or not set.")
+        # else:
+        #     print("✅ EMAIL_API_KEY loaded successfully.")
         
         # Send email now
-        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
-            smtp.starttls()  # upgrade the connection to secure
-            smtp.login(SMTP_USERNAME, SMTP_PASSWORD)
-            smtp.send_message(msg)
+        # with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
+        #     smtp.starttls()  # upgrade the connection to secure
+        #     smtp.login(SMTP_USERNAME, SMTP_PASSWORD)
+        #     smtp.send_message(msg)
 
         return {"status": "Success", "message": f"Email sent to {to_email}"}
 
@@ -836,7 +836,7 @@ root_agent = Agent(
         - netProfitMargin
         - dscr
         - bouncedCheques
-        - riskRating
+        - riskRating: "send the grade calculated in this parameter from `grade` in score step. The possible value could be A, B, C etc."
         - finalRecommendation: "✅ Recommend for financing" or "❌ Not Recommend for financing"
         - finalDecision: "send the `Final Decision` string you created here but don't add emoji at start of string, remove emoji and send english sentense only"
     The `send_email_tool` will automatically generate the email body.
