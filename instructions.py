@@ -182,6 +182,8 @@ User can ask you to analyze all companies or a specific company by ID.
    - if score is between 40 to 49.99, give grade D
    - if score is between 0 to 39.99, give grade R 
 
+   User can give you the custom rules or ask you to modify the existing score card rules, if so recalculate based on new rules.
+
 5. **Provide Decision and Justification:**
    For each company, clearly state:
    - Company Name
