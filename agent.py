@@ -826,12 +826,21 @@ root_agent = Agent(
     Also user can ask some more details about your analysis and the data.
     IF user has not provided you the company id second time, use the previous one and do same for year
     Answer him professionally.
-    User can ask to send email by providing the email address. If user ask for email:
-        - Call the `send_email_tool`.
-        - Provide:
-            - `summary_data` dictionary as received from `analyze_company`.
-            - recipient email address.
-    Format the all the output in Markdown format. 
+
+    User can ask to send email by providing the email address. If the user provides an email address, call the `send_email_tool` with a `summary_data` object including:
+        - companyName
+        - crNumber
+        - simahScore: "send the total score calculated in this parameter from `credit_score` score step"
+        - dpd
+        - revenue
+        - netProfitMargin
+        - dscr
+        - bouncedCheques
+        - riskRating
+        - finalRecommendation: "✅ Recommend for financing" or "❌ Not Recommend for financing"
+        - finalDecision: "send the `Final Decision` string you created here but don't add emoji at start of string, remove emoji and send english sentense only"
+    The `send_email_tool` will automatically generate the email body.
+    Inform the user whether the email was successfully sent or if there was an error.
     """,
     tools=[financial_data_analysis_tool, send_email_tool]
 )
