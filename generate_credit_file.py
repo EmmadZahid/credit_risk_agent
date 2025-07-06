@@ -258,7 +258,7 @@ def create_lendo_credit_file(companyId, summary_data: Dict[str, Any], output_fil
     for i, buyer in enumerate(approved_buyers):
         cells = table.add_row().cells
         cells[0].text = buyer.get('buyerEnglishName', '')
-        cells[1].text = f'{buyer.get('averageCap', '')}%'
+        cells[1].text = f"{buyer.get('averageCap', '')}%"
         cells[2].text = "--"  # Tenor is not available in the JSON
 
         for cell in cells:

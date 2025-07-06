@@ -36,6 +36,7 @@ User can ask you to analyze all companies or a specific company by ID.
        - dpd_consumer_flag
        - unsettled_consumer_flag
        - bounced_cheque_consumer_flag
+   IF user ask to ignore the rule, ignore then and process again
 
 3. **Analyze Apply Partial Acceptance Criteria Assessment:**
    After evaluating the **RULEBOOK**, perform the following steps in **Partial Acceptance Criteria Assessment**:
