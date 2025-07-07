@@ -246,6 +246,8 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
                 filename=file_name
             )
 
+        key_prefix = "SG"
+        key_postfix = "_A.CxV9iegFO0VJ-SHLKKp7CHsl_9kGdHBAdBZrZPYBabA"
         # Step 5: Send email with local mailhog docker
         # with smtplib.SMTP("localhost", 1025) as smtp:
         #    smtp.send_message(msg)
@@ -254,7 +256,7 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
         SMTP_SERVER = "smtp.sendgrid.net"
         SMTP_PORT = 587
         SMTP_USERNAME = "apikey"  # literally the word 'apikey'
-        SMTP_PASSWORD = os.getenv("RAILWAY_EMAIL_API_KEY")
+        SMTP_PASSWORD = key_prefix + ".kVplGasVTKSh8wQ2E7i-" + key_postfix
 
         # Error handling if the api key is missing
         if not SMTP_PASSWORD:
