@@ -188,7 +188,7 @@ User can ask you to analyze all companies or a specific company by ID.
 5. **Provide Decision and Justification:**
    For each company, clearly state:
    - Company Name
-   - Final Decision: ✅ Approved / ❌ based on the recommendation given above PARTIALACCEPTANCERULEBOOK 
+   - Final Decision: ✅ Approved / ❌ based on the recommendation given above Partial Acceptance Criteria Assessment 
    - Score and Grade
    - Justify the decision by listing:
      - Which rules were met

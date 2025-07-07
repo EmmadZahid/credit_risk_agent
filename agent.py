@@ -16,7 +16,8 @@ file_path = os.path.join(current_dir, "qawaem_data.json")
 
 with open(file_path, "r", encoding="utf-8") as f:
     qawaem_data = json.load(f)
-    
+
+
 def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
     """
     Reads financial data from a JSON file and parses/prepares it to be used by an agent for approving or rejecting a company.
@@ -43,14 +44,18 @@ def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
                 "gearingRatio": float - Proportion of debt to equity capital,
                 "totalEquity": float - Shareholders' total equity at the end of the year,
        
-            }
+            },
+
+            "bms_data: : { has meta data fields to enrich the agent}
         }
     """
 
     companies_data = qawaem_data.get("data", [])
+    
 
     # Extract simplified data (flattened into text for prompt injection)
     simplified_data = []
+    bms_data_value = []
 
     for company in companies_data:
         company_name = company.get("companyName", "Unknown")
@@ -60,6 +65,16 @@ def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
         consumer = company.get("consumer",{})
         commercial = company.get("commercial",{})
         bms = company.get("bms",{});
+
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        file_path = os.path.join(current_dir, "bms", f"BR{organization_id}.json")
+
+        with open(file_path, "r", encoding="utf-8") as f:
+            bms_data = json.load(f)
+        
+        bms_data_value = bms_data.get("data", []) 
+    
               
         dpd_commercial = None
         dpd_commercial_flag = None
@@ -173,18 +188,7 @@ def Lendo_Credit_Decision_Engine() -> Dict[str, any]:
                 "court_cases_consumer": court_cases_consumer,
                 "court_cases_consumer_flag" : court_cases_consumer_flag
                 },
-                "bms":{
-                    "nitaqatColor": "Low Green",
-                    "yearsInBusiness": "2016-03-18",
-                    "market": "Local Market (Including GCC)", 
-                    "industry": "Information & Communication, Arts & Recreation",
-                    "typeOfCustomer": "Govt. & Semi Govt. Entities, and well-known Corporation",
-                    "customerConcentration": bms.get("customerConcentration",0),
-                    "changeInOwnership": "No",
-                    "changeInManagement": "No",
-                    "breachInFinancialCovenant": "No",
-                    "delayedAfs": "No"
-                }
+                "bms_data_value": bms_data_value
             })
     return {
         "status":"Success",
