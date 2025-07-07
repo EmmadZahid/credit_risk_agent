@@ -254,13 +254,13 @@ def Send_Email(input: Dict[str, Any]) -> Dict[str, str]:
         SMTP_SERVER = "smtp.sendgrid.net"
         SMTP_PORT = 587
         SMTP_USERNAME = "apikey"  # literally the word 'apikey'
-        SMTP_PASSWORD = os.getenv("EMAIL_API_KEY")
+        SMTP_PASSWORD = os.getenv("RAILWAY_EMAIL_API_KEY")
 
         # Error handling if the api key is missing
         if not SMTP_PASSWORD:
-            raise EnvironmentError("❌ EMAIL_API_KEY environment variable is missing or not set.")
+            raise EnvironmentError("❌ RAILWAY_EMAIL_API_KEY environment variable is missing or not set.")
         else:
-            print("✅ EMAIL_API_KEY loaded successfully.")
+            print("✅ RAILWAY_EMAIL_API_KEY loaded successfully.")
         
         # Send email now
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
