@@ -5,10 +5,10 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y bash build-essential
 
 # Copy your project (including adk.yaml) into the container
-COPY . /app/credit-risk-agent
+COPY . /app/credit_risk_agent
 
 # Install Python dependencies
-RUN pip install --upgrade pip && pip install -r credit-risk-agent/requirements.txt
+RUN pip install --upgrade pip && pip install -r credit_risk_agent/requirements.txt
 
 EXPOSE 8080
 
@@ -16,4 +16,5 @@ EXPOSE 8080
 WORKDIR /app
 
 # Run the agent using adk.yaml
-CMD ["adk", "api_server", "--allow_origins", "*", "--port", "8080"]
+CMD ["adk", "api_server", "--allow_origins", "*", "--port", "8080", "--host", "0.0.0.0"]
+
